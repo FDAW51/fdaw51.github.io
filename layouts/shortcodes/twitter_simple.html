@@ -1,0 +1,6 @@
+{{/* Redirect deprecated twitter_simple shortcode to the new x shortcode */}}
+{{ partial "pwa/warning" (dict "message" "The twitter_simple shortcode is deprecated. Use x shortcode instead.") }}
+{{ $user := .Get "user" }}
+{{ $id := .Get "id" }}
+{{ partial "shortcodes/x" (dict "user" $user "id" $id "context" .) }}
+

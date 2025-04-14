@@ -1,0 +1,13 @@
+{{ printf "Hugo version: %s" hugo.Version }}
+{{ printf "Hugo environment: %s" hugo.Environment }}
+{{ printf "Hugo configuration file: %s" site.ConfigFiles }}
+
+<h2>Site Parameters</h2>
+<pre>{{ jsonify (dict "indent" "  ") site.Params }}</pre>
+
+<h2>Page Parameters</h2>
+<pre>{{ jsonify (dict "indent" "  ") .Params }}</pre>
+
+<h2>Template Debugging Information</h2>
+<p>This page can help identify template rendering issues.</p>
+

@@ -1,0 +1,20 @@
+{{/* Redirect deprecated vimeo_simple shortcode to the custom vimeo shortcode */}}
+{{ partial "pwa/warning" (dict "message" "The vimeo_simple shortcode might cause API timeouts. Static representation is shown instead.") }}
+{{ $id := .Get "id" }}
+<div class="vimeo-embed" style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin: 15px 0; max-width: 550px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div style="display: flex; align-items: center; margin-bottom: 10px;">
+    <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #19B7EA; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">V</div>
+    <div>
+      <div style="font-weight: bold;">Vimeo Video</div>
+      <div style="color: #536471; font-size: 0.9em;">Video ID: {{ $id }}</div>
+    </div>
+  </div>
+  <div style="margin: 10px 0;">
+    <p>This is a static representation of a Vimeo video.</p>
+    <p>View the original video: <a href="https://vimeo.com/{{ $id }}" target="_blank" rel="noopener noreferrer">https://vimeo.com/{{ $id }}</a></p>
+  </div>
+  <div style="color: #536471; font-size: 0.9em; margin-top: 10px;">
+    Note: Direct embedding disabled to prevent API timeouts
+  </div>
+</div>
+
