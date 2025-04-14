@@ -2,9 +2,9 @@
 name: Deploy Hugo site to Pages
 
 on:
-  # 在推送到main分支时运行
+  # 在推送到master分支时运行
   push:
-    branches: ["main"]
+    branches: ["master"]
   # 允许手动运行此工作流
   workflow_dispatch:
 
@@ -32,6 +32,12 @@ jobs:
     env:
       HUGO_VERSION: 0.145.0
     steps:
+      - name: 检出代码 # 检出你的仓库代码
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive # 获取Git子模块
+          fetch-depth: 0 # 获取所有历史记录和标签
+
       - name: 检查是否存在package.json # 检查是否需要Node.js
         id: check-package-json
         run: |
@@ -51,12 +57,6 @@ jobs:
       - name: 安装Node.js依赖 # 安装Node.js依赖（如果package.json存在）
         if: steps.check-package-json.outputs.exists == 'true'
         run: npm ci
-          
-      - name: 安装Node.js依赖 # 安装Node.js依赖（如果package.json存在）
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-          fi
 
       - name: 设置Pages # 配置GitHub Pages环境
         id: pages
