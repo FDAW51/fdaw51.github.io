@@ -32,17 +32,25 @@ jobs:
     env:
       HUGO_VERSION: 0.145.0
     steps:
-      - name: 检出代码 # 检出你的仓库代码
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive # 获取Git子模块
-          fetch-depth: 0 # 获取所有历史记录和标签
+      - name: 检查是否存在package.json # 检查是否需要Node.js
+        id: check-package-json
+        run: |
+          if [ -f package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: 设置Node.js # 如果你的主题需要Node.js（大多数现代主题都需要）
+        if: steps.check-package-json.outputs.exists == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          # 不使用cache选项，避免在没有lock文件时出错
+          
+      - name: 安装Node.js依赖 # 安装Node.js依赖（如果package.json存在）
+        if: steps.check-package-json.outputs.exists == 'true'
+        run: npm ci
           
       - name: 安装Node.js依赖 # 安装Node.js依赖（如果package.json存在）
         run: |
