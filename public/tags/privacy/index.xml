@@ -30,20 +30,29 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;x-twitter-shortcode&#34;&gt;X (Twitter) Shortcode
 &lt;/h2&gt;
+
+
+
 &lt;div class=&#34;x-embed&#34; style=&#34;border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin: 15px 0; max-width: 550px; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; margin-bottom: 10px;&#34;&gt;
-    &lt;div style=&#34;width: 48px; height: 48px; border-radius: 50%; background-color: #eee; margin-right: 10px;&#34;&gt;&lt;/div&gt;
+    &lt;div style=&#34;width: 48px; height: 48px; border-radius: 50%; background-color: #1DA1F2; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;&#34;&gt;X&lt;/div&gt;
     &lt;div&gt;
-      &lt;div style=&#34;font-weight: bold;&#34;&gt;@DesignReviewed&lt;/div&gt;
-      &lt;div style=&#34;color: #536471; font-size: 0.9em;&#34;&gt;X Post ID: 1085870671291310081&lt;/div&gt;
+      &lt;div style=&#34;font-weight: bold;&#34;&gt;X Post by @DesignReviewed&lt;/div&gt;
+      &lt;div style=&#34;color: #536471; font-size: 0.9em;&#34;&gt;Post ID: 1085870671291310081&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div style=&#34;margin: 10px 0;&#34;&gt;
-    &lt;p&gt;This is a static representation of an X post (formerly Twitter).&lt;/p&gt;
-    &lt;p&gt;View the original post: &lt;a href=&#34;https://twitter.com/DesignReviewed/status/1085870671291310081&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://twitter.com/DesignReviewed/status/1085870671291310081&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;This is a static representation of an X (formerly Twitter) post.&lt;/p&gt;
+    &lt;p&gt;View the original post: 
+      
+        &lt;a href=&#34;https://twitter.com/DesignReviewed/status/1085870671291310081&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+          https://twitter.com/DesignReviewed/status/1085870671291310081
+        &lt;/a&gt;
+      
+    &lt;/p&gt;
   &lt;/div&gt;
   &lt;div style=&#34;color: #536471; font-size: 0.9em; margin-top: 10px;&#34;&gt;
-    Note: Direct embedding disabled to prevent API timeouts
+    Note: Static representation is shown to prevent API timeouts
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -53,26 +62,29 @@
 &lt;h2 id=&#34;vimeo-simple-shortcode&#34;&gt;Vimeo Simple Shortcode
 &lt;/h2&gt;
 
-&lt;div style=&#34;background-color: #fff3cd; color: #856404; padding: 12px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #ffeeba;&#34;&gt;
-  &lt;strong&gt;Warning:&lt;/strong&gt; The vimeo_simple shortcode might cause API timeouts. Static representation is shown instead.
+
+&lt;div style=&#34;background-color: #fff3cd; color: #856404; padding: 8px; margin-bottom: 10px; border-radius: 4px; font-size: 14px;&#34;&gt;
+  Note: Using static Vimeo representation to prevent API timeouts.
 &lt;/div&gt;
-
-
 
 &lt;div class=&#34;vimeo-embed&#34; style=&#34;border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin: 15px 0; max-width: 550px; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;&#34;&gt;
   &lt;div style=&#34;display: flex; align-items: center; margin-bottom: 10px;&#34;&gt;
-    &lt;div style=&#34;width: 48px; height: 48px; border-radius: 50%; background-color: #19B7EA; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;&#34;&gt;V&lt;/div&gt;
+    &lt;div style=&#34;width: 48px; height: 48px; border-radius: 50%; background-color: #1AB7EA; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;&#34;&gt;V&lt;/div&gt;
     &lt;div&gt;
       &lt;div style=&#34;font-weight: bold;&#34;&gt;Vimeo Video&lt;/div&gt;
-      &lt;div style=&#34;color: #536471; font-size: 0.9em;&#34;&gt;Video ID: &lt;/div&gt;
+      &lt;div style=&#34;color: #536471; font-size: 0.9em;&#34;&gt;Video ID: 48912912&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div style=&#34;margin: 10px 0;&#34;&gt;
     &lt;p&gt;This is a static representation of a Vimeo video.&lt;/p&gt;
-    &lt;p&gt;View the original video: &lt;a href=&#34;https://vimeo.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://vimeo.com/&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;View the original video: 
+      &lt;a href=&#34;https://vimeo.com/48912912&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+        https://vimeo.com/48912912
+      &lt;/a&gt;
+    &lt;/p&gt;
   &lt;/div&gt;
   &lt;div style=&#34;color: #536471; font-size: 0.9em; margin-top: 10px;&#34;&gt;
-    Note: Direct embedding disabled to prevent API timeouts
+    Note: Static representation is shown to prevent API timeouts
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -98,7 +110,35 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;gist-shortcode&#34;&gt;Gist Shortcode
-&lt;/h2&gt;&lt;script src=&#34;https://gist.github.com/spf13/7896402.js&#34;&gt;&lt;/script&gt;
+&lt;/h2&gt;
+
+
+
+
+&lt;div class=&#34;gist-embed&#34; style=&#34;border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin: 15px 0; max-width: 100%; font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;&#34;&gt;
+  &lt;div style=&#34;display: flex; align-items: center; margin-bottom: 10px;&#34;&gt;
+    &lt;div style=&#34;width: 48px; height: 48px; border-radius: 50%; background-color: #333; margin-right: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;&#34;&gt;G&lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style=&#34;font-weight: bold;&#34;&gt;GitHub Gist by @spf13&lt;/div&gt;
+      &lt;div style=&#34;color: #536471; font-size: 0.9em;&#34;&gt;
+        Gist ID: 7896402
+        
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;margin: 10px 0;&#34;&gt;
+    &lt;p&gt;This is a static representation of a GitHub Gist.&lt;/p&gt;
+    &lt;p&gt;View the original Gist: 
+      &lt;a href=&#34;https://gist.github.com/spf13/7896402&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+        https://gist.github.com/spf13/7896402
+      &lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;color: #536471; font-size: 0.9em; margin-top: 10px;&#34;&gt;
+    Note: Static representation is shown to prevent API timeouts
+  &lt;/div&gt;
+&lt;/div&gt;
+
 
 &lt;h2 id=&#34;gitlab-snippets-shortcode&#34;&gt;Gitlab Snippets Shortcode
 &lt;/h2&gt;&lt;script

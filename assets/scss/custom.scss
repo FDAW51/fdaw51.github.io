@@ -1,0 +1,283 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+.right-sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// .widget {
+//     max-height: 100vh;
+//     overflow-y: auto;
+//     scrollbar-width: none;
+//     -ms-overflow-style: none;
+
+//     &::-webkit-scrollbar {
+//         display: none;
+//     }
+// }
+
+
+// 引用块CSS
+// 文件位置：~/assets/scss/custom/_custom.scss
+
+blockquote.quote {
+    position: relative;
+    margin: 1.5em -10em 0 -10 ;
+    padding-left: 18%;
+    padding-right: 15%;
+    border: none;
+    background-color: transparent;;
+    &::before {
+        position: absolute;
+        left: 7%;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1;
+    }
+    &.poetry {
+        display: table;
+        padding: 0;
+        &::before {
+            left: -1em;
+        }
+        p:last-child {
+            margin: 0;
+        }
+    }
+    &.en {
+        p {
+            line-height: 1.618;
+            text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+        }
+    }
+}
+@media (max-width:650px) {
+    blockquote.quote {
+        &::before {
+            position: absolute;
+            left: 3.5%;          
+        }
+    }
+}
+
+@media (max-width:500px) {
+    blockquote.quote {
+        &::before {
+            position: absolute;
+            left: 3.5%; 
+            top: 0.1%         
+        }
+    }
+}
+
+
+
+//文本高斯模糊
+.blur {
+   color: transparent;
+   text-shadow:0px 0px 8px rgba(0,0,0,0.5)
+}
+
+.blur:hover {
+   color: transparent;
+   text-shadow:0px 0px 0px rgba(0,0,0,1)
+  
+}
+
+
+//文本黑幕效果
+.shady {
+   color:#000;
+   font-weight: bold;
+   box-shadow: 0px -20px 0px rgba(0,0,0,1) inset; 
+   transition: all 0.3s ease;
+}
+.shady:hover{
+  font-weight: bold;
+   color:#FFF;
+   box-shadow: 0px -20px 0px rgba(0,0,0,1) inset; 
+}
+
+
+
+//友情链接双栏
+@media (min-width: 1024px) {
+    .article-list--compact.links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: none;
+        box-shadow: none;
+        
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-bottom: 8px;
+            border-radius: 10px;
+            &:nth-child(odd) {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+//修改选中颜色
+::selection {
+    color: #fff;
+    background: #34495e;
+}
+
+//  ~\blog\assets\scss\custom.scss
+
+// 页面基本配色
+:root {
+    // 全局顶部边距
+    --main-top-padding: 30px;
+    // 全局卡片圆角
+    --card-border-radius: 25px;
+    // 标签云卡片圆角
+    --tag-border-radius: 8px;
+    // 卡片间距
+    --section-separation: 40px;
+    // 全局字体大小
+    --article-font-size: 1.8rem;
+    // 行内代码背景色
+    --code-background-color: #f8f8f8;
+    // 行内代码前景色
+    --code-text-color: #e96900;
+    // 暗色模式下样式
+    &[data-scheme="dark"] {
+      // 行内代码背景色
+      --code-background-color: #ff6d1b17;
+      // 行内代码前景色
+      --code-text-color: #e96900;
+    }
+  }
+  
+  //------------------------------------------------------
+  // 修复引用块内容窄页面显示问题
+  a {
+    word-break: break-all;
+  }
+  
+  code {
+    word-break: break-all;
+  }
+  
+  //---------------------------------------------------
+  // 文章内容图片圆角阴影
+  .article-page .main-article .article-content {
+    img {
+      max-width: 96% !important;
+      height: auto !important;
+      border-radius: 8px;
+    }
+  }
+  
+  //------------------------------------------------
+  // 文章内容引用块样式
+  .article-content {
+    blockquote {
+      border-left: 6px solid #358b9a1f !important;
+      background: #3a97431f;
+    }
+  }
+  // ---------------------------------------
+  // 代码块基础样式修改
+  .highlight {
+    max-width: 102% !important;
+    background-color: var(--pre-background-color);
+    padding: var(--card-padding);
+    position: relative;
+    border-radius: 20px;
+    margin-left: -7px !important;
+    margin-right: -12px;
+    box-shadow: var(--shadow-l1) !important;
+  
+    &:hover {
+      .copyCodeButton {
+        opacity: 1;
+      }
+    }
+  
+    // keep Codeblocks LTR
+    [dir="rtl"] & {
+      direction: ltr;
+    }
+  
+    pre {
+      margin: initial;
+      padding: 0;
+      margin: 0;
+      width: auto;
+    }
+  }
+  
+  // light模式下的代码块样式调整
+  [data-scheme="light"] .article-content .highlight {
+    background-color: #fff9f3;
+  }
+  
+  [data-scheme="light"] .chroma {
+    color: #ff6f00;
+    background-color: #fff9f3cc;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--accent-color);
+  
+    &:hover {
+      color: var(--accent-color-darker);
+    }
+  
+    &.link {
+      color: #4288b9ad;
+      font-weight: 600;
+      padding: 0 2px;
+      text-decoration: none;
+      cursor: pointer;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  //-------------------------------------------------
+  //文章封面高度更改
+  .article-list article .article-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  
+    @include respond(md) {
+      height: 200px;
+    }
+  
+    @include respond(xl) {
+      height: 305px;
+    }
+  }
+  
+    
+  //-------------------------------------------------------
+  //全局页面小图片样式微调
+  .article-list--compact article .article-image img {
+    width: var(--image-size);
+    height: var(--image-size);
+    object-fit: cover;
+    border-radius: 17%;
+  }
+
