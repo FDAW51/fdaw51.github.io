@@ -1,16 +1,19 @@
 ---
+
 title: "Hugo | Hugo-stack-theme主题魔改版"
 date: 2022-02-13T03:02:52+08:00
 lastmod: 2022-02-13T03:02:52+08:00
 description: 问的人比较多，我又比较懒，干脆做了一套样板间。
 tags:
-  - Hugo
-categories:
-  - 甘普基本变形定律
-image: 
-slug: stack-theme-mod
+
+- Hugo
+  categories:
+- 甘普基本变形定律
+  image: 
+  slug: stack-theme-mod
 
 ---
+
 Codeberg 仓库地址：[Ice Year](https://codeberg.org/iceyear)/[hugo-theme-stack-mod](https://codeberg.org/iceyear/hugo-theme-stack-mod)
 
 本主题由 [CaiJimmy](https://github.com/CaiJimmy) 制作并[发布](https://github.com/CaiJimmy/hugo-theme-stack)，这个仓库是由 [Ice Year](https://codeberg.org/iceyear) 基于 [Mantyke](https://github.com/Mantyke/) 的魔改版本进行二次修改，结合了其他的一些参考资料并跟进官方 commits ，添加了一些特性，以及修复了一些 bug.
@@ -22,8 +25,6 @@ Codeberg 仓库地址：[Ice Year](https://codeberg.org/iceyear)/[hugo-theme-sta
 **从零建立博客**：Fork仓库到自己账号下，用Github 注册 Vercel，依次点击Overview → New Project → import刚刚Fork的仓库，设置`FRAMEWORK PRESET`为Hugo → 点击`Environment Variables`，设置`NAME`为`HUGO_VERSION`，`Value`为`Hugo版本号（如0.89.0）` → 点击Add → 点击Deploy，稍等十来秒即可部署完成。下载仓库到本地后使用Github Desktop更新文章。（注，本地预览需安装Hugo，具体请参照[Hugo | 一起动手搭建个人博客吧](https://mantyke.icu/2021/hugo-build-blog/)相关内容）
 
 **旧博客更换主题**：不同主题方式不同，推荐只保留原博客的content文件夹，迁移到本仓库content文件夹后再按情况调整。
-
-
 
 <br>
 
@@ -51,6 +52,7 @@ Codeberg 仓库地址：[Ice Year](https://codeberg.org/iceyear)/[hugo-theme-sta
 三月，因久旱不雨，苏轼赴郿，祈雨于太白山之上清宫。数日后，虽有微雨，父老以为不足，于是，再陪宋太守亲往祭祷，回程路上，便见道中有云气自山中来，如群马奔突而至车座左右，苏轼一时好奇心起，开笼收云归家，作《攓云篇》。
 {< /quote >}}
 ```
+
 {{< quote >}} 三月，因久旱不雨，苏轼赴郿，祈雨于太白山之上清宫。数日后，虽有微雨，父老以为不足，于是，再陪宋太守亲往祭祷，回程路上，便见道中有云气自山中来，如群马奔突而至车座左右，苏轼一时好奇心起，开笼收云归家，作《攓云篇》。 {{< /quote >}} 
 <br>
 
@@ -66,7 +68,7 @@ Codeberg 仓库地址：[Ice Year](https://codeberg.org/iceyear)/[hugo-theme-sta
         "image": "iceyear.webp",
      "description": "Il n'y a pas de hasard, il n'y a que des rendez-vous."
     },
-	{
+    {
         "title": "友情链接2",
         "website": "",
         "image": "",
@@ -87,7 +89,7 @@ Codeberg 仓库地址：[Ice Year](https://codeberg.org/iceyear)/[hugo-theme-sta
 #位置：layout/partials/footer/footer.html
 
     <section class="copyleft">
-        &copy; 
+        © 
         {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
             {{ .Site.Params.footer.since }} - 
         {{ end }}
@@ -128,7 +130,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <img src="{{ .src }}" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
                 {{ else }}
                     {{ $avatar := resources.Get (.src) }}
-                    
+
                     {{ if $avatar }}
                         {{ $avatarResized := $avatar.Resize "300x" }}
                         <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
