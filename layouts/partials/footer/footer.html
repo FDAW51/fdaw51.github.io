@@ -19,32 +19,32 @@
 </script>
 
     <section class="copyleft">
-        🄯  
+         @ 
         {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
             {{ .Site.Params.footer.since }} - 
         {{ end }}
-        {{ now.Format "2006" }} <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+        {{ now.Format "2006" }} <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
       {{$var :=  $scratch.Get "total"}}{{$var = div $var 100.0}}{{$var = math.Ceil $var}}{{$var = div $var 10.0}}共书写了{{$var}}k字·共 {{ len (where .Site.RegularPages "Section" "post") }}篇文章</br><span><p>
     </section>
-    
+
     <section class="powerby">
         {{ with .Site.Params.footer.customText }}
             {{ . | safeHTML }} <br/>
         {{ end }}
 
-
+        <p>本博客所有内容无特殊标注均为Eugene原创内容，复制请保留原文出处。</p>
         {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
         {{- $Theme := printf `<b><a href="https://codeberg.org/iceyear/hugo-theme-stack-mod" target="_blank" rel="noopener" data-version="%s">Stack Mod</a></b>` $ThemeVersion -}}
         {{- $DesignedBy := `<a href="https://iceyear.eu.org" target="_blank" rel="noopener">Ice Year</a>` -}} 
         
-
+      
         {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
         {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}<br />
-         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">🄯 Licensed Under CC BY-NC-SA 4.0</a>
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">Licensed Under CC BY-NC-SA 4.0</a>
     </section>
 
 <script>
-var s1 = '2022-02-12';//设置为建站时间
+var s1 = '2025-04-11';//设置为建站时间
 s1 = new Date(s1.replace(/-/g, "/"));
 s2 = new Date();
 var days = s2.getTime() - s1.getTime();

@@ -1,7 +1,7 @@
 ---
-title: About
-description: Ice Year's Plane.
-date: '2023-08-16'
+title: 关于自己
+description: 关于我自己的一些信息。
+date: '2025-04-16'
 aliases:
   - about-us
   - about-hugo
