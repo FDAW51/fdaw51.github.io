@@ -1,5 +1,4 @@
 ---
-
 title: "Friends"
 date: 2023-08-16
 description: 
@@ -13,18 +12,22 @@ menu:
         weight: -90
         params:
             icon: home
-
+        
 ---
-
 <style>
 .article-header {
     display: none;
   }
 .article-footer {
-    display: none;
+	display: none;
   }
 
 </style>
+
+
+
+
+
 
  这个标题默认隐藏了标题与页尾，推荐用以下格式来交换友情链接。
 
@@ -40,7 +43,7 @@ link.json格式为：
         "image": "iceyear.webp",
      "description": "Il n'y a pas de hasard, il n'y a que des rendez-vous."
     },
-    {
+	{
         "title": "友情链接2",
         "website": "",
         "image": "",
@@ -48,6 +51,8 @@ link.json格式为：
     }
 ]
 ```
+
+
 
 > 名称：Ice Year の位面
 > 简介：Il n'y a pas de hasard, il n'y a que des rendez-vous.
