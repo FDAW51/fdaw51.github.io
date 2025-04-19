@@ -109,13 +109,12 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
-&lt;p&gt;f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; 2 \
-1, &amp;amp; g(x) \geq 2
-\end{cases}&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
+&lt;p&gt;$$
+f(g(x)) =
+\begin{cases}0, &amp;amp; g(x) &amp;lt; \theta \
+1, &amp;amp; g(x) \geq \theta
+\end{cases}
+$$&lt;/p&gt;
 &lt;p&gt;有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
 &lt;p&gt;首先对于AND逻辑来说：&lt;/p&gt;
 &lt;table&gt;
@@ -157,8 +156,7 @@ $$
 &lt;p&gt;我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：&lt;/p&gt;
 &lt;p&gt;$$
 f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; 2 \
+\begin{cases}0, &amp;amp; g(x) &amp;lt; 2 \
 1, &amp;amp; g(x) \geq 2
 \end{cases}
 $$&lt;/p&gt;
