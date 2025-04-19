@@ -4,6 +4,7 @@ theme: stack
 pagerSize: 5
 title: Eugene
 
+
 # Change it to your Disqus shortname before using
 disqusShortname: Yibao
 
@@ -217,19 +218,20 @@ related:
           weight: 200
 
 markup:
-    goldmark:
-        renderer:
-            ## Set to true if you have HTML content inside Markdown
-            unsafe: true
-    tableOfContents:
-        endLevel: 6
-        ordered: true
-        startLevel: 2
-    highlight: 
-        noClasses: false
-        codeFences: true
-        guessSyntax: true
-        lineNoStart: 1
-        lineNos: true
-        lineNumbersInTable: true
-        tabWidth: 4
+  goldmark:
+    extensions:
+      math: true       # 一定要有这一行
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: true
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4

@@ -28,6 +28,13 @@
 		    document.head.appendChild(customFont);
 		}());
 </script>
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"/>
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"></script>
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
 
     </head>
     <body class="
@@ -456,7 +463,7 @@
 
                 
                 <time class="article-words">
-                    1870 字
+                    1872 字
                 </time>
             </div>
         
@@ -567,11 +574,15 @@ $$
 <p>else:y = 0</p>
 </li>
 </ol>
-<p>所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：
-$$
-f(g(x)) = \begin{cases}0, &amp; g(x) &lt; 2 \ 1, &amp; g(x) \geq 2\end{cases}
-$$
-有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。</p>
+<p>所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：</p>
+<p>$$</p>
+<p>f(g(x)) =
+\begin{cases}
+0, &amp; g(x) &lt; 2 \
+1, &amp; g(x) \geq 2
+\end{cases}</p>
+<p>$$</p>
+<p>有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。</p>
 <p>首先对于AND逻辑来说：</p>
 <div class="table-wrapper"><table>
   <thead>
@@ -609,15 +620,15 @@ $$
       </tr>
   </tbody>
 </table></div>
-<p>我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：
-$$
+<p>我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：</p>
+<p>$$
 f(g(x)) =
 \begin{cases}
 0, &amp; g(x) &lt; 2 \
 1, &amp; g(x) \geq 2
 \end{cases}
-$$
-对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。</p>
+$$</p>
+<p>对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。</p>
 <p>但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？</p>
 <p>本文原载于 <a class="link" href="https://quantum51.top"  target="_blank" rel="noopener"
     >quantum51.top</a>，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。</p>
