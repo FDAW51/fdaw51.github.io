@@ -2,7 +2,7 @@
 title: AI
 slug: AI
 description: 
-image: cover.jpg
+image: 
 style:
     background: "#2a9d8f"
     color: "#fff"
