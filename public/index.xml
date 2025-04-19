@@ -106,13 +106,11 @@ $$
 &lt;li&gt;
 &lt;p&gt;If  $Sum\geq \theta :y=1$&lt;/p&gt;
 &lt;p&gt;else:y = 0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：
 $$
-f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; \theta \
-1, &amp;amp; g(x) \geq \theta
-\end{cases}
+f(g(x)) = \begin{cases}0, &amp;amp; g(x) &amp;lt; 2 \ 1, &amp;amp; g(x) \geq 2\end{cases}
 $$
 有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
 &lt;p&gt;首先对于AND逻辑来说：&lt;/p&gt;
@@ -162,8 +160,6 @@ f(g(x)) =
 $$
 对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。&lt;/p&gt;
 &lt;p&gt;但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
 </description>
@@ -238,7 +234,14 @@ $$&lt;/p&gt;
 &lt;li&gt;$|P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c})| = 1/\sqrt{2} \approx 0.707$&lt;/li&gt;
 &lt;li&gt;$1 + P(\vec{b}, \vec{c}) = 1 - 1/\sqrt{2} \approx 0.293$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;显然$0.707 &amp;gt; 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。&lt;/p&gt;
+&lt;p&gt;显然$0.707 &amp;gt; 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。
+$$
+f(g(x)) =
+\begin{cases}
+0, &amp;amp; g(x) &amp;lt; 2 \
+1, &amp;amp; g(x) \geq 2
+\end{cases}
+$$&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;结论&#34;&gt;结论
 &lt;/h3&gt;

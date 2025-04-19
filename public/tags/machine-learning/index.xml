@@ -12,8 +12,12 @@
         <pubDate>Sat, 19 Apr 2025 09:34:28 +0800</pubDate>
         
         <guid>http://localhost:1313/2025/aiwhy-machines-learn/</guid>
-        <description>&lt;h1 id=&#34;chapter-1-deseperatly-seeking-pattern急切的寻找pattern&#34;&gt;Chapter 1 Deseperatly seeking pattern(急切的寻找pattern)
+        <description>&lt;h1 id=&#34;why-machines-learn&#34;&gt;Why machines learn？
 &lt;/h1&gt;
+&lt;h2 id=&#34;deseperatly-seeking-pattern&#34;&gt;Deseperatly seeking pattern
+&lt;/h2&gt;
+&lt;h3 id=&#34;从现象出发&#34;&gt;从现象出发
+&lt;/h3&gt;
 &lt;p&gt;这里面的pattern其实就是数据中某种模式特征，打个比方，每一个人对于每一年每一个季度的天气的理解和判断，都是基于一段时间（几年）的生活，通过观察每一年的天气（数据），然后得出一些经验（特征）。&lt;/p&gt;
 &lt;p&gt;然而令人惊讶的是，小小的鸭苗在没有父母的帮助下，也可以从运动的物体中找到一定的规律，这些规律可以是相似之处，也可以是不同之处，比如，小鸭苗如果看见有5个黑鸭苗和2个白鸭苗的队伍，它会知道自己是黑的还是白的，并且知道黑色和白色的差别，最后他会加入到其中一个队伍里面。&lt;/p&gt;
 &lt;p&gt;这就是令人惊讶的动物的学习能力。在早些年，就有科学家提出“动物（人）是怎么学习的”这一问题，他们就想到先从学习数据中的特征入手，于是就有科学家开发了Perceptron（感知机）来模拟人类的思考。当你给这个感知机下面这些数据的时候：&lt;/p&gt;
@@ -52,20 +56,47 @@
 $$
 y=x_1+2x_2
 $$
-而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距），然后你可以通过一些测试数据来判读这一组系数的好坏（离最优的系数差多远，最优的系数当然是通过每一个数据点，但是实际上并不能很好的做到），最后得到这组数据的最优解，接下来你就可以通过这样的关系来predict不同的input，会有怎么样的output了。就好像天气一样，你可以通过之前每一天的数据来预测之后的数据一样，只不过天气与很多因素有关。&lt;/p&gt;
+而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。&lt;/p&gt;
+&lt;p&gt;然后你可以通过一些测试数据来判读这一组系数的好坏（离最优的系数差多远，最优的系数当然是通过每一个数据点，但是实际上并不能很好的做到），最后得到这组数据的最优解，接下来你就可以通过这样的关系来predict不同的input，会有怎么样的output了。就好像天气一样，你可以通过之前每一天的数据来预测之后的数据一样，只不过天气与很多因素有关。&lt;/p&gt;
 &lt;p&gt;所以Regression Method的具体步骤是：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;给他一定的训练数据，并且指定一开始的 $w_1,w2，b$&lt;/li&gt;
 &lt;li&gt;然后计算这一组的系数所给出的output $y_{predict}和y_{train}$之间的差距，然后通过这个差距反过来调节系数&lt;/li&gt;
 &lt;li&gt;不断的执行，直到这个差距小到我们的要求为止&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;神经元的逻辑化&#34;&gt;神经元的逻辑化
+&lt;/h3&gt;
 &lt;p&gt;言归正传（Regression后面还会系统的说明），我们也许可以通过理解机器是怎么学习的来完全理解人类是怎么学习的（这里我的理解是我们可以在让机器逐步学会学习的过程中，不断地深化我们对于自己学习过程的理解）。&lt;/p&gt;
 &lt;p&gt;19世纪，图灵等科学家就认为logic和computation之间有很深厚的联系，他们断言“所有的计算都可以被简化为某种逻辑”。然后就引出了这样一个问题：既然人脑是可以执行计算的，那么它是怎么样执行逻辑操作的（它底层是否像逻辑门一样呢？）。&lt;/p&gt;
-&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：![截屏2025-04-19 09.05.51](/Users/yuxiaojin/Desktop/Screenshots/截屏2025-04-19 09.05.51.png)&lt;/p&gt;
+&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1.png&#34;
+	width=&#34;948&#34;
+	height=&#34;421&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;截屏2025-04-19 09.05.51&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;225&#34;
+		data-flex-basis=&#34;540px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;图中Dendrites就是神经元的树突，它负责接受各种刺激，树突中间的就是细胞体，他可以处理树突接受到的刺激（相当于进行计算），然后Axon（轴突）负责转递细胞体的结果到Axon terminals（端粒），端粒在将这个结果传递给周边其他的神经元。&lt;/p&gt;
 &lt;p&gt;然后生物学家希望把这一机构转化为一个简单的计算模型，理由是：他很像一个机器，你给他一个输入（刺激），他就会给输出。因此他们想要通过类比用神经元来构建逻辑AND，OR操作。&lt;/p&gt;
 &lt;p&gt;他们首先将这个神经元定义为这个样子：&lt;/p&gt;
-&lt;p&gt;![](/Users/yuxiaojin/Desktop/Screenshots/截屏2025-04-19 09.12.30.png)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2.png&#34;
+	width=&#34;974&#34;
+	height=&#34;382&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;254&#34;
+		data-flex-basis=&#34;611px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;上图的左侧就是给神经元的输入，然后中间的g，f就代表的是神经元对于输入的处理，然后再到右侧的输入y（其实我们可以在g，f的中间再加一个传输的过程，就是将g的处理结果传输到下一个f神经元处）。&lt;/p&gt;
 &lt;p&gt;然后这里假设 $x_1，x_2 \in {0,1}$,并且神经元会这样处理输入：&lt;/p&gt;
 &lt;ol&gt;
@@ -75,13 +106,11 @@ $$
 &lt;li&gt;
 &lt;p&gt;If  $Sum\geq \theta :y=1$&lt;/p&gt;
 &lt;p&gt;else:y = 0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：
 $$
-f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; \theta \
-1, &amp;amp; g(x) \geq \theta
-\end{cases}
+f(g(x)) = \begin{cases}0, &amp;amp; g(x) &amp;lt; 2 \ 1, &amp;amp; g(x) \geq 2\end{cases}
 $$
 有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
 &lt;p&gt;首先对于AND逻辑来说：&lt;/p&gt;
@@ -131,14 +160,6 @@ f(g(x)) =
 $$
 对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。&lt;/p&gt;
 &lt;p&gt;但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;
-&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
-&lt;/h3&gt;
-&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
-&lt;/h3&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
 </description>

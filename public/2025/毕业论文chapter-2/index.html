@@ -333,6 +333,8 @@
     
     <div class="widget-body">
         <div class="category-list">
+            <div class="category-list-item"><a href="http://localhost:1313/categories/ai/" class="category-list-link">ai<span class="category-list-count">1</a>
+            </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" class="category-list-link">毕业论文<span class="category-list-count">2</a>
             </span></div>
         </div>
@@ -388,6 +390,10 @@
         
             <a href="/tags/bell%E4%B8%8D%E7%AD%89%E5%BC%8F/" class="font_size_1">
                 Bell不等式
+            </a>
+        
+            <a href="/tags/machine-learning/" class="font_size_1">
+                Machine Learning
             </a>
         
             <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0/" class="font_size_1">
@@ -455,7 +461,7 @@
 
                 
                 <time class="article-words">
-                    1395 字
+                    1412 字
                 </time>
             </div>
         
@@ -534,7 +540,14 @@ $$</p>
 <li>$|P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c})| = 1/\sqrt{2} \approx 0.707$</li>
 <li>$1 + P(\vec{b}, \vec{c}) = 1 - 1/\sqrt{2} \approx 0.293$</li>
 </ul>
-<p>显然$0.707 &gt; 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。</p>
+<p>显然$0.707 &gt; 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。
+$$
+f(g(x)) =
+\begin{cases}
+0, &amp; g(x) &lt; 2 \
+1, &amp; g(x) \geq 2
+\end{cases}
+$$</p>
 <hr>
 <h3 id="结论">结论
 </h3>
@@ -586,17 +599,19 @@ $$</p>
                 src="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
                 defer
                 >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
+            </script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      macros: {},
+      // 启用 ams 扩展
+      fleqn: false,
+      throwOnError: false,
+      trust: false,
+      strict: 'warn'
+    });">
 </script>
     
 </article>
@@ -683,7 +698,7 @@ $$</p>
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了2.7k字·共 3篇文章</br><span><p>
+      共书写了4.6k字·共 3篇文章</br><span><p>
     </section>
 
     <section class="powerby">

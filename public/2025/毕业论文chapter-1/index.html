@@ -580,17 +580,19 @@ $$</p>
                 src="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
                 defer
                 >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
+            </script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      macros: {},
+      // 启用 ams 扩展
+      fleqn: false,
+      throwOnError: false,
+      trust: false,
+      strict: 'warn'
+    });">
 </script>
     
 </article>
@@ -677,7 +679,7 @@ $$</p>
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了4.5k字·共 3篇文章</br><span><p>
+      共书写了4.6k字·共 3篇文章</br><span><p>
     </section>
 
     <section class="powerby">

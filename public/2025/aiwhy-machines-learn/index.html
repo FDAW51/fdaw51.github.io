@@ -456,7 +456,7 @@
 
                 
                 <time class="article-words">
-                    1872 字
+                    1870 字
                 </time>
             </div>
         
@@ -565,13 +565,11 @@ $$
 <li>
 <p>If  $Sum\geq \theta :y=1$</p>
 <p>else:y = 0</p>
+</li>
+</ol>
 <p>所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：
 $$
-f(g(x)) =
-\begin{cases}
-0, &amp; g(x) &lt; \theta \
-1, &amp; g(x) \geq \theta
-\end{cases}
+f(g(x)) = \begin{cases}0, &amp; g(x) &lt; 2 \ 1, &amp; g(x) \geq 2\end{cases}
 $$
 有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。</p>
 <p>首先对于AND逻辑来说：</p>
@@ -621,8 +619,6 @@ f(g(x)) =
 $$
 对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。</p>
 <p>但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？</p>
-</li>
-</ol>
 <p>本文原载于 <a class="link" href="https://quantum51.top"  target="_blank" rel="noopener"
     >quantum51.top</a>，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。</p>
 
@@ -666,17 +662,24 @@ $$
                 src="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
                 defer
                 >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
+            </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
 </script>
     
 </article>
@@ -744,7 +747,7 @@ $$
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了4.5k字·共 3篇文章</br><span><p>
+      共书写了4.6k字·共 3篇文章</br><span><p>
     </section>
 
     <section class="powerby">
