@@ -54,9 +54,9 @@
 &lt;/table&gt;
 &lt;p&gt;我们只需要通过一点点的观察和心算就能够发现这组数据中存在的关系是：
 $$
-y=x_1+2x_2
-$$
-而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。&lt;/p&gt;
+y = x_1+2x_2
+$$&lt;/p&gt;
+&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。&lt;/p&gt;
 &lt;p&gt;然后你可以通过一些测试数据来判读这一组系数的好坏（离最优的系数差多远，最优的系数当然是通过每一个数据点，但是实际上并不能很好的做到），最后得到这组数据的最优解，接下来你就可以通过这样的关系来predict不同的input，会有怎么样的output了。就好像天气一样，你可以通过之前每一天的数据来预测之后的数据一样，只不过天气与很多因素有关。&lt;/p&gt;
 &lt;p&gt;所以Regression Method的具体步骤是：&lt;/p&gt;
 &lt;ol&gt;
@@ -109,13 +109,12 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
-&lt;p&gt;f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; 2 \
-1, &amp;amp; g(x) \geq 2
-\end{cases}&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
+&lt;p&gt;$$
+f(g(x)) =
+\begin{cases}0, &amp;amp; g(x) &amp;lt; \theta \\
+1, &amp;amp; g(x) \geq \theta
+\end{cases}
+$$&lt;/p&gt;
 &lt;p&gt;有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
 &lt;p&gt;首先对于AND逻辑来说：&lt;/p&gt;
 &lt;table&gt;
@@ -157,13 +156,13 @@ $$
 &lt;p&gt;我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：&lt;/p&gt;
 &lt;p&gt;$$
 f(g(x)) =
-\begin{cases}
-0, &amp;amp; g(x) &amp;lt; 2 \
+\begin{cases}0, &amp;amp; g(x) &amp;lt; 2 \\
 1, &amp;amp; g(x) \geq 2
 \end{cases}
 $$&lt;/p&gt;
 &lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。&lt;/p&gt;
 &lt;p&gt;但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？&lt;/p&gt;
+&lt;p&gt;Tips:下次记得分段公式要三条斜杆（调试了一上午）&lt;/p&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
 </description>
@@ -330,6 +329,50 @@ $$&lt;/p&gt;
 &lt;/h3&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>http://localhost:1313/1/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/1/</guid>
+        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;###标题&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;slug&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;###描述&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2025-04-19T09:34:28+08:00&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;lastmod&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2025-04-19T09:34:28+08:00&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;###背景图（最好是把图片放到文件夹内）&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;license&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hidden&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;draft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;categories&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;###目录&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;###标签&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;一级标题&#34;&gt;一级标题
+&lt;/h1&gt;
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题
+&lt;/h2&gt;
+&lt;h3 id=&#34;三级标题&#34;&gt;三级标题
+&lt;/h3&gt;
 </description>
         </item>
         
