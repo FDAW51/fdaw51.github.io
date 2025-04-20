@@ -1,5 +1,4 @@
 ---
-
 title: "AI|Why Machines Learn?"
 slug: "AI|Why Machines Learn?"
 description: <Why machines learn这本书的笔记>
@@ -80,7 +79,7 @@ $$
 
 $$
 f(g(x)) =
-\begin{cases}0, & g(x) < \theta \\\   
+\begin{cases}0, & g(x) < \theta \\\ 
 1, & g(x) \geq \theta
 \end{cases}
 $$
