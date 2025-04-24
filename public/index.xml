@@ -41,18 +41,14 @@
 &lt;h2 id=&#34;书店&#34;&gt;书店:
 &lt;/h2&gt;
 &lt;p&gt;下面的书籍都是我考研过程中买的书,如果学弟学妹有需要的可以联系我(有一定收费,但一定更便宜很多):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/1.jpg&#34;
-	width=&#34;3024&#34;
-	height=&#34;4032&#34;
-	srcset=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/1_hu_bfb0fea9901a0af6.jpg 480w, http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/1_hu_3f4a1bb41273df8c.jpg 1024w&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/1.jpg&#34;
+	
+	
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;75&#34;
-		data-flex-basis=&#34;180px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/2.jpeg&#34;
@@ -69,18 +65,14 @@
 		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/3.jpeg&#34;
-	width=&#34;4032&#34;
-	height=&#34;3024&#34;
-	srcset=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/3_hu_556c86e7b65866b8.jpeg 480w, http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/3_hu_e9228093802d54e2.jpeg 1024w&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/3.jpeg&#34;
+	
+	
+	
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;3&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;133&#34;
-		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/4.jpeg&#34;
@@ -423,6 +415,138 @@ $$&lt;/p&gt;
 &lt;h3 id=&#34;结论&#34;&gt;结论
 &lt;/h3&gt;
 &lt;p&gt;通过证明Bell不等式在量子力学中不成立，表明非局域性是量子力学的本质特征，从而验证了量子纠缠的合理性。&lt;/p&gt;
+&lt;h2 id=&#34;chsh游戏&#34;&gt;CHSH游戏：
+&lt;/h2&gt;
+&lt;p&gt;上面描述了两种可行的实验方案，但是其实还有一种更容易理解的思想实验（CHSH游戏），通过这个游戏的分析表明任何经典的局部隐变量理论都不能够解释量子纠缠的情况。由于该游戏确实在物理上可实现，因此就证明了经典物理从根本上无法解释某些量子现象，至少在“局部”层面上无法解释。&lt;/p&gt;
+&lt;h3 id=&#34;chsh游戏的定义&#34;&gt;CHSH游戏的定义:
+&lt;/h3&gt;
+&lt;p&gt;游戏有三个人,一个Alice,一个Bob,一个裁判:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先,裁判以均匀的概率随机地选定两个数 $x，y\in {0,1}$&lt;/li&gt;
+&lt;li&gt;然后，裁判把 $x$给Alice，$y$给Bob&lt;/li&gt;
+&lt;li&gt;最后，Alice$需要给出回应a \in {0,1}$,Bob也需要给出回应$b\in{0,1}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果$x = y = 1$，则只有当Alice和Bob要给出不一样的回应才可以获胜；对于其他的情况，则需要Alice和Bob的回应一样才能获胜。&lt;/p&gt;
+&lt;h3 id=&#34;经典情况&#34;&gt;经典情况：
+&lt;/h3&gt;
+&lt;p&gt;在经典情况下，如果我们去找一个对于这个游戏的最优策略，那么只需要找到胜率最高的那种策略，根据下面的分析：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;$x$&lt;/th&gt;
+          &lt;th&gt;$y$&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;最佳的&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$a和b相同$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$a和b相同$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$a和b相同$&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;$a和b不同$&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;我们可以从上面的表格看到，有三种情况都需要Alice和Bob选择一样的回应，所以对于经典的最优解就是：Alice和Bob两者的回应保持相同，则获胜的概率最大为 $\frac{3}{4}$（对于这种策略，四种情况只有一种情况输）。&lt;/p&gt;
+&lt;h3 id=&#34;量子情况&#34;&gt;量子情况：
+&lt;/h3&gt;
+&lt;p&gt;对于量子情况，首先介绍一些对于量子比特和量子态的基础知识。&lt;/p&gt;
+&lt;h4 id=&#34;基态&#34;&gt;基态：
+&lt;/h4&gt;
+&lt;p&gt;让$s_1\dots s_n \in {0,1}^n$是一个长度为n的二进制串，$i\in {0,1,\dots,2^{n}-1}$是对应二进制串的值，比如n=2，那么此时二进制串为$s_1s_2={00,01,10,11}$,对应这四个二进制串的值为0,1,2,3。然后根据这个我们可以定义 $\ket{s_1\dots s_n}$是一个长度为 $2^n$的向量，假设这个向量里面的二进制串所对应的值为 $i$，则这个向量的第 $i+1$个位置为1，其余的位置为0，这个向量$\ket{s_1\dots s_n}$我们就称之为n个量子比特的基态。对于n=2(两个量子比特)的情况，那么就有 $\ket{00},\ket{01},\ket{10,\ket{11}}$这些基态，这些基态分别对应(下面的基态都是列向量）：
+$$
+\ket{00}=[1,0,0,0]^T，\ket{01}=[0,1,0,0]^T \\
+\ket{10}=[0,0,1,0]^T，\ket{11}=[0,0,0,1]^T
+$$&lt;/p&gt;
+&lt;h5 id=&#34;量子态&#34;&gt;量子态：
+&lt;/h5&gt;
+&lt;p&gt;定义：n个量子比特的量子态是一个向量 $\vec{x}$:
+$$
+\vec{x} = x_{0\dots0}\ket{0\dots0}+ \dots + x_{1\dots1}\ket{1\dots1} \\
+= \sum_{S\in{0,1}^n}x_s\ket{S}
+$$
+上式中 $S$是遍历所有长度是n的二进制串，并且 $\vec{x}$满足归一化条件：
+$$
+|x_{0\ldots0}|^2 + \cdots + |x_{1\ldots1}|^2 = 1.
+$$&lt;/p&gt;
+&lt;p&gt;系数 $x_{0\dots0},\dots,x_{1\dots1}$可以是复数，但是我们只考虑它们是实数的情况。&lt;/p&gt;
+&lt;h5 id=&#34;量子门&#34;&gt;量子门：
+&lt;/h5&gt;
+&lt;p&gt;就像函数  $f(x)$一样，有输出对应着输入，这个函数相当于对这个输入做了某种操作；那么对应某个系统的量子态，我们应该如何去操作它改变它呢？上面我们提到了量子态是一个向量 $\vec{x}$,那么量子门操作就是 $f(\vec{x})$,并且要遵循如下的性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;归一化：对于所有满足归一化条件的 $\vec{x}$，在经过量子门操作之后的量子态 $\vec{y}=f(\vec{x})$也要满足归一化关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;线性操作（可以在附录说一下为什么线性是必要的）&lt;!--Problem7--&gt;：对于所有的可能的输入的向量 $\vec{a}，\vec{b}$以及所有实数 $c$，我们有 $f(\vec{a}+\vec{b})=f(\vec{a})+f({\vec{b}})$和 $f(c\vec{a})=cf(\vec{a})$.&lt;/p&gt;
+&lt;p&gt;对于满足上面两个性质的量子门操作，我们称之为线性量子门。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;量子系统孤立系统&#34;&gt;量子系统，孤立系统：
+&lt;/h4&gt;
+&lt;p&gt;对于要如何去实现这样的二进制的量子态我们可以直接想到的是电子，我们可以依靠电子的自旋量子数是1/2的特性（这个特性使得电子再任意方向上的自旋都有两个本征态，自旋向上，自旋向下）去实现基态是 $\ket{0},\ket{1}$的量子系统。顺着这个思路，我们可以得出量子系统其实就是多个有顺序的电子的集合表示为 $E =(e_1,\dots,e_n)$。&lt;/p&gt;
+&lt;p&gt;因为每个电子要么自旋向上（0）要么自旋向上（1），所以这个量子系统的状态一定是二进制串 $S = s_1\dots s_n\in{0,1}^n$中的一个，那么我们可以将测量这个量子系统中每一个电子的自旋的过程描述为 $E \to S$&lt;/p&gt;
+&lt;p&gt;在大部分情况下，我们只关心庞大世界中的某一个系统，那么此时这个孤立系统是怎么样的，和复合系统的区别是什么？一个孤立的量子系统 $E$之所以孤立是因为他的测量事件和其他量子系统的测量是独立的，即：&lt;/p&gt;
+&lt;p&gt;这个孤立系统的测量事件：$E \to S$与所有其他的系统的测量 $E’ \to S&amp;rsquo;$是独立的，也就是这个系统的测量结果并不会影响其他系统的结果。&lt;/p&gt;
+&lt;p&gt;上面我们提到了测量事件和测量结果，那么对于一个处于某一个量子态的量子系统E，这些是如何定义的呢？&lt;/p&gt;
+&lt;h5 id=&#34;测量公理&#34;&gt;测量公理：
+&lt;/h5&gt;
+&lt;p&gt;假设 $E$是一个由n个电子 $(e_1,\dots,e_n)$ 组成的孤立量子系统，根据前面的定义，我们可以用一个向量 $\vec{x}$来表示这个系统的状态，如果我们去测量这个系统的状态，可能的结果是所有二进制串（长度为n） $S\in{0,1}^n$中的一个，或者说这个系统的状态是不同基态的组合：
+$$
+\ket{\psi} = \sum_{S\in{0,1}^n}x_s\ket{S}
+$$
+那么此时我们知道当我们观测这个系统的时候，这个系统一定会处于基态中的一个，但是在观测前我们也许可以知道我们测量得到不同基态的概率 $|x_s|^2$,测量公理定义了这样的概率是：
+$$
+Pr [E \to S] =|x_s|^2
+$$
+以及将我们可能对这个处于 $\vec{x}$ 孤立系统E做出的物理操作定义为一个量子门 $f$，这样就使得前面有关与量子门的操作和定义能够在实际物理世界中存在对应。&lt;/p&gt;
+&lt;p&gt;总而言之，这个公理将一个孤立的系统描述为某一个量子态，以及每一个物理上的操作（Physical process）描述为某一个量子门。&lt;/p&gt;
+&lt;h4 id=&#34;张量积tensor-product&#34;&gt;张量积（Tensor Product）：
+&lt;/h4&gt;
+&lt;p&gt;回想一下我们CHSH游戏中指定了Alice和Bob共享一个EPR对 $\ket{\psi}=\frac{1}{\sqrt{2}}(\ket{00}+\ket{11})$,那么这个状态其实是Alice的电子和Bob的电子相组合成的系统（但是这个两个系统之间有纠缠）。前面我们知道对于一个系统的状态可以用一个向量 $\vec{x}=(x_1,\dots,x_n)^T$（长度为n）来描述，如果此时还有另一个系统状态是 $\vec{y}=(y_1,\dots,y_m)^T$（长度为m），那么两个系统组合起来的状态由向量 $\vec{\Phi}$  表示，那么这个向量应该如何定义呢？&lt;/p&gt;
+&lt;h5 id=&#34;向量的张量积&#34;&gt;向量的张量积：
+&lt;/h5&gt;
+&lt;p&gt;我们这里引入向量之间的张量积，定义为：
+$$
+\vec{\Phi} = \vec{x}\otimes\vec{y}
+$$
+并且这个向量 $\vec{\Phi}$的长度是nm，并且 $\otimes$被称之为张量积。向量$\vec{x}$和向量$\vec{y}$之间的张量积定义为：
+$$
+\vec{x}\otimes\vec{y} = (a_1b_1,a_1b_2,\dots,a_nb_{n-1},a_nb_n
+$$
+比如，但两个系统（$E_1，E_2$）的状态分别为 $\vec{a}=(a_1,a_2)$和 $\vec{b}=(b_1,b_2,b_3)$，那么这两个系统组合的状态 $\vec{\psi}$为：
+$$
+\vec{\psi}=\vec{a}\otimes \vec{b}=[a_1(b_1,b_2,b_3),a_2(b_1,b_2,b_3)] \\
+=(a_1b_1,a_1b_2,a_1b_3,a_2b_1,a_2b_2,a_2b_3)
+$$&lt;/p&gt;
+&lt;h5 id=&#34;不同孤立系统状态的张量积&#34;&gt;不同孤立系统状态的张量积：
+&lt;/h5&gt;
+&lt;p&gt;上面对于两个系统组合起来的张量积表示有一个前提条件就是，它们两个都是孤立系统，即它们不能有相互作用或者纠缠（如EPR态）。它表述为一个定理：&lt;/p&gt;
+&lt;p&gt;如果两个系统 $E_1$和 $E_2$都是孤立的系统，并且两个分别由向量 $\vec{x}$和$\vec{y}$表示，则它们的联合系统状态 $E_1E_2$ 用向量 $\vec{x}\otimes\vec{y}$表示&lt;/p&gt;
+&lt;h5 id=&#34;作用在两个系统的量子门的张量积&#34;&gt;作用在两个系统的量子门的张量积：
+&lt;/h5&gt;
+&lt;p&gt;我们已经定义了两个孤立系统的联合状态是怎么样的，那么我们想，如果我们想对系统（A和B）进行物理操作（相当于作用量子门）,那么这些操作是如何影响整个系统的联合状态的呢？我们可以定义：&lt;/p&gt;
+&lt;p&gt;让 $f：V^n\to V^n$表示对于系统A的一个线性操作（线性的量子门），$g:V^m\to V^m$表示对于系统B的一个线性操作，则对于这整个系统的联合状态 $\vec{a}\otimes\vec{b}$而言，我们对于整个系统的操作 $f\otimes g$作用效果为：
+$$
+(f\otimes g)(\vec{a}\otimes\vec{b}) = f(\vec{a})\otimes g(\vec{b})
+$$
+这里对于整个系统AB的操作 $f\otimes g$ 可以由一个公理指定（$f$作用与A系统，$g$作用于B系统）。（&lt;strong&gt;此处可以说明一下这里如果两个操作并不同时发生，这个定义还是有效的吗？，因为两个系统是孤立系统，所以互不影响。&lt;/strong&gt;）&lt;/p&gt;
+&lt;h4 id=&#34;chsh游戏的一种解法&#34;&gt;CHSH游戏的一种解法：
+&lt;/h4&gt;
 &lt;h2 id=&#34;附录&#34;&gt;附录
 &lt;/h2&gt;
 &lt;h3 id=&#34;参考文献&#34;&gt;参考文献
