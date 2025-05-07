@@ -302,7 +302,7 @@ $$
 上面的 $u和v$都代表的是二进制数。所以得到：
 $$
 \begin{aligned}
-\frac{1-a^\ast b^\ast}{2} &= x \cdot y \\
+\frac{1-a^\ast b^\ast}{2} &= x \cdot y \\\
 a^\ast b^\ast &= 1-2xy
 \end{aligned}
 $$

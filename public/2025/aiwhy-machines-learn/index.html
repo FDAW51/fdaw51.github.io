@@ -296,12 +296,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#deseperatly-seeking-pattern">Deseperatly seeking pattern</a>
+    <li><a href="#chapter1deseperatly-seeking-pattern">Chapter1:Deseperatly seeking pattern</a>
       <ol>
         <li><a href="#从现象出发">从现象出发</a></li>
         <li><a href="#神经元的逻辑化">神经元的逻辑化</a></li>
       </ol>
     </li>
+    <li><a href="#learning-from-mistakes">Learning From Mistakes：</a></li>
   </ol>
 </nav>
         </div>
@@ -462,7 +463,7 @@
 
                 
                 <time class="article-words">
-                    1898 字
+                    2797 字
                 </time>
             </div>
         
@@ -479,7 +480,7 @@
     
     <h1 id="why-machines-learn">Why machines learn？
 </h1>
-<h2 id="deseperatly-seeking-pattern">Deseperatly seeking pattern
+<h2 id="chapter1deseperatly-seeking-pattern">Chapter1:Deseperatly seeking pattern
 </h2>
 <h3 id="从现象出发">从现象出发
 </h3>
@@ -628,6 +629,50 @@ $$</p>
 <p>对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。</p>
 <p>但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？</p>
 <p>Tips:下次记得分段公式要三条斜杆（调试了一上午）</p>
+<h2 id="learning-from-mistakes">Learning From Mistakes：
+</h2>
+<p>我们常说，要从失败中汲取教训，这句话对于早期的Machine来说有所表现。早期Rosenblatt和Nagy 开发出的Mark I神经网络模型（就是根据前面的神经元模型建造的，这个名字让我想起Severance的Mark 🤣），这个模型能够识别图片的字母（20*20像素的图片）。但是据我们所知，光学识别系统也可以完成一样的工作，那么我们可以说它们是等价的吗？</p>
+<p>不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。</p>
+<p><strong>光学系统识别图片上的字母</strong>（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。</p>
+<p>而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。</p>
+<p>那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：<img src="/2025/aiwhy-machines-learn/3.png"
+	width="2072"
+	height="820"
+	srcset="/2025/aiwhy-machines-learn/3_hu_108ee01616ada618.png 480w, /2025/aiwhy-machines-learn/3_hu_d3ad43de8655b340.png 1024w"
+	loading="lazy"
+	
+		alt="3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="606px"
+	
+></p>
+<p>它的过程是这样的：</p>
+<ol>
+<li>
+<p>首先计算 $Sum = w_1x_1+w_2x_2+b$，</p>
+</li>
+<li>
+<p>然后 If:  $Sum \leq 0 : y = 1$ ;</p>
+<p>​	Else:   y  =-1.</p>
+</li>
+</ol>
+<p>整个过程可以简化为两个函数$g和f$，一个函数$g$负责做求和操作：
+$$
+g(\vec{x}) = \sum_{i=1}^{n} w_ix_i+b,\quad 其中\vec{x} = (x_1,\dots,x_n)
+$$
+然后函数f做判断：
+$$
+f(g(x)) =
+\begin{cases}-1, &amp; g(x) &lt; 0 \\
+1, &amp; g(x) \geq 0
+\end{cases}
+$$
+我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：</p>
+<p>如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：</p>
+<p>​</p>
 <p>本文原载于 <a class="link" href="https://quantum51.top"  target="_blank" rel="noopener"
     >quantum51.top</a>，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。</p>
 
@@ -752,7 +797,7 @@ $$</p>
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了14.5k字·共 4篇文章</br><span><p>
+      共书写了15.5k字·共 4篇文章</br><span><p>
     </section>
 
     <section class="powerby">
