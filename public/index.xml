@@ -700,8 +700,6 @@ $$&lt;/p&gt;
 	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;截屏2025-04-19 09.05.51&#34;
-	
 	
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;225&#34;
@@ -795,18 +793,18 @@ $$&lt;/p&gt;
 &lt;p&gt;不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;光学系统识别图片上的字母&lt;/strong&gt;（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。&lt;/p&gt;
 &lt;p&gt;而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。&lt;/p&gt;
-&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/3.png&#34;
-	width=&#34;2072&#34;
-	height=&#34;820&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/3_hu_108ee01616ada618.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/3_hu_d3ad43de8655b340.png 1024w&#34;
+&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4.png&#34;
+	width=&#34;1444&#34;
+	height=&#34;570&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;3&#34;
+		alt=&#34;截屏2025-05-20 20.10.37&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;252&#34;
-		data-flex-basis=&#34;606px&#34;
+		data-flex-grow=&#34;253&#34;
+		data-flex-basis=&#34;608px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;它的过程是这样的：&lt;/p&gt;
@@ -832,7 +830,26 @@ f(g(x)) =
 $$
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
-&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;
+	width=&#34;767&#34;
+	height=&#34;586&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;截屏2025-05-20 20.13.09&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​      我们可以看到，Mark I在学习如何将这样的数据集分成两部分，即学习数据中的某种规律（学习这条separating line 的slope和bias），但是这样分类的学习有一定的前提：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我们所提供的数据集是可以分的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;并且这种通过training data学习到的分类模型，在面对不在training data里面的数据的时候并不能100%地做出正确的分类，这是因为，我们可以看到上图中，三角形所在的区域和圆形所在的区域之间存在很多条可以区分训练数据的直线，所以仅仅通过训练数据来训练这个分类模型是不够的，它还得用一些testing data来进行反馈（这里很像人，人在看了很久的书之后，你要让他在新的环境下去实践，才会提高人对于这本书的掌握。）&lt;/p&gt;
+&lt;p&gt;所以Learning from  mistake 还是有一定部分从人类角度的启发的。并且我们可以看到上面神经元最后的输出其实可以是任意的数，那就使得这个神经元可以做的事情很多了&lt;/p&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
 </description>

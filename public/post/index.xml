@@ -25,24 +25,229 @@
 &lt;/h4&gt;
 &lt;h5 id=&#34;素数&#34;&gt;素数
 &lt;/h5&gt;
+&lt;p&gt;我们说一个数$a$是素数（prime number），是指它只有1和它本身作为因数（即$a$只能被1和它本身整除）。举一些例子，比如35，它的因子是：1，5，7，35，所以他不是素数，又比如71，它的因子是：1，71，所以它是素数。&lt;/p&gt;
 &lt;h5 id=&#34;共素&#34;&gt;共素
 &lt;/h5&gt;
-&lt;h5 id=&#34;最大公约数&#34;&gt;最大公约数
+&lt;p&gt;如果我们说两个自然数$a和b$共素（互质），也就是说，他们的最大公因数为1（记为$\gcd(a,b)=1$）。&lt;/p&gt;
+&lt;h5 id=&#34;最大公因数the-greatest-common-divisor&#34;&gt;最大公因数（the greatest common divisor）
 &lt;/h5&gt;
-&lt;h5 id=&#34;模n群&#34;&gt;模N群
+&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b))}$，具体的计算过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;写出a的因子&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;写出b的因子&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后通过比较找到两者都有的最大因子。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;举个例子，比如计算24和88的最大公因数：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. 24的因子有：1，2，3，4，6，8，12，24
+1. 88的因子有：1，2，4，8，11，22，44。
+1. 所以他们的最大公因子是8。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;模n&#34;&gt;模N
 &lt;/h5&gt;
+&lt;p&gt;我们说一个整数的模N，即用这个数Q去除以N取余数的操作，那么自然而然这个可能的余数就会组成一个模N意义下的整数集合$\Z_N$（即所有可能的余数）是：
+$$
+\Z_N = {0，1，2，\dots，N-1}
+$$
+比如，$Q=6 ，N =5，那么Q \pmod N = 6%5 = 1$&lt;/p&gt;
 &lt;h5 id=&#34;模n的乘法群&#34;&gt;模N的乘法群
 &lt;/h5&gt;
+&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：
+$$
+a \in Z ,1\leq a &amp;lt;N , \gcd{(a,N)} =1
+$$
+该群的运算是模N下的乘法运算：
+$$
+a\cdot b \pmod N
+$$
+该群的性质有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单位元1的存在性：$\gcd{(1,N)}=1$，符合模N群的定义，即单位元1存在并且$a \cdot 1 \equiv a \pmod N$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;逆元的存在性：$\forall a \in \Z_N^{\ast} ,\exist a^{-1}$ ,使得 ：
+$$
+a \cdot a^{-1} = 1 \pmod{N}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;封闭性：如果$a，b \in \Z_N^*$，则有$\gcd{(ab,N)} = 1$，即a，b的乘积也在模N群中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;阶为r，表示与N互质的整数的个数，即这个群的大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下图就是单位元上的六个单位根，可以将其看成模6群的几何结构（因为两者同构）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cyclic_group&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h5 id=&#34;抽屉原理&#34;&gt;抽屉原理
 &lt;/h5&gt;
+&lt;p&gt;在数学上，抽屉原理是指当n个物品放入m个抽屉时，若n&amp;gt;m，则至少有一个抽屉里面有多个物品。比如一个数量足够大的人群中，一定有同一天出生的人，但是抽屉原理不会告诉你他们是谁？但是一定存在。&lt;/p&gt;
 &lt;h4 id=&#34;时间复杂度&#34;&gt;时间复杂度
 &lt;/h4&gt;
-&lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计
+&lt;p&gt;在计算机科学中，时间复杂度是一个函数，它定性的描述某一个算法的运行时间随着输入规模增长的速度。比如说一个算法的时间复杂度是$O(n)$，那么当该算法的输入变成两倍，那么运行时间也变成两倍。这么做的意义是：衡量算法的实际表现，因为在实际使用一个算法的时候，往往不会去考虑输入数据的规模，所以一个复杂度小的算法对于输入的数据的适应性就好。下面是常见的时间复杂度的排序（从上到下是由快到慢）：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;时间复杂度&lt;/th&gt;
+          &lt;th&gt;名称&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(1)$&lt;/td&gt;
+          &lt;td&gt;常数时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(\log n)$&lt;/td&gt;
+          &lt;td&gt;对数时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(n)$&lt;/td&gt;
+          &lt;td&gt;线性时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(n \log n)$&lt;/td&gt;
+          &lt;td&gt;线性对数时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(n^2)$&lt;/td&gt;
+          &lt;td&gt;二次时间（平方）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(n^3)$&lt;/td&gt;
+          &lt;td&gt;三次时间（立方）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(2^n)$&lt;/td&gt;
+          &lt;td&gt;指数时间&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;$O(n!)$&lt;/td&gt;
+          &lt;td&gt;阶乘时间&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计：
 &lt;/h4&gt;
-&lt;h4 id=&#34;量子傅立叶变换&#34;&gt;量子傅立叶变换
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;量子相位估计（Quantum Phase Estimation），和他的名字一样是估计相位，这个相位是算符U本征方程$U\ket{\psi} = e^{2\pi i\theta}\ket{\psi}$中的$\theta$。具体流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先准备好一个初态$\ket{\Psi_0}=\ket{0}^{\otimes n}\ket{\psi}$，其中$\ket{\psi}=\sum_{j=0}^{2^m-1}\alpha_j\ket{j}$是代表m个qubit的状态，其中j代表不同的长度为m的二进制串的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后对前面n个qubit做Handmard 门操作$H^{\otimes n}\otimes I_m$,得到态$\ket{\Psi_1}$,即：
+$$
+\ket{\Psi_1} = (H^{\otimes n}\otimes I_m)(\ket{\Psi_0}) = \frac{1}{2^{\frac{n}{2}}}(\ket{0}+\ket{1})^{\otimes n }\ket{\psi} \\
+= \frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\ket{\psi}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对态$\ket{\Psi_1}$做受控U门操作，$U = \sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k$,由此得到态$\ket{\Psi_2}$:
+$$
+\ket{\Psi_2} =\sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k(\frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\otimes\ket{\psi}) \\
+= \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}\sum_{j=0}^{2^n-1}\ket{k}\delta_{jk}\otimes e^{2\pi ik\theta}\ket{\psi} \\
+=\frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}e^{2\pi ij\theta}\ket{j}\otimes \ket{\psi} \\
+= \ket{\Phi_2} \otimes\ket{\psi}
+$$
+所以这就由对于纠缠态$\ket{j}\ket{\psi}$的操作，使得$\ket{\psi}$中信息（本征值中的相位），传递到了前一部分的叠加态的振幅当中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对态$\ket{\Psi_2}$中的$\ket{\Phi_2}$进行大小为N=$2^n$量子傅立叶逆变换（$QFT_{2^n}^{-1}$）,得到态$\ket{\Phi_3}$。量子傅立叶变换为(上式为变换，下式为逆变换)：
+$$
+QFT_N \ket{x} = N^{-1/2} \sum_{k=0}^{N-1} e^{\frac{2\pi i}{N} kx} \ket{k} \\
+QFT_N^{-1} \ket{k} = N^{-1/2} \sum_{x=0}^{N-1} e^{-\frac{2\pi i}{N} kx} \ket{x}
+$$
+那么对于态$\ket{\Phi_2}$进行$QFT_{2^n}^{-1}$，得到：
+$$
+\ket{\Phi_3} = QFT_{2^n}^{-1} \left( \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \ket{j} \right) \\
+= \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \left(\frac{1}{2^{n/2}} \sum_{x=0}^{2^n-1} e^{\frac{-2\pi ijx}{2^n}} \ket{x} \right) \\
+= \frac{1}{2^{n}} \sum_{j=0}^{2^n -1} \sum_{x=0}^{2^n -1} \exp{\left( 2\pi ij (\theta -\frac{jx}{2^n})\right)} \ket{x}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后对上面的态在计算基${\ket{x}}$测量，测得不同x的概率为：$|c_x|^2$,并且我们定义$2^n \theta = a+2^n \delta$，其中$a$是最接近$2^n\theta$的整数，所以$2^n \delta$要满足$0\leq|2^n\delta|\leq 1/2$(因为，如果a是2.4，那么估计值就是2，误差为0.4,如果a = 2.7，那么估计值为3，误差为0.3，所以$2^n \delta$不会超过0.5)。由于这个定义，$c_x$就变成了：
+$$
+c_x = \frac{1}{2^n}\sum_{j=0}^{2^n-1} e^{\frac{2\pi ij}{2^n}(x-a)}e^{2\pi i\delta j}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测量态$\ket{\Phi_3}$,我们可以从式8中发现，测量到$x = 2^n\theta$的概率最高（因为此时处于干涉相加，所以系数最大），因此对于量子相位估计来说，想要估计的量$\theta$被放在测量概率最大的态上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;连分数算法&#34;&gt;连分数算法
 &lt;/h4&gt;
-&lt;h4 id=&#34;连分数算法&#34;&gt;连分数算法：
-&lt;/h4&gt;
+&lt;p&gt;当我们有一个实数$\alpha$，我们想要找到两个自然数$b和c$使得$\frac{b}{c}=\alpha$。&lt;/p&gt;
+&lt;p&gt;具体流程是这样的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先我们对$\alpha$做连分数展开，得到一个整数序列$[a_0;a_1,a_2,\dots,a_n]$，并满足：
+$$
+\alpha = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{\ddots + \cfrac{1}{a_k}}}}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;具体获得这个序列的方法如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$a_0 = \lfloor x \rfloor$（取整数部分）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;令 $x_1 = \frac{1}{x - a_0}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$a_1 = \lfloor x_1 \rfloor$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重复上面的abc，直到误差足够小或达到预定项数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后生成收敛值序列${\frac{p_0}{q_0},\frac{p_1}{q_1},\dots,\frac{p_n}{q_n}}$,其中p_i,q_i的计算过程如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;初始化：$p_0 = a_0,q_0=1$;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$p_1 =a_0a_1+1,q_1 = a_1$;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于$i \geq 2$的情况：
+$$
+p_i= a_ip_{i-1}+p_{i-2} \\
+q_i = a_iq_{i-1}+q_{i-2}
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这个收敛值序列的值会越来越接近我们的实数$\alpha$,所以最后我们可以选取符合我们要求的$p_i和q_i$作为我们的$b和c$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以举一个例子，当我们有一个实数M = 0.833984375（约等于$\frac{427}{512}$）,我们通过上面的算法可以先得到连分数序列[0;1,5,42,2]，然后计算得到收敛值序列：$[\frac{0}{1},\frac{1}{1},\frac{5}{6},\frac{211}{253},\frac{427}{512}]$，我们可以看到最后一个收敛值就是我们要得到的分数。&lt;/p&gt;
 &lt;h3 id=&#34;密码破解&#34;&gt;密码破解
 &lt;/h3&gt;
 &lt;p&gt;对于平时用的加密方案RSA，其加密原理是：&lt;/p&gt;
@@ -62,6 +267,14 @@ $$
 &lt;h3 id=&#34;shor算法的逻辑&#34;&gt;Shor算法的逻辑：
 &lt;/h3&gt;
 &lt;p&gt;前面说了，经典计算里面可以通过并行计算来加速任务的完成时间，那么分解大数的问题可不可以用并行计算来处理，答案是并行计算的加速效果是线性的，而shor算法具有指数级的加速效果，并且shor算法的时间复杂度是： $O((\log{n})^3)$，所以经典中的并行计算对于任务的加速效果并不如shor算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;那么Shor算法的逻辑是什么呢？&lt;/p&gt;
 &lt;p&gt;首先任务是：给出一个大数M，我们需要找到M的整数因子（两个大素数），这就排除了M是偶数的可能性（如果是偶数的话，2自然就是M的一个因子，并且2是比较小的素数，这就使得这个密钥不再安全），并且当M分解成一个素数和另一个非素数，我们可以逐步迭代使得M最终分解成多个素数的乘积（&lt;strong&gt;这里可以注释一下给一个例子&lt;/strong&gt;）。&lt;/p&gt;
 &lt;p&gt;要解决这个问题有两部分：&lt;/p&gt;
@@ -76,10 +289,10 @@ $$
 &lt;p&gt;首先我们在区间 $[2,M)$ 随机选择一个整数$a$，然后我们去计算 $\gcd{(a,M)}$ ($a和M的最大公约数$)，那么就会有两种情况：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;$\gcd{(a,M)} \neq 1$，即它们的最大公约数是G，那么M就可以分解成G和 $\frac{M}{G}$（ $\gcd{(a,M) = G}$ 表明G是M的因子，即M可以被G整除）&lt;/p&gt;
+&lt;p&gt;$\gcd{(a,M)} \neq 1$，即它们的最大公约数是G，那么M就可以分解成G和 $\frac{M}{G}$（ $\gcd{(a,M) = G}$ 表明G是M的因子，即M可以被G整除），这时候整个算法结束。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;$\gcd{(a,M)} = 1$，那么此时 $a和M共素$，则 a在模M整数乘法群（群里的元素都是和M共素且属于模M群）里，记为 $a \in \Z_M^{*}$。&lt;/p&gt;
+&lt;p&gt;$\gcd{(a,M)} = 1$，那么此时 $a和M共素$，则 a在模M整数乘法群（群里的元素都是和M共素且属于模M群）里，记为 $a \in \Z_M^{*}$。（后面基本上讨论的都是这个情况）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -95,31 +308,156 @@ $$
 $$
 X：{a^1,a^2,\dots}
 $$&lt;/p&gt;
-&lt;p&gt;这个序列的长度是无限的,因为我们可以对a不断做取幂处理，并且我们知道：
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个序列的长度是无限的,因为我们可以对a不断做取幂处理，由于$a \in \Z_{M}^{\ast}$，所以每一个幂次的$a$在 $\Z_M^\ast$中都有一个对应的元素，即：
 $$
-a \in \Z_{M}^{&lt;em&gt;},\forall k \in \N ,\exist Z_{k} \in \Z_{M}^{&lt;/em&gt;}，Z_k = a^k \pmod{M}
+\forall k \in \N ,\exist Z_{k} \in \Z_{M}^{\ast}，Z_k = a^k \pmod{M}
 $$
-但是由于$Z_M^*$里面包含的元素是有限的（仅包含0，1，2，$\dots$，M-1）。&lt;/p&gt;
-&lt;p&gt;由于抽屉原理，从序列$X$中抽出第一个元素 $a^i$，它在$\Z_M^*$所对应的元素记为 $Z_i$，那么总有一次抽出的 $a^j$，与先前抽出的元素对应着同一个 $\Z_M^*中的Z_i$，通俗的解释就是：如果将模M群中的元素记为不同的抽屉，而序列X里面包含着无数个小球，它们分布在不同抽屉中，那么一定存在两个小球属于一个抽屉&lt;/p&gt;
+而$Z_M^\ast$里面包含的元素是有限的（仅包含0，1，2，$\dots$，M-1）。因此我们有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;无数多个幂次的a（可以看出无数多个小球）。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;对于某个 $a^{k1}$，在$\Z^*_N$中存在逆元&lt;/p&gt;
+&lt;p&gt;每一个幂次的$a^k$都会对应着$\Z^{\ast}_M$中的某一个元素，而$\Z_M^{\ast}$里面的元素是有限的（可以看成不同的抽屉）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由于抽屉原理，当我们有足够多的小球，那么就一定存在$i,j \in \R\and i &amp;lt;j$，使得：
+$$
+a^i = a^j \pmod{M} \quad/a^j = a^i \pmod{M}
+$$
+即两个小球对应于同一个抽屉。然后由于 $a^j和a^i$$在\Z_M^\ast$ 中存在逆元$a^{-j}和a^{-i}$，所以在等式两边乘$a^{-i}$：
+$$
+a^j*a^{-i} = a^{j-i} = 1 \pmod{M}
+$$
+记$r = j-i$,这个r就是a在模M群中的阶（order），它说明了序列X是周期性的。&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;因此对于$\gcd{(a,M)} = 1$情况，我们就可以通过找到r来对M进行分解，具体的过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;找到r后，首先判断r是不是偶数，如果不是，那么就需要重新寻找r&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果r为偶数，那么 :
+$$
+a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
+$$
+这就说明M可以整除$(a^{r/2}-1)(a^{r/2}+1)$。（&lt;strong&gt;可以注释一下为什么到这没有完成分解&lt;/strong&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;解决of问题&#34;&gt;解决OF问题
 &lt;/h3&gt;
+&lt;p&gt;所以现在分解M的问题就转变为找a的序列周期r的问题。&lt;/p&gt;
+&lt;p&gt;首先给定了目标分解数M，和一个任意选择的$a$，我们想要找到周期r满足：
+$$
+a^r = 1\pmod{M}
+$$
+shor算法本质上就是通过量子相位估计（QPE），估计出一个结果（包含r的分数），然后用连分数算法将周期r提取出来。对于shor算法的QPE，它的算符U定义为：&lt;/p&gt;
 &lt;p&gt;$$
-a \in \Z_{M}^&lt;em&gt;,\forall k \in \N ,\exist Z_{k} \in \Z_{M}^&lt;/em&gt;，Z_k = a^k \pmod{M}
+U|k\rangle = \begin{cases}
+\ket{a^k \pmod{M}} &amp;amp; 0 \le k &amp;lt; M \\
+\ket{k} &amp;amp; M \le k &amp;lt; 2^n .
+\end{cases}
+$$
+上面定义表达的意思是，当$k \in \Z_M^\ast$，则计算得到相应$a^k$在$\Z_M^\ast$中对应的元素,如果不在，那么就返回$k$本身。因为我们知道序列X存在最小的周期r，所以当我作用r次U到同一个态$\ket{k}$ ，那么这时候就会返回$\ket{k}$，即$U^r\ket{k} = \ket{k}$，因此$U^r = I$。&lt;/p&gt;
+&lt;p&gt;假设U的本征态为$\ket{\psi}$，其本征值为$\omega$,则有：
+$$
+U\ket{\psi} = \omega\ket{\psi} \\
+U^r\ket{\psi} = \ket{\psi}=\omega^r \ket{\psi}
+$$
+所以有$\omega^r =1$,所以$\omega_r^k = e^{\frac{i2\pi k}{r}}$,这里的角标r说明U有r个特征向量${\ket{\psi_j}}$，每个的特征值为$\omega^j_r$。（这里用几何解释就是：r次单位根，见下图）。&lt;/p&gt;
+&lt;p&gt;可以发现${\ket{a^0},\ket{a^1},\dots,\ket{a^{r-1}}}$也构成算符U的一组基矢，我们可以用它们来表示${\ket{\psi_j}}$，关系是(这其实像离散的傅立叶变换)：
+$$
+\ket{\psi_j} = r^{-1/2}\sum_{k=0}^{r-1} w_{r}^{-kj}\ket{a^k}
+$$
+这里其实也可以用U作用到$\ket{\psi_j}$来验证，然后对$\ket{\psi_j}$求和得到：
+$$
+\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} = \frac{1}{r}\sum_{j=0}^{r-1}\sum_{k=0}^{r-1}\omega_r^{jk}\ket{a^k} \\
+=\ket{1} + \frac{1}{r}\sum_{k=0}^{r-1} ( \sum_{j=0}^{r-1}\omega_r^{jk}) \ket{a^k} =\ket{1}
+$$
+第一个等号是因为$\omega_r^{jk}=\omega_r^{-jk} = e^{2\pi ijk/r}$,最后一个等号是因为：
+$$
+\sum_{j=0}^{r-1}e^{2\pi jk/r} = \frac{1-e^{2\pi ik}}{1-e^{2\pi ik/r}} = 0
+$$
+可以参考等比数列求和公式。&lt;/p&gt;
+&lt;p&gt;有了这个关系我们就可以通过制备态$\ket{1}$，然后展开得到U的每一个本征态，即$\ket{1} = \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}$。&lt;/p&gt;
+&lt;p&gt;Shor算法寻找r的过程是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先根据M来确定说需要的量子比特数n，要满足:$2^n&amp;gt;M$，所以$n =\lceil \log_2 M \rceil$，例如，当M = 31时，n = 5（通常来说只需要满足$n =\lceil \log_2 M \rceil$，但是可以证明2n个比特数可以以足够的精度来寻找周期r）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后制备初态$\ket{\Phi_0} = \ket{0}^{\otimes{2n}}\ket{1}$&lt;!--这里的态之间的\otimes省略了--&gt;（左边是第一寄存器，右边是第二寄存器），我们知道可以通过展开得到：
+$$
+\ket{\Phi_0} = \ket{0}^{\otimes{2n}}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
 $$&lt;/p&gt;
-&lt;h3 id=&#34;效率performance&#34;&gt;效率（Performance）
-&lt;/h3&gt;
-&lt;p&gt;$$
-a \in \Z_{M}^{&lt;em&gt;},\forall k \in \N , Z_{k}  \Z_{M}^{&lt;/em&gt;}，
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对第一寄存器做Hadamard操作$H^{\otimes2n}\otimes I_m$，得到态
+$$
+\ket{\Phi_1} = (H\ket{0})^{\otimes 2n}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} \\
+= \frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\ket{x}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
 $$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后对整个系统做受控$U_c$操作，得到态$\ket{\Phi_2}$:
+$$
+\ket{\Phi_2} = U_c(\ket{\Phi_1})
+= (\sum_{k = 0}^{2^{2n}-1}\ket{k}\bra{k}\otimes U^k) \ket{\Phi_1} \\
+=\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}U^{k}\ket{\psi_j}) \\
+=\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\omega_j^k\ket{\psi_j}) \\
+=\frac{1}{2^n} \frac{1}{\sqrt{r}}\sum_{x=0}^{2^{2n}-1}\sum_{j=0}^{r-1}\omega^x_j \ket{x}\ket{\psi_j}
+= \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\phi_j}\ket{\psi_j}
+$$
+其中$\ket{\phi_j}=\frac{1}{2^n}\sum_{x=0}^{2^{2n}-1}e^{2\pi ijx/r}\ket{x}$，从上式可以看出，我们如果对上面的态进行测量，我们测量到每一个结果$\ket{\phi_j}$的概率都是一样的，都是$\frac{1}{r}$，所以我们在做完测量之后不能够知道是哪个$j$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后对第一个寄存器做逆量子傅立叶变换$QFT_{2^{2n}}^{-1}$，得到即：
+$$
+QFT_{2^{2n}}^{-1}\ket{\phi_j}=\frac{1}{2^{n}}\sum_{x=0}^{2^{2n}-1}e^{\frac{2\pi ijx}{r}}\frac{1}{2^{n}}\sum_{k=0}^{2^{2n}-1}e^{\frac{-2\pi ikx}{2^{2n}}}\ket{k} \\
+=\sum_{k=0}^{2^{2n}-1}\frac{1}{2^{2n}}\left( \sum_{x=0}^{2^{2n}-1} \exp\left( 2\pi ix\left(\frac{j}{r} - \frac{k}{2^{2n}}\right) \right) \right)\ket{k} \\
+=\sum_{k=0}^{2^{2n}-1}c_k \ket{k}
+$$
+我们可以看到对于这个态，如果我们以基${\ket{k}}$测量，那么我们测量到$k=2^{2n}\frac{j}{r}$结果的概率最大。&lt;/p&gt;
+&lt;p&gt;这里可能有一个问题，这里只是测量到的概率最大，但是不一定就会测量到这个包含$r的k$。但是我们完全可以多做几次测量，来确保这个结果就是包含$r$的那个结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在得到包含r的测量结果k之后，我们就可以对其除以$2^{2n}$，就可以得到一个实数$G=\frac{j}{r}$，但是j我们无从得知，所以我们不能直接计算得到r。&lt;/p&gt;
+&lt;p&gt;这时候就可以用上面的连分数算法来提取得到，但是需要注意的是，在取r实际上是取符合要求的分母$q_k$(在收敛值序列中)，并且这个分母不能大于要分解的目标$M$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后，对于$\gcd{(a,M)} = 1$情况，在找到估计的r后，我们就可以对M进行分解了，具体的分解过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;找到r后，首先判断r是不是偶数，如果不是，那么就需要重新寻找r&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果r为偶数，那么 :
+$$
+a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
+$$
+这就说明M可以整除$(a^{r/2}-1)(a^{r/2}+1)$。（&lt;strong&gt;可以注释一下为什么到这没有完成分解&lt;/strong&gt;）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后计算$\gcd{(a^{r/2}-1,M)}和\gcd{(a^{r/2}+1,M)}$，得出M得两个因子。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;conclusion总结&#34;&gt;Conclusion(总结)
 &lt;/h3&gt;
+&lt;p&gt;我们通过shor算法实现了对于大数的分解，其中量子纠缠的作用体现在受控U门操作那里，他仅用了一次操作就将本征态的信息（本征值中的r）转移到了第一寄存器的系数上，使得测量概率和需要估计的r有关。&lt;/p&gt;
 &lt;h2 id=&#34;附录&#34;&gt;附录:
 &lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;注意$\Z_*$最好用$\Z_{\ast}${\ast}&lt;/li&gt;
+&lt;li&gt;格式要紧凑，行内公式前后不要留空格。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;参考文献&#34;&gt;参考文献
 &lt;/h3&gt;
 &lt;h3 id=&#34;版权信息&#34;&gt;版权信息
@@ -362,8 +700,6 @@ $$&lt;/p&gt;
 	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;截屏2025-04-19 09.05.51&#34;
-	
 	
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;225&#34;
@@ -457,18 +793,18 @@ $$&lt;/p&gt;
 &lt;p&gt;不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;光学系统识别图片上的字母&lt;/strong&gt;（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。&lt;/p&gt;
 &lt;p&gt;而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。&lt;/p&gt;
-&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/3.png&#34;
-	width=&#34;2072&#34;
-	height=&#34;820&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/3_hu_108ee01616ada618.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/3_hu_d3ad43de8655b340.png 1024w&#34;
+&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4.png&#34;
+	width=&#34;1444&#34;
+	height=&#34;570&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;3&#34;
+		alt=&#34;截屏2025-05-20 20.10.37&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;252&#34;
-		data-flex-basis=&#34;606px&#34;
+		data-flex-grow=&#34;253&#34;
+		data-flex-basis=&#34;608px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;它的过程是这样的：&lt;/p&gt;
@@ -494,7 +830,26 @@ f(g(x)) =
 $$
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
-&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;
+	width=&#34;767&#34;
+	height=&#34;586&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;截屏2025-05-20 20.13.09&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​      我们可以看到，Mark I在学习如何将这样的数据集分成两部分，即学习数据中的某种规律（学习这条separating line 的slope和bias），但是这样分类的学习有一定的前提：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我们所提供的数据集是可以分的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;并且这种通过training data学习到的分类模型，在面对不在training data里面的数据的时候并不能100%地做出正确的分类，这是因为，我们可以看到上图中，三角形所在的区域和圆形所在的区域之间存在很多条可以区分训练数据的直线，所以仅仅通过训练数据来训练这个分类模型是不够的，它还得用一些testing data来进行反馈（这里很像人，人在看了很久的书之后，你要让他在新的环境下去实践，才会提高人对于这本书的掌握。）&lt;/p&gt;
+&lt;p&gt;所以Learning from  mistake 还是有一定部分从人类角度的启发的。并且我们可以看到上面神经元最后的输出其实可以是任意的数，那就使得这个神经元可以做的事情很多了&lt;/p&gt;
 &lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
 </description>
