@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="量子纠缠的早期视角 EPR佯谬 一般的纠缠态 一个最经典的纠缠态的例子就是：在计算基矢 (Computational basis) 中，如果对于一个两个量子比特的系统（包含了两个子系统 Alice 和 Bob），总状态是：\n$$ \\ket{\\psi} = \\frac{1}{\\sqrt{2}}(\\ket{0}\\ket{1} + \\ket{1}\\ket{0}) $$\n">
-<title>毕业论文|chapter 1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="我在学习《算法导论》这本书时的笔记">
+<title>算法导论｜chapter1</title>
 
-<link rel='canonical' href='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/'>
+<link rel='canonical' href='http://localhost:1313/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/'>
 
-<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="毕业论文|chapter 1">
-<meta property='og:description' content="量子纠缠的早期视角 EPR佯谬 一般的纠缠态 一个最经典的纠缠态的例子就是：在计算基矢 (Computational basis) 中，如果对于一个两个量子比特的系统（包含了两个子系统 Alice 和 Bob），总状态是：\n$$ \\ket{\\psi} = \\frac{1}{\\sqrt{2}}(\\ket{0}\\ket{1} + \\ket{1}\\ket{0}) $$\n">
-<meta property='og:url' content='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/'>
+<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="算法导论｜chapter1">
+<meta property='og:description' content="我在学习《算法导论》这本书时的笔记">
+<meta property='og:url' content='http://localhost:1313/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/'>
 <meta property='og:site_name' content='Eugene'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='量子纠缠' /><meta property='article:tag' content='Bell不等式' /><meta property='article:published_time' content='2025-04-16T16:38:41&#43;08:00'/><meta property='article:modified_time' content='2025-04-16T16:38:41&#43;08:00'/>
-<meta name="twitter:title" content="毕业论文|chapter 1">
-<meta name="twitter:description" content="量子纠缠的早期视角 EPR佯谬 一般的纠缠态 一个最经典的纠缠态的例子就是：在计算基矢 (Computational basis) 中，如果对于一个两个量子比特的系统（包含了两个子系统 Alice 和 Bob），总状态是：\n$$ \\ket{\\psi} = \\frac{1}{\\sqrt{2}}(\\ket{0}\\ket{1} + \\ket{1}\\ket{0}) $$\n"><style>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='算法' /><meta property='article:tag' content='计算机' /><meta property='article:published_time' content='2025-07-04T21:04:14&#43;08:00'/><meta property='article:modified_time' content='2025-07-04T21:04:14&#43;08:00'/>
+<meta name="twitter:title" content="算法导论｜chapter1">
+<meta name="twitter:description" content="我在学习《算法导论》这本书时的笔记"><style>
     :root {
         --article-font-family: "Noto Serif SC", var(--base-font-family);
     }
@@ -296,12 +296,12 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#epr佯谬">EPR佯谬</a>
+    <li><a href="#11算法">1.1算法：</a>
       <ol>
-        <li><a href="#一般的纠缠态">一般的纠缠态</a></li>
-        <li><a href="#epr佯谬-1">EPR佯谬</a></li>
+        <li><a href="#111-算法解决哪一类的问题">1.1.1 算法解决哪一类的问题：</a></li>
       </ol>
     </li>
+    <li><a href="#12-作为一种技术的算法">1.2 作为一种技术的算法：</a></li>
     <li><a href="#附录">附录</a>
       <ol>
         <li><a href="#参考文献">参考文献</a></li>
@@ -441,8 +441,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" style="background-color: #2a9d8f; color: #fff;">
-                毕业论文
+            <a href="/categories/ai/" style="background-color: #2a9d8f; color: #fff;">
+                AI
             </a>
         
     </header>
@@ -450,9 +450,13 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/">毕业论文|chapter 1</a>
+            <a href="/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/">算法导论｜chapter1</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            我在学习《算法导论》这本书时的笔记
+        </h3>
         
     </div>
 
@@ -472,7 +476,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 16, 2025</time>
+                <time class="article-time--published">Jul 04, 2025</time>
             </div>
         
 
@@ -488,7 +492,7 @@
 
                 
                 <time class="article-words">
-                    1232 字
+                    1438 字
                 </time>
             </div>
         
@@ -503,62 +507,28 @@
     <section class="article-content">
     
     
-    <h1 id="量子纠缠的早期视角">量子纠缠的早期视角
+    <h1 id="算法在计算中的作用">算法在计算中的作用
 </h1>
-<h2 id="epr佯谬">EPR佯谬
+<h2 id="11算法">1.1算法：
 </h2>
-<h3 id="一般的纠缠态">一般的纠缠态
+<p>首先，非形式地定义一下算法：<strong>算法</strong>是任何良定义的计算过程，该过程有输入有输出，但是局部来看，一个算法会包含多个输入输出的环节，即有多个计算步骤。</p>
+<p>比如说排序问题，对于这个问题，我们有相应的算法去解决，但是前提是我们应该先弄清楚这个问题的输入和输出是什么？才能更好地设计这个解决方案，输入是一个包含n个数的序列 $&lt;a_1,a_2,\dots,a_n&gt;$,而输出是一个排好序的序列 $&lt;A_1,A_2,\dots,A_n&gt;$ （其中 $A_1\leq A_2 \leq \dots \leq A_n$）,例如若输入$&lt;31，23，45，632，123&gt;$，则需要输出&lt;23，31，45，123，632&gt;。要实现这个算法，我们有许多种方法：插入排序，分冶法等，每一种算法中都包含对于输入序列的不同的操作，最终达到排序的效果。</p>
+<h3 id="111-算法解决哪一类的问题">1.1.1 算法解决哪一类的问题：
 </h3>
-<p>一个最经典的纠缠态的例子就是：在计算基矢 (Computational basis) 中，如果对于一个两个量子比特的系统（包含了两个子系统 Alice 和 Bob），总状态是：</p>
-<p>$$
-\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{0}\ket{1} + \ket{1}\ket{0})
-$$</p>
-<p>其中 $\ket{0}\ket{1}$ 表示一个复合系统，等价于 $\ket{0} \otimes \ket{1}$，左边代表系统 I 的状态，右边表示系统 II 的状态。</p>
-<p>那么对于这个系统，如果测量到 A 系统的状态是 $\ket{0}$，那么 B 系统的状态就是 $\ket{1}$；另一种情况也是一样的，这个形式与式（8）具有相似之处。</p>
-<p>所谓“纠缠”就是：对一个系统的观测结果会<strong>瞬间影响</strong>另一个系统的状态，而且<strong>这种影响是非局域性的</strong>（无论两个系统相距多远），这就像一种“幽灵般的超距作用”。</p>
-<hr>
-<h3 id="epr佯谬-1">EPR佯谬
-</h3>
-<p>对于纠缠这个概念，最早的启发来自 Einstein 与其合作者在 1935 年发表的论文：</p>
-<blockquote>
-<p>&ldquo;Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?&rdquo;<br>
-—— 量子力学中对物理现实的描述是完整的吗？</p></blockquote>
-<p>他们认为量子力学的表述是不完备的，并提出了一个纠缠系统的思考实验。他们首先定义了“物理现实中的元素”（Elements of Physical Reality）：</p>
-<blockquote>
-<p><strong>定义：</strong><br>
-如果我们可以在<strong>不干扰系统的前提下</strong>，准确预测该系统中某一物理量的值，那么就存在一个物理现实的元素对应于这个物理量。</p></blockquote>
-<p>然后他们将这个标准应用到一个复合量子系统：两个相距很远的粒子（编号为 1 和 2），其状态由如下纠缠波函数描述：</p>
-<p>$$
-\psi(x_1, x_2, p_1, p_2) = \delta(x_1 - x_2 - L)\delta(p_1 + p_2)
-$$</p>
-<p>其中 $\delta$ 并不是真正的 Dirac delta 函数，而是一个<strong>归一化的尖峰函数</strong>；$L$ 是一个相对于粒子间相互作用而言非常大的距离。</p>
-<p>这个波函数的物理意义是：</p>
-<ul>
-<li>两个粒子之间的距离几乎是 $L$；</li>
-<li>总动量几乎为 $0$；</li>
-<li>而且 $x_1 - x_2$ 和 $p_1 + p_2$ 是可同时观测的对易算符。</li>
-</ul>
-<blockquote>
-<p>💡 注：你也可以在这里插入一个 delta 函数图像来辅助理解。</p></blockquote>
-<p>对于这个状态来说，我们对单个粒子的状态（位置或动量）是一无所知的；我们只知道两个粒子之间的差值（距离、动量和）可以确定。</p>
-<ul>
-<li>
-<p>如果我们测量粒子 1 的位置 $x_1$，我们可以准确预测粒子 2 的位置：$x_2 = x_1 - L$。<br>
-根据 EPR 的论点：由于两个粒子此时<strong>不再相互作用</strong>，粒子 1 的测量<strong>不会干扰</strong>粒子 2，因此 $x_2$ 对应着一个物理现实元素。</p>
-</li>
-<li>
-<p>同理，如果我们测量粒子 1 的动量 $p_1$，就能预测粒子 2 的动量：$p_2 = -p_1$，因此 $p_2$ 也对应一个物理现实元素。</p>
-</li>
-</ul>
-<p>但是，根据量子力学的基本原理（不确定性原理）：</p>
-<p>$$
-\Delta x \cdot \Delta p \geq \frac{\hbar}{2}
-$$</p>
-<p>当粒子的位置被精确测量（$\Delta x = 0$）时，其动量的测量精度就必须变差（$\Delta p \to \infty$），所以<strong>不能同时确定位置与动量</strong>。</p>
-<p>因此，EPR 论文指出：我们从测量粒子 1 就可以同时“知道”粒子 2 的位置和动量，这与量子力学的不确定性原理矛盾。</p>
-<blockquote>
-<p>🧠 结论：这说明量子力学对物理现实的描述是不完备的。</p></blockquote>
-<p>EPR 因此推测：<strong>存在某些“隐藏变量”</strong>（目前未知），使得这些物理量实际上是可以同时确定的。这就是“隐变量理论”（Hidden Variables Theory）的雏形。论文并未给出这种理论的构造，但为后来的 Bell 不等式与实验验证奠定了基础。</p>
+<p>算法不只是解决排序这一种问题，算法的实际应用无处不在。比如：1.互联网使得全世界的人都能快速地访问与检索大量的信息，这就需要各个网站能够管理和处理这些海量的数据，所以必须使用相应的算法来对数据进行检索和传输。2. 给定两个有序的符号序列，求出两个序列的最长公共子序列，3. 给定平面上n个点，找出这些点的凸壳（凸壳就是包含这些点的最小凸多边形），等等。</p>
+<p>虽然算法能解决的问题还有许多，但是解决这些问题的算法却展示了许多有趣算法的共同的两个特征：</p>
+<ol>
+<li>对于一个问题，有多个算法可以解决或者很多候选解（并未解决这个问题，只解决了一部分），但是找一个真正的解或最好的解却是一个很大的挑战。</li>
+<li>在实际生活中存在应用：比如最短路径问题的解法能够解决运输公司如何在公路或者铁路网络找到最短路径的问题。</li>
+</ol>
+<h2 id="12-作为一种技术的算法">1.2 作为一种技术的算法：
+</h2>
+<p>如果计算机无限快并且计算资源（能源，芯片，储存器）是免费的，那么还有研究算法的必要吗？答案是否定的，但是这种情况目前看来是不可能实现的。那么我们就需要权衡现有的计算资源和速度，对应一个具体问题，找到一个效率最好的算法很重要。</p>
+<p>对于同一个问题，不同的算法在效率上的区别可以很大。</p>
+<p>例如，排序算法中的两个算法，插入排序和归并排序，前面的算法所花的时间大概是 $c_1n^2$,其中c1是一个不依赖于n的参数，n指的是输入的规模 （表示一个数的二进制串的长度），这个时间表明该算法所花的时间大致与n的平方成正比；第二个算法所花的时间大概是 $c_2n\lg{n}$。插入排序的因子c1通常比归并排序的因子小，因此在n很小的时候，插入排序比归并排序更快，但是当n很大时，归并排序的优势就显现出来了。</p>
+<p>可以具体一点：我们让运行插入排序的一台较快的计算机A与一台运行归并排序的一台较慢的计算机B竞争，两者都要排序一个具有1000万个数的数组（1000万个数如果都是8字节的整数，输入将占用80MB),假设A每秒可以执行10^8条指令，假设插入排序的c1为2，那么运行插入排序对于1000万个数的数组排序所需要的指令数是 $2*(10^7)^2$，那么说需要的时间就是20000秒（大约5.5个小时）</p>
+<p>但是若计算机B每秒只能执行1000万条指令，对于归并算法而言（设置c2为50），需要50nlgn条指令，将指令数除以速度得到时间约为1163秒（少于20min）</p>
+<p>因此可以看出，随着规模的增大，不同效率的算法的优势就会更加明显，因此提前设计一个兼容性好（在问题规模扩大之后，仍然能够运行）的算法也是至关重要的。</p>
 <h2 id="附录">附录
 </h2>
 <h3 id="参考文献">参考文献
@@ -575,9 +545,9 @@ $$</p>
     
     <section class="article-tags">
         
-            <a href="/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0/">量子纠缠</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
         
-            <a href="/tags/bell%E4%B8%8D%E7%AD%89%E5%BC%8F/">Bell不等式</a>
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
         
     </section>
 
@@ -635,24 +605,12 @@ $$</p>
                 
                     
 <article class="">
-    <a href="/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/">
+    <a href="/2025/aiwhy-machines-learn/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">毕业论文｜chapter3</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">毕业论文|chapter 2</h2>
+            <h2 class="article-title">AI|Why Machines Learn?</h2>
         </div>
     </a>
 </article>

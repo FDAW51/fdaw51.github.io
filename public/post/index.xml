@@ -6,7 +6,45 @@
         <description>Recent content in Posts on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 09 May 2025 14:06:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 04 Jul 2025 21:04:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>算法导论｜chapter1</title>
+        <link>http://localhost:1313/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/</link>
+        <pubDate>Fri, 04 Jul 2025 21:04:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/</guid>
+        <description>&lt;h1 id=&#34;算法在计算中的作用&#34;&gt;算法在计算中的作用
+&lt;/h1&gt;
+&lt;h2 id=&#34;11算法&#34;&gt;1.1算法：
+&lt;/h2&gt;
+&lt;p&gt;首先，非形式地定义一下算法：&lt;strong&gt;算法&lt;/strong&gt;是任何良定义的计算过程，该过程有输入有输出，但是局部来看，一个算法会包含多个输入输出的环节，即有多个计算步骤。&lt;/p&gt;
+&lt;p&gt;比如说排序问题，对于这个问题，我们有相应的算法去解决，但是前提是我们应该先弄清楚这个问题的输入和输出是什么？才能更好地设计这个解决方案，输入是一个包含n个数的序列 $&amp;lt;a_1,a_2,\dots,a_n&amp;gt;$,而输出是一个排好序的序列 $&amp;lt;A_1,A_2,\dots,A_n&amp;gt;$ （其中 $A_1\leq A_2 \leq \dots \leq A_n$）,例如若输入$&amp;lt;31，23，45，632，123&amp;gt;$，则需要输出&amp;lt;23，31，45，123，632&amp;gt;。要实现这个算法，我们有许多种方法：插入排序，分冶法等，每一种算法中都包含对于输入序列的不同的操作，最终达到排序的效果。&lt;/p&gt;
+&lt;h3 id=&#34;111-算法解决哪一类的问题&#34;&gt;1.1.1 算法解决哪一类的问题：
+&lt;/h3&gt;
+&lt;p&gt;算法不只是解决排序这一种问题，算法的实际应用无处不在。比如：1.互联网使得全世界的人都能快速地访问与检索大量的信息，这就需要各个网站能够管理和处理这些海量的数据，所以必须使用相应的算法来对数据进行检索和传输。2. 给定两个有序的符号序列，求出两个序列的最长公共子序列，3. 给定平面上n个点，找出这些点的凸壳（凸壳就是包含这些点的最小凸多边形），等等。&lt;/p&gt;
+&lt;p&gt;虽然算法能解决的问题还有许多，但是解决这些问题的算法却展示了许多有趣算法的共同的两个特征：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于一个问题，有多个算法可以解决或者很多候选解（并未解决这个问题，只解决了一部分），但是找一个真正的解或最好的解却是一个很大的挑战。&lt;/li&gt;
+&lt;li&gt;在实际生活中存在应用：比如最短路径问题的解法能够解决运输公司如何在公路或者铁路网络找到最短路径的问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;12-作为一种技术的算法&#34;&gt;1.2 作为一种技术的算法：
+&lt;/h2&gt;
+&lt;p&gt;如果计算机无限快并且计算资源（能源，芯片，储存器）是免费的，那么还有研究算法的必要吗？答案是否定的，但是这种情况目前看来是不可能实现的。那么我们就需要权衡现有的计算资源和速度，对应一个具体问题，找到一个效率最好的算法很重要。&lt;/p&gt;
+&lt;p&gt;对于同一个问题，不同的算法在效率上的区别可以很大。&lt;/p&gt;
+&lt;p&gt;例如，排序算法中的两个算法，插入排序和归并排序，前面的算法所花的时间大概是 $c_1n^2$,其中c1是一个不依赖于n的参数，n指的是输入的规模 （表示一个数的二进制串的长度），这个时间表明该算法所花的时间大致与n的平方成正比；第二个算法所花的时间大概是 $c_2n\lg{n}$。插入排序的因子c1通常比归并排序的因子小，因此在n很小的时候，插入排序比归并排序更快，但是当n很大时，归并排序的优势就显现出来了。&lt;/p&gt;
+&lt;p&gt;可以具体一点：我们让运行插入排序的一台较快的计算机A与一台运行归并排序的一台较慢的计算机B竞争，两者都要排序一个具有1000万个数的数组（1000万个数如果都是8字节的整数，输入将占用80MB),假设A每秒可以执行10^8条指令，假设插入排序的c1为2，那么运行插入排序对于1000万个数的数组排序所需要的指令数是 $2*(10^7)^2$，那么说需要的时间就是20000秒（大约5.5个小时）&lt;/p&gt;
+&lt;p&gt;但是若计算机B每秒只能执行1000万条指令，对于归并算法而言（设置c2为50），需要50nlgn条指令，将指令数除以速度得到时间约为1163秒（少于20min）&lt;/p&gt;
+&lt;p&gt;因此可以看出，随着规模的增大，不同效率的算法的优势就会更加明显，因此提前设计一个兼容性好（在问题规模扩大之后，仍然能够运行）的算法也是至关重要的。&lt;/p&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录
+&lt;/h2&gt;
+&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
+&lt;/h3&gt;
+&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
+&lt;/h3&gt;
+&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>毕业论文｜chapter3</title>
         <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
         <pubDate>Fri, 09 May 2025 14:06:10 +0800</pubDate>
