@@ -2,29 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/ai/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <lastmod>2025-09-12T11:50:15+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <lastmod>2025-09-12T11:50:15+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/notes/</loc>
+    <lastmod>2025-09-12T11:50:15+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/2025/notes%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/</loc>
+    <lastmod>2025-09-12T11:50:15+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <lastmod>2025-09-12T11:50:15+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/agent/</loc>
+    <lastmod>2025-09-12T11:49:55+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2025-09-12T11:49:55+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/2025/notesai/</loc>
+    <lastmod>2025-09-12T11:49:55+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <lastmod>2025-09-12T11:49:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <loc>http://localhost:1313/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2025-09-12T11:49:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/2025/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BAchapter1/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <loc>http://localhost:1313/categories/process/</loc>
+    <lastmod>2025-09-12T11:48:35+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-    <lastmod>2025-07-04T21:04:14+08:00</lastmod>
+    <loc>http://localhost:1313/2025/process%E8%BF%9B%E7%A8%8B/</loc>
+    <lastmod>2025-09-12T11:48:35+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/shor%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-05-09T14:06:10+08:00</lastmod>
@@ -43,21 +55,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2025-05-09T14:06:10+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E6%9D%82%E8%AE%B0/</loc>
-    <lastmod>2025-04-21T19:57:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E8%80%83%E7%A0%94/</loc>
-    <lastmod>2025-04-21T19:57:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/2025/%E8%80%83%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E8%B4%B4/</loc>
-    <lastmod>2025-04-21T19:57:54+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/2025/aiwhy-machines-learn/</loc>
-    <lastmod>2025-04-19T09:34:28+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/machine-learning/</loc>
-    <lastmod>2025-04-19T09:34:28+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</loc>
     <lastmod>2025-04-16T16:39:44+08:00</lastmod>
@@ -84,6 +81,6 @@
   </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://localhost:1313/categories/%E6%9D%82%E8%AE%B0/</loc>
   </url>
 </urlset>
