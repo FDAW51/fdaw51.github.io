@@ -87,7 +87,7 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/client.html
         waline:
-            serverURL: waline1-eight.vercel.app
+            serverURL: https://waline1-f41o10fci-fdaw51s-projects.vercel.app/
             lang: zh-CN
             visitor: false
             avatar:
