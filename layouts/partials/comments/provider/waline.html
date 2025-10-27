@@ -44,7 +44,12 @@
 {{- end -}}
 
 <script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  // 延迟初始化，确保 #waline 容器已存在
+  window.addEventListener('DOMContentLoaded', () => {
     init({{ $config | jsonify | safeJS }});
+  });
 </script>
+
 {{- end -}}
