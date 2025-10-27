@@ -18,8 +18,11 @@
    	1. chapter1
    	1. chapter2
    	1. chapter3
-2. 每日记录：
+2. Process：
 3. 杂记：
    1. 考研经验分享贴
-4. AI：
-   1. Why machines learn？
+4. Notes：
+   1. AI
+      1. RL
+      2. Algorithm
+   2. Electrodynamics
