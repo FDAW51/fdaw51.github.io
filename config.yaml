@@ -89,7 +89,7 @@ params:
         waline:
             serverURL: https://waline1-eight.vercel.app/
             lang: zh-CN
-            visitor: false
+            visitor: true
             avatar:
             emoji:
                 - https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili
