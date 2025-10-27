@@ -46,10 +46,22 @@
 <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
-  // 延迟初始化，确保 #waline 容器已存在
-  window.addEventListener('DOMContentLoaded', () => {
-    init({{ $config | jsonify | safeJS }});
-  });
+  function waitForWaline() {
+    const el = document.querySelector('#waline');
+    if (el) {
+      init({{ $config | jsonify | safeJS }});
+    } else {
+      // 容器尚未挂载，50ms 后重试
+      setTimeout(waitForWaline, 50);
+    }
+  }
+
+  // 等待 Vue / Hugo 前端渲染完毕后执行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForWaline);
+  } else {
+    waitForWaline();
+  }
 </script>
 
 {{- end -}}
