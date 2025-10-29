@@ -12,7 +12,14 @@
         <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
         
         <guid>http://localhost:1313/2025/process%E8%BF%9B%E7%A8%8B/</guid>
-        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
+        <description>&lt;h2 id=&#34;plan使用光子晶体进行计算并且与传统的光学计算进行比较&#34;&gt;Plan：使用光子晶体进行计算并且与传统的光学计算进行比较
+&lt;/h2&gt;
+&lt;p&gt;Details：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. Master the Theorem of the Photonic Crystal
+1. Simulated the Crystal
+1. Compare it 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录
 &lt;/h2&gt;
 &lt;h3 id=&#34;参考文献&#34;&gt;参考文献
 &lt;/h3&gt;

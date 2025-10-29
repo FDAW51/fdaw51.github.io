@@ -15,6 +15,14 @@ tags: [""]
 
 ---
 
+## Plan：使用光子晶体进行计算并且与传统的光学计算进行比较
+
+Details：
+
+	1. Master the Theorem of the Photonic Crystal
+	1. Simulated the Crystal
+	1. Compare it 
+
 ## 附录
 
 ### 参考文献
