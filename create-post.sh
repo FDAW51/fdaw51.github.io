@@ -25,9 +25,10 @@ file_path="content/post/${year}/${slug}/index.md"
 mkdir -p "$(dirname "$file_path")"
 
 # 处理 tags 为 YAML 列表
+tags_array=()
 IFS=',' read -ra tags_array <<< "$tags_input"
 tags_yaml=""
-for tag in "${tags_array[@]}"; do
+for tag in "${tags_array[@]:-}"; do
   clean_tag=$(echo "$tag" | xargs)
   if [ -n "$clean_tag" ]; then
     tags_yaml+="  - \"$clean_tag\"\n"

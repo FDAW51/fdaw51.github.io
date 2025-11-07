@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>process on Eugene</title>
+        <title>Process on Eugene</title>
         <link>http://localhost:1313/categories/process/</link>
-        <description>Recent content in process on Eugene</description>
+        <description>Recent content in Process on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Fri, 12 Sep 2025 11:48:35 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/process/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Process|Maze_Agent</title>
+        <link>http://localhost:1313/2025/processmaze_agent/</link>
+        <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
+        
+        <guid>http://localhost:1313/2025/processmaze_agent/</guid>
+        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
+&lt;/h2&gt;
+&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
+&lt;/h3&gt;
+&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
+&lt;/h3&gt;
+&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Process|进程</title>
         <link>http://localhost:1313/2025/process%E8%BF%9B%E7%A8%8B/</link>
         <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
