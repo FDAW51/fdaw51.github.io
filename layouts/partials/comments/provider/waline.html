@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css"/>
 <div id="waline" class="waline-container"></div>
 <style>
     .waline-container {
@@ -7,6 +7,7 @@
         box-shadow: var(--shadow-l1);
         padding: var(--card-padding);
         --waline-font-size: var(--article-font-size);
+        min-height: 200px;
     }
     .waline-container .wl-count {
         color: var(--card-text-color-main);
@@ -44,23 +45,75 @@
 {{- end -}}
 
 <script type="module">
-  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  // 使用 jsDelivr CDN 作为主要源，更稳定
+  const CDN_SOURCES = [
+    'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js',
+    'https://unpkg.com/@waline/client@v3/dist/waline.js'
+  ];
 
-  function waitForWaline() {
-    const el = document.querySelector('#waline');
-    if (el) {
-      init({{ $config | jsonify | safeJS }});
-    } else {
-      // 容器尚未挂载，50ms 后重试
-      setTimeout(waitForWaline, 50);
+  let initAttempts = 0;
+  const MAX_ATTEMPTS = 10;
+  let walineInit = null;
+
+  async function loadWaline(cdnIndex = 0) {
+    try {
+      const module = await import(CDN_SOURCES[cdnIndex]);
+      walineInit = module.init;
+      return true;
+    } catch (error) {
+      console.warn(`Failed to load Waline from ${CDN_SOURCES[cdnIndex]}:`, error);
+      if (cdnIndex < CDN_SOURCES.length - 1) {
+        return await loadWaline(cdnIndex + 1);
+      }
+      return false;
     }
   }
 
-  // 等待 Vue / Hugo 前端渲染完毕后执行
+  async function initWaline() {
+    const el = document.querySelector('#waline');
+    if (!el) {
+      initAttempts++;
+      if (initAttempts < MAX_ATTEMPTS) {
+        setTimeout(initWaline, 100);
+      } else {
+        console.error('Waline container not found after multiple attempts');
+      }
+      return;
+    }
+
+    // 确保元素在 DOM 中
+    if (!el.parentNode) {
+      console.error('Waline container is not attached to DOM');
+      return;
+    }
+
+    // 加载 Waline 库
+    if (!walineInit) {
+      const loaded = await loadWaline();
+      if (!loaded) {
+        console.error('Failed to load Waline library from all CDN sources');
+        el.innerHTML = '<p style="color: var(--card-text-color-main);">评论系统加载失败，请刷新页面重试。</p>';
+        return;
+      }
+    }
+
+    try {
+      const config = {{ $config | jsonify | safeJS }};
+      walineInit(config);
+    } catch (error) {
+      console.error('Failed to initialize Waline:', error);
+      el.innerHTML = '<p style="color: var(--card-text-color-main);">评论系统初始化失败：' + error.message + '</p>';
+    }
+  }
+
+  // 等待页面加载完成
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', waitForWaline);
+    document.addEventListener('DOMContentLoaded', initWaline);
   } else {
-    waitForWaline();
+    // 使用 requestAnimationFrame 确保 DOM 完全渲染
+    requestAnimationFrame(() => {
+      setTimeout(initWaline, 100);
+    });
   }
 </script>
 

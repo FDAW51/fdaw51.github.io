@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>新建文章</h2>
+<form method="post">
+  <label>Slug <input name="slug" required></label>
+  <label>标题 <input name="title"></label>
+  <label>描述 <input name="description"></label>
+  <label>封面图 URL <input name="image"></label>
+  <label>分类 <input name="category"></label>
+  <label>标签（用逗号分隔） <input name="tags"></label>
+  <label><input type="checkbox" name="draft" checked> 草稿</label>
+  <div class="actions">
+    <button type="submit">创建</button>
+  </div>
+</form>
+{% endblock %}

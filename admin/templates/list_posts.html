@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>文章列表</h2>
+<table>
+  <thead>
+    <tr><th>路径</th><th>最后修改时间</th><th>操作</th></tr>
+  </thead>
+  <tbody>
+  {% for item in items %}
+    <tr>
+      <td><code>{{ item.path }}</code></td>
+      <td>{{ item.mtime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+      <td><a href="{{ url_for('edit_post') }}?path={{ item.path }}">编辑</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

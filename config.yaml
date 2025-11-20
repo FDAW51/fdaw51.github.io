@@ -90,7 +90,6 @@ params:
             serverURL: https://waline1-eight.vercel.app/
             lang: zh-CN
             visitor: true
-            avatar:
             emoji:
                 - https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili
                 - https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji
@@ -190,7 +189,7 @@ menu:
           weight: -100
           params:
               ### For demonstration purpose, the home link will be open in a new tab
-              newTab: flase
+              newTab: false
               icon: home
 
     social:

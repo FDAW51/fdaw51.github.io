@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>快速操作</h2>
+  <ul>
+    <li><a href="{{ url_for('new_post') }}">新建文章</a></li>
+    <li><a href="{{ url_for('posts') }}">管理/编辑文章</a></li>
+    <li><a href="{{ url_for('new_category') }}">新建分类</a></li>
+  </ul>
+</section>
+{% endblock %}
