@@ -1,6 +1,24 @@
 {{- partial "helper/external" (dict "Context" . "Namespace" "KaTeX") -}}
 <script>
     window.addEventListener("DOMContentLoaded", () => {
+        const fixMathEmphasis = () => {
+            const blockSelectors = ".article-content p, .article-content div";
+            document.querySelectorAll(blockSelectors).forEach((el) => {
+                const text = el.textContent ? el.textContent.trim() : "";
+                if (!text || !(text.startsWith("$$") || text.startsWith("\\["))) {
+                    return;
+                }
+                if (!el.innerHTML.includes("<em>")) {
+                    return;
+                }
+                el.innerHTML = el.innerHTML
+                    .replace(/<em>/g, "_")
+                    .replace(/<\/em>/g, "_");
+            });
+        };
+
+        fixMathEmphasis();
+
         renderMathInElement(document.body, {
             delimiters: [
                 { left: "$$", right: "$$", display: true },
@@ -9,5 +27,6 @@
                 { left: "\\[", right: "\\]", display: true }
             ],
             ignoredClasses: ["gist"]
-        });})
+        });
+    });
 </script>

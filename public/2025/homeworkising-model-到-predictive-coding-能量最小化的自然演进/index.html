@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="物理创新实践的课程论文，主要内容如下：简单的介绍了一下Ising model ，对于Ising model的应用从传统的优化问题出发，介绍了模拟退火算法和Quantum Annealing,然后到神经网络的基础理论-Hopfield Theory，最后讲了现代神经科学的一种新的双层范式- Predictive Coding">
+<title>Ising model 到 Predictive Coding-能量最小化的自然演进</title>
+
+<link rel='canonical' href='http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/'>
+
+<link rel="stylesheet" href="/scss/style.min.27f98f87ba8fa0710c61fd4182de065b9b07dcc853a5f3272da209117b478a36.css"><meta property='og:title' content="Ising model 到 Predictive Coding-能量最小化的自然演进">
+<meta property='og:description' content="物理创新实践的课程论文，主要内容如下：简单的介绍了一下Ising model ，对于Ising model的应用从传统的优化问题出发，介绍了模拟退火算法和Quantum Annealing,然后到神经网络的基础理论-Hopfield Theory，最后讲了现代神经科学的一种新的双层范式- Predictive Coding">
+<meta property='og:url' content='http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/'>
+<meta property='og:site_name' content='Eugene'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Ising model' /><meta property='article:tag' content='Predictive Coding' /><meta property='article:tag' content='Hopfield Network' /><meta property='article:tag' content='quantum Annealing' /><meta property='article:tag' content='Simulated Annealing' /><meta property='article:published_time' content='2025-11-25T17:40:16&#43;08:00'/><meta property='article:modified_time' content='2025-11-25T17:40:16&#43;08:00'/>
+<meta name="twitter:title" content="Ising model 到 Predictive Coding-能量最小化的自然演进">
+<meta name="twitter:description" content="物理创新实践的课程论文，主要内容如下：简单的介绍了一下Ising model ，对于Ising model的应用从传统的优化问题出发，介绍了模拟退火算法和Quantum Annealing,然后到神经网络的基础理论-Hopfield Theory，最后讲了现代神经科学的一种新的双层范式- Predictive Coding"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.bunny.net/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended">
+    
+<div id="article-toolbar">
+    <a href="http://localhost:1313/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/averter_hu_ae616c79b8826943.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤡</span>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">Eugene</a></h1>
+        <h2 class="site-description">努力是为了以更好的状态去经历有意思的人和事</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/FDAW51'
+                            target="_blank"
+                            title="GitHub"
+                            rel="me"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a 
+                            href='https://twitter.com'
+                            target="_blank"
+                            title="Twitter"
+                            rel="me"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#摘要">摘要：</a></li>
+    <li><a href="#1ising-model">1.Ising Model</a></li>
+    <li><a href="#2-模拟退火算法simulated-annealing">2. 模拟退火算法（Simulated annealing）</a>
+      <ol>
+        <li><a href="#解决的问题">解决的问题：</a></li>
+        <li><a href="#物理上的启发">物理上的启发：</a></li>
+        <li><a href="#具体算法">具体算法：</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-量子退火算法">3 .量子退火算法</a>
+      <ol>
+        <li><a href="#ising-model的引入">Ising model的引入</a></li>
+        <li><a href="#具体流程">具体流程</a></li>
+      </ol>
+    </li>
+    <li><a href="#hopfield-神经网络">Hopfield 神经网络</a>
+      <ol>
+        <li><a href="#记忆">记忆：</a></li>
+        <li><a href="#学习">学习：</a></li>
+        <li><a href="#回忆">回忆：</a></li>
+        <li><a href="#问题">问题：</a></li>
+      </ol>
+    </li>
+    <li><a href="#展望与思考">展望与思考</a>
+      <ol>
+        <li><a href="#predictive-coding">Predictive Coding</a>
+          <ol>
+            <li><a href="#1-定义能量函数-the-energy-function">1. 定义能量函数 (The Energy Function)</a></li>
+            <li><a href="#2-两个过程推断-inference-与-学习-learning">2. 两个过程：推断 (Inference) 与 学习 (Learning)</a>
+              <ol>
+                <li><a href="#a-快过程神经元状态更新-inference">A. 快过程：神经元状态更新 (Inference)</a></li>
+                <li><a href="#b-慢过程突触权重更新-learning">B. 慢过程：突触权重更新 (Learning)</a></li>
+              </ol>
+            </li>
+            <li><a href="#pc与hopfield-神经网络的区别">PC与Hopfield 神经网络的区别：</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#参考文献">参考文献</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">  </h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="http://localhost:1313/categories/homewok/" class="category-list-link">homewok<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="http://localhost:1313/categories/notes/" class="category-list-link">notes<span class="category-list-count">2</a>
+            </span></div>
+            <div class="category-list-item"><a href="http://localhost:1313/categories/process/" class="category-list-link">process<span class="category-list-count">3</a>
+            </span></div>
+            <div class="category-list-item"><a href="http://localhost:1313/categories/test/" class="category-list-link">test<span class="category-list-count">2</a>
+            </span></div>
+            <div class="category-list-item"><a href="http://localhost:1313/categories/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" class="category-list-link">毕业论文<span class="category-list-count">3</a>
+            </span></div>
+            <div class="category-list-item"><a href="http://localhost:1313/categories/%E8%A7%82%E5%90%8E%E6%84%9Ffeelings/" class="category-list-link">观后感（feelings)<span class="category-list-count">1</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2025">
+                        
+                            <span class="year">2025</span>
+                            <span class="count">12</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/agent/" class="font_size_1">
+                Agent
+            </a>
+        
+            <a href="/tags/ai/" class="font_size_1">
+                AI
+            </a>
+        
+            <a href="/tags/bell%E4%B8%8D%E7%AD%89%E5%BC%8F/" class="font_size_1">
+                Bell不等式
+            </a>
+        
+            <a href="/tags/hopfield-network/" class="font_size_1">
+                Hopfield Network
+            </a>
+        
+            <a href="/tags/ising-model/" class="font_size_1">
+                Ising Model
+            </a>
+        
+            <a href="/tags/movie/" class="font_size_1">
+                Movie
+            </a>
+        
+            <a href="/tags/predictive-coding/" class="font_size_1">
+                Predictive Coding
+            </a>
+        
+            <a href="/tags/quantum-annealing/" class="font_size_1">
+                Quantum Annealing
+            </a>
+        
+            <a href="/tags/shor%E7%AE%97%E6%B3%95/" class="font_size_1">
+                Shor算法
+            </a>
+        
+            <a href="/tags/simulated-annealing/" class="font_size_1">
+                Simulated Annealing
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/homewok/" >
+                Homewok
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/">Ising model 到 Predictive Coding-能量最小化的自然演进</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            物理创新实践的课程论文，主要内容如下：简单的介绍了一下Ising model ，对于Ising model的应用从传统的优化问题出发，介绍了模拟退火算法和Quantum Annealing,然后到神经网络的基础理论-Hopfield Theory，最后讲了现代神经科学的一种新的双层范式- Predictive Coding
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 25, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <time class="article-words">
+                    5712 字
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="摘要">摘要：
+</h2>
+<p>本文系统探讨了统计物理模型与神经计算理论之间的深刻联系，阐述了基于“能量最小化”原理的计算框架如何从物理系统延伸至生物智能。</p>
+<p>文章首先回顾了Ising模型及其哈密顿量形式，并以此为基础介绍了**模拟退火（Simulated Annealing）与量子退火（Quantum Annealing）**算法。通过类比物理系统寻找最低能态的过程，解释了如何利用热涨落和量子隧穿效应克服局部极小值，从而解决复杂的组合优化问题（如NP问题）。</p>
+<p>随后，文章将物理自旋映射为神经元，引入了Hopfield神经网络。基于Hebbian学习规则，文章展示了神经网络的记忆存储与提取本质上是在塑造能量地貌（Energy Landscape），即通过突触权重的调整使得记忆状态对应于系统的能量基态。</p>
+<p>最后，针对传统Hebbian学习缺乏全局误差传导机制（信用分配问题）的局限，文章重点介绍了**预测编码（Predictive Coding, PC）理论。作为神经科学的前沿理论，PC通过构建分层高斯生成模型，引入了“状态单元”与“误差单元”的双重结构。文章详细推导了PC的自由能函数及动力学方程，揭示了大脑如何通过快速的神经元状态更新（感知推断）与慢速的突触权重更新（学习）**来最小化预测误差。结论指出，Predictive Coding在保持局部计算（生物学合理性）的同时，实现了类似反向传播的深度误差修正能力，为理解大脑的高级认知功能提供了强有力的数学解释。</p>
+<p>关键词： Ising模型，模拟退火，量子退火，Hopfield网络，Hebbian学习，预测编码 (Predictive Coding)，自由能原理，能量地貌</p>
+<h2 id="1ising-model">1.Ising Model
+</h2>
+<p><img src="https://www.bdhammel.com/assets/ising_model/monte-carlo-ising-2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="The Ising model"
+	
+	
+></p>
+<ul>
+<li>
+<p><strong>基本概念</strong>：统计物理中用于描述铁磁性的数学模型。系统由许多离散变量（自旋）组成，每个自选变量的取值为 $+1$ 或 $-1$。</p>
+</li>
+<li>
+<p>哈密顿量 (能量函数)：</p>
+<p>$$H(\sigma) = -\sum_{&lt;i,j&gt;} J_{ij} \sigma_i \sigma_j - \mu \sum_{j} h_j \sigma_j$$</p>
+<ul>
+<li>其中 $J_{ij}$ 代表每个自旋之间的相互作用强度，$h_j$ 代表外部磁场。第一项是相互作用能，第二项是外部磁场的能量。</li>
+<li>通过这个哈密顿量，就可以研究这个系统的相变过程以及其相变温度Tc。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-模拟退火算法simulated-annealing">2. 模拟退火算法（Simulated annealing）
+</h2>
+<h3 id="解决的问题">解决的问题：
+</h3>
+<p>优化问题经常出现在我们的生活当中，比如：</p>
+<ol>
+<li>如何在最短的时间内到达学校？</li>
+<li>如何以最低的价格买到想要购买的东西？</li>
+<li>如何选择合适的路线使得行驶的距离最短？</li>
+</ol>
+<p>这些问题在我们生活中其实不知不觉地在被解决，比如导航的app，购物的app，都无时无刻地在计算对于一类优化问题的最优解。</p>
+<p>那么它们是如何来解决优化问题的呢？</p>
+<h3 id="物理上的启发">物理上的启发：
+</h3>
+<p>首先，一个优化问题可以转化成，假如你在一群山之间，这些山的高度不一样，你如何找到这群山中最低的地方。从物理的角度上说，就是如何找到一个能量（势能）最低点。</p>
+<p>模拟退火算法就是物理学家类比固体退火过程得出的。</p>
+<p>固体在温度比较高的时候，此时固体内部的原子剧烈运动（热运动剧烈的程度与温度相关），逐渐降温（退火过程）整个系统接近平衡，最终就会达到一个平衡态，这个平衡态的能量最低。</p>
+<p>其中，固体在温度T时处于能量E的状态的概率遵循Boltzmann分布：
+$$
+P(E) \propto e^{-E/(kT)}
+$$
+那么物理学家就将这么一个过程类比到一个优化问题：</p>
+<ol>
+<li>将一个物理系统的能量类比为优化问题的目标函数 $f(x)$。</li>
+<li>温度T类比为在寻找最优解过程中“容忍坏解”的程度。</li>
+<li>物理系统的状态类比为优化问题的一个候选解。</li>
+<li>物理系统遵循Boltzmann分布的特性类比为优化问题中不同解之间的转变规则。</li>
+</ol>
+<h3 id="具体算法">具体算法：
+</h3>
+<p>对于一个优化问题 $\bold{min}_x f(x)$,f(x)是目标函数。</p>
+<p>模拟退火算法的流程如下：</p>
+<ol>
+<li>
+<p><strong>随机初始化一个解</strong> $f(x_0)$</p>
+</li>
+<li>
+<p>在当前解附近 <strong>生成一个新解 f(x)</strong></p>
+</li>
+<li>
+<p>根据能量变化 ΔE =f(x)-f(x0) 来决定是否接受新解：</p>
+<ul>
+<li>
+<p>若更好（ΔE &lt; 0）：必然接受</p>
+</li>
+<li>
+<p>若更差（ΔE &gt; 0）：以概率
+$$
+P = \exp(-\Delta E / T)
+$$
+接受</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>逐渐降低温度 T</strong></p>
+</li>
+<li>
+<p>当温度很低时系统趋于稳定，返回最终解</p>
+</li>
+</ol>
+<p>那么其中有一个问题？</p>
+<ol>
+<li>在算法的第二步中，如何选择/生成这样一个新解？（解决方案：随机生成但是随着温度的下降随机性变小。）</li>
+</ol>
+<h2 id="3-量子退火算法">3 .量子退火算法
+</h2>
+<p><img src="/Downloads/%e4%b8%8a%e6%b5%b7%e5%a4%a7%e5%ad%a6%e8%af%be%e7%a8%8b%e8%ae%ba%e6%96%87%e6%a8%a1%e6%9d%bf/figures/energy_landscape.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>首先，在经典中，想要找到全局的最优解需要翻过一些山峰。</p>
+<p>但是在量子中有一个著名的效应是量子隧穿效应，也就是说，当这个小球面对一个山峰时，它有概率直接穿过到达这座山的另一侧。</p>
+<p>那么这样一种神奇的效应正好可以克服经典模拟退火算法容易陷入局部最优解的问题，它使得候选解可以更快地离开局部最优。</p>
+<h3 id="ising-model的引入">Ising model的引入
+</h3>
+<p>在组合优化问题中有这样一条定理：</p>
+<blockquote>
+<p>任意NP类型组合优化问题（SAT、Max-Cut、TSP、Partition、QUBO…）
+其目标函数都可以转成 <strong>二值变量的二次型</strong>：
+$$
+E(x) = x^T Q x
+$$
+其中 $x_i \in {0,1}$ 或 $x_i=\pm1$。</p></blockquote>
+<p>而Ising model的哈密顿量：
+$$
+H = -\sum_{i&lt;j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
+$$
+可以发现，Ising model中的能量函数与组合优化问题中二值变量的二次型类似，其中自旋的取值为正负1。因此可以通过Ising model 的哈密顿量来表达所有NP类型的组合问题的哈密顿量。</p>
+<h3 id="具体流程">具体流程
+</h3>
+<p>首先我们将目标函数类比为经典Ising model的哈密顿量：<strong>经典 Ising 哈密顿量（目标函数）：</strong>
+$$
+H_C = -\sum_{i&lt;j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
+$$
+其中：</p>
+<ul>
+<li>$\sigma_i^z$ 是 Pauli Z 矩阵</li>
+<li>自旋向上对应 $s_i = +1$，向下对应 $s_i = -1$</li>
+</ul>
+<p>然后我们加入一个量子涨落（一个外部的扰动/影响），使得整个系统可以进行量子隧穿：
+$$
+H_D = -\Gamma \sum_i \sigma_i^x
+$$
+其中：</p>
+<ul>
+<li>$\sigma_i^x$ 会翻转自旋（量子涨落）</li>
+<li>$\Gamma$ 是横场强度（影响整个系统x方向上的自旋）</li>
+</ul>
+<p>将两个项结合就是总的哈密顿量：
+$$
+H(t) = A(t) H_D + B(t) H_C
+$$
+边界条件：
+$$
+A(0)=1,\ B(0)=0 \quad\text{（完全量子）}
+\
+A(T)=0,\ B(T) =1 \quad \text{(完全经典)}
+$$
+从初始哈密顿量：
+$$
+H(0) = H_D
+$$
+一开始系统的状态为：
+$$
+|\psi(0)\rangle = \bigotimes_i \frac{|0\rangle_i + |1\rangle_i}{\sqrt{2}}
+$$
+也就是 <strong>所有自旋均匀叠加</strong>，完全无偏（这么选择的原因是：这个状态是 $\sigma_x$的本征态，并且这个态可以通过演化到达其他所有的状态，因此就允许了系统在一开始能够对于整个状态空间的量子态进行搜索）。</p>
+<p>最终哈密顿量：
+$$
+H(T) = H_C
+$$
+最终哈密顿量的基态即为优化问题的最优解（因为基态的能量最低，前面将优化问题的目标函数类比为Ising model的能量，那么最优解对应的态自然就是基态）。</p>
+<p>那么现在有1个问题：</p>
+<ol>
+<li>如何保证系统能够演化到最终的最优解的状态？&mdash;-（量子绝热定理）</li>
+</ol>
+<h2 id="hopfield-神经网络">Hopfield 神经网络
+</h2>
+<p>Ising model 是固定不同自旋之间的耦合强度 $J_{ij}$，通过改变温度，来观察这些自旋之间的集体行为（相变，相变温度 $T_c$）。那么基于Ising model 的Quantum Annealing 其实也是同理的。</p>
+<p>人大脑中的神经元与自旋类似。当人接收到外部信息时，这些神经元要么处于激活状态（+1），要么处于未激活状态（-1），并且神经元之间由突触连接，这个连接的强度变化由早期的Hebbian Theory决定：</p>
+<blockquote>
+<p>当对于某一个事件而言，若两个神经元之间同时处于激活状态，那么它们之间的连接强度增强。</p></blockquote>
+<p>由此，Hopfield就联想到了物理中的Ising Model：
+$$
+E=-\frac{1}{2}\sum_{i,j}J_{ij}\sigma_i\sigma_j
+$$
+这里不考虑外部影响，只考虑神经元之间的耦合，每个神经元都与其他所有的神经元有连接（这个连接时对称的，即A和B之间的耦合强度 $J_{AB} = J_{BA}$）。</p>
+<p>仅仅用Ising model来解释神经元之间的连接是不够的，还需要解释，一个神经网络是如何学习与回忆的。</p>
+<h3 id="记忆">记忆：
+</h3>
+<p>在解释神经网络是如何学习与回忆之前，有一个重要的概念就是记忆。在Ising model 中基态是能量最低的态，量子退火算法也是通过找到基态，从而找到了最优解，那么神经网络中也有一个基态，这个基态对应着记忆。</p>
+<p>为什么记忆就是基态呢？</p>
+<p>可以这样理解，当你在处理某一类的问题时，就像将小球丢进一个记忆空间中（这个记忆空间其实是你学习过程中形成的），当你在回忆你的记忆时，其实就是小球滚动寻找下图中最低点的过程（寻找基态的过程）</p>
+<img src="https://media.licdn.com/dms/image/v2/C4D12AQEDnTuwZCVx1Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1538577454555?e=2147483647&v=beta&t=d6SKEEOQzdF6aqyLwFCSzY3lahC6aCkg1x9grYMwEJI" alt="Understanding Deep Learning through Energy Landscapes" style="zoom:50%;" />
+<h3 id="学习">学习：
+</h3>
+<p>假设有N个神经元，正在学习某一个方面的内容，接收信息，更新N个神经元之间的连接强度 $W_{ij}$:
+$$
+W_{ij}=\frac{1}{N}\sum_{\mu=1}^P\xi_i^\mu\xi_j^\mu
+$$
+其中i,j 表示不同的神经元。</p>
+<p>Tips:</p>
+<ol>
+<li>P表示接受的信息有P个patterns ，比如说你在学习如何识别图片中的内容，你接收到了三张图片（“A”，“B”，“笑脸”），此时就有3个Patterns的信息</li>
+<li>$\xi_j^\mu$表示第j个神经元对于第 $\mu$个pattern的反应，比如对于图片A，3号神经元是Active的，但是4号神经元却是睡觉。</li>
+<li>重复学习会导致什么结果？</li>
+</ol>
+<h3 id="回忆">回忆：
+</h3>
+<p>当你完成了对于某一个方面内容的学习，下一次你需要这方面内容的时候，你就需要去回忆&ndash;找到这个记忆&ndash;找到当前记忆空间中的最低谷。</p>
+<p>此时，神经元之间的强度固定（其实应该是减弱的，但是是整体减弱，所以忽略），但是此时你神经元的状态却是随机的，所以回忆的过程是：在记忆空间中，随机地释放小球，让小球寻找记忆的过程。</p>
+<p>举一个具体的例子就是，比如说图片识别，当一个神经网络学会了图像识别，当放一个模糊的照片给神经网络，让其进行识别，那么此时网络就会按照如下的规则来更新每个神经元的状态：
+$$
+S_i\leftarrow\mathrm{sign}\left(\sum_jW_{ij}S_j\right)
+$$
+这个规则要表达的意思其实是将第i个神经元周围所有神经元的状态及其突触连接强度综合起来，去更新其状态。sign函数是一个符号函数，内部结果大于0，则返回1，反之-1。</p>
+<h3 id="问题">问题：
+</h3>
+<ol>
+<li>重复学习在神经网络中的效果是什么？</li>
+<li>如果神经元之间的连接强度不对称会发生什么</li>
+</ol>
+<h2 id="展望与思考">展望与思考
+</h2>
+<p>量子退火算法使用Ising model，通过加入量子涨落，并缓慢地降温，使得系统一开始可以探索所有可能性的空间，最后让基态落在最优解上。</p>
+<p>Hopfield 神经网络 通过Ising model 与神经元网络之间的类比，并结合神经科学中的Hebbian learning theory ，使得神经网络有了学习，回忆等功能。</p>
+<p>那么问题是：随着神经科学的不断进步，人类对于大脑的研究更加深入，Hebbian learning theory 可不可以替换成现在对于神经元研究最新的理论，使得这个神经网络更加强大呢？</p>
+<p>答案是：Predictive Coding</p>
+<h3 id="predictive-coding">Predictive Coding
+</h3>
+<p>传统的认知观点认为大脑像一个“照相机”：接收外界信号 -&gt; 处理信号 -&gt; 产生感知。 <strong>Predictive Coding（PC）</strong> 则认为大脑有两层-高层区域和底层区域，其中高层区域负责预测，底层区域负责接收真实的输入，比如当我们看到一个只有两个腿的动物，高层就会认为我们看到的是一个人，而底层告诉高层，看到的是一个袋鼠，那么这时候就产生了误差。：</p>
+<ol>
+<li><strong>自顶向下（Top-Down）的预测：</strong> 大脑的高层区域（概念层）时刻在根据记忆和经验，向低层区域（感觉层）发送“预测”信号（它认为现在的世界是什么样的）。</li>
+<li><strong>自底向上（Bottom-Up）的误差：</strong> 感觉器官接收真实的输入。如果输入和预测不一致，就会产生**“预测误差”（Prediction Error）**。</li>
+<li><strong>误差传递与更新：</strong> 只有这个“误差”信号会向上传递，用来修正高层的模型。</li>
+</ol>
+<p>因此PC认为大脑的核心目标是最小化高层区域的预测误差。其数学过程如下：</p>
+<p>我们将 Predictive Coding 看作一个<strong>分层高斯生成模型（Hierarchical Gaussian Generative Model）</strong>。为了简化，我们只看两层：</p>
+<ul>
+<li><strong>观测层 (Level 0):</strong> $\mathbf{x}$ (感觉输入)</li>
+<li><strong>隐层 (Level 1):</strong> $\mathbf{r}$ (大脑内部的表征/状态)</li>
+</ul>
+<h4 id="1-定义能量函数-the-energy-function">1. 定义能量函数 (The Energy Function)
+</h4>
+<p>在物理学中，系统倾向于演化到能量最低的状态。在这里，我们定义一个目标函数 $F$（即变分自由能的简化形式，在统计学上等价于负对数似然），它衡量了“预测误差”的大小。</p>
+<p>假设高层 $\mathbf{r}$ 通过权重矩阵 $W$ 线性预测低层，预测值为 $\hat{\mathbf{x}} = W\mathbf{r}$。</p>
+<p>此时，预测误差 $\mathbf{e}$ 为：</p>
+<p>$$\mathbf{e} = \mathbf{x} - W\mathbf{r}$$</p>
+<p>为了同时满足“解释数据”和“先验约束（Prior）”，总能量 $F$ 通常被定义为：</p>
+<p>$$
+F = \underbrace{\frac{1}{2} ||\mathbf{x} - W\mathbf{r}||^2}_{\text{Sensory Prediction Error}}</p>
+<ul>
+<li>\underbrace{\frac{\lambda}{2} ||\mathbf{r} - \mathbf{r}_{prior}||^2}_{\text{Prior Prediction Error (Regularization)}}
+$$
+为简化讨论，我们暂时忽略先验项，只关注第一项（感觉误差）。</li>
+</ul>
+<h4 id="2-两个过程推断-inference-与-学习-learning">2. 两个过程：推断 (Inference) 与 学习 (Learning)
+</h4>
+<p>Predictive Coding 的核心在于它将神经网络的运作分为了两个不同时间尺度的动力学过程：<strong>快过程（神经元活动）**和**慢过程（突触可塑性）</strong>。两者都是为了最小化 $F$。</p>
+<h5 id="a-快过程神经元状态更新-inference">A. 快过程：神经元状态更新 (Inference)
+</h5>
+<p>当一张图片 $\mathbf{x}$ 输入进来时，权重 $W$ 是固定的。网络需要调整神经元状态 $\mathbf{r}$，使其生成的预测尽可能接近 $\mathbf{x}$。这就是“感知”。</p>
+<p>我们在 $\mathbf{r}$ 空间进行梯度下降：</p>
+<p>$$\dot{\mathbf{r}} = -\frac{\partial F}{\partial \mathbf{r}}$$</p>
+<p>计算梯度：</p>
+<p>$$\frac{\partial F}{\partial \mathbf{r}} = \frac{\partial}{\partial \mathbf{r}} \left( \frac{1}{2} (\mathbf{x} - W\mathbf{r})^T (\mathbf{x} - W\mathbf{r}) \right) = -(\mathbf{x} - W\mathbf{r})^T W = -\mathbf{e}^T W$$</p>
+<p>所以，神经元的动力学方程为：</p>
+<p>$$\dot{\mathbf{r}} = W^T \mathbf{e}$$</p>
+<blockquote>
+<p><strong>物理直觉：</strong> 这是一个<strong>局部计算</strong>。误差 $\mathbf{e}$ 在底层计算出来，通过转置矩阵 $W^T$（反馈连接）传回高层，驱动 $\mathbf{r}$ 改变，直到预测误差最小化（即 $\dot{\mathbf{r}} \to 0$）。</p></blockquote>
+<h5 id="b-慢过程突触权重更新-learning">B. 慢过程：突触权重更新 (Learning)
+</h5>
+<p>这是你最关心的部分。当我们推断出较好的 $\mathbf{r}$ 后（或者在推断的同时），我们需要更新突触权重 $W$，以便下次能更准地预测。</p>
+<p>我们在参数 $W$ 空间进行梯度下降：</p>
+<p>$$\dot{W} = -\mu \frac{\partial F}{\partial W}$$</p>
+<p>其中 $\mu$ 是学习率。计算梯度：</p>
+<p>$$\frac{\partial F}{\partial W} = -(\mathbf{x} - W\mathbf{r}) \mathbf{r}^T = -\mathbf{e} \mathbf{r}^T$$</p>
+<p>所以，权重的更新规则为：</p>
+<p>$$\Delta W \propto \mathbf{e} \cdot \mathbf{r}^T$$</p>
+<p>或者写成张量形式（针对单个权重 $w_{ij}$）：</p>
+<p>$$\Delta w_{ij} \propto e_i \cdot r_j$$</p>
+<h4 id="pc与hopfield-神经网络的区别">PC与Hopfield 神经网络的区别：
+</h4>
+<p>Hopfield 神经网络中的神经元是局部的，它只关心他和邻居有没有同时处于激活状态，但是不知道整体网络的目标是什么？（例如：这张图是不是猫？），所以当这个网络变深之后，就不知道哪个神经元应该为错误的输出负责，去纠正错误。</p>
+<p>现代深度学习使用反向传播解决了这个谁应该为错误负责的问题。具体是这样：比如当我们在做图像识别的时候，当我识别出的图片与目标图片存在偏差的时候，这时候计算出一个损失函数，这个损失函数通过反向传播可以看到谁对这个偏差的影响更大，此时通过调整对应的神经元即可修正这个偏差。但是问题是，大脑中并没有这种误差传导通路。</p>
+<p><strong>PC 的巧妙之处：</strong> PC 引入了一种层级化的**“预测-纠错”机制**。你可以把它理解为每一层都有了自己的“质检员”（误差单元）。其中高层向下层发送预测，下层向上层反馈误差。 通过这种结构，PC 将原本遥不可及的“全局大目标”，转化为了每一层都能直接看到的“局部小目标”。神经元不再需要等待全局指令，只需要消除眼前的预测误差，就能自动引导整个网络走向最优解。</p>
+<h2 id="参考文献">参考文献
+</h2>
+<ol>
+<li>
+<p><strong>Ernst Ising (1925).</strong> <em>Beitrag zur Theorie des Ferromagnetismus</em>. Zeitschrift für Physik.</p>
+</li>
+<li>
+<p><strong>Kirkpatrick, S., Gelatt, C. D., &amp; Vecchi, M. P. (1983).</strong> &ldquo;Optimization by Simulated Annealing&rdquo;. <em>Science</em>, 220(4598), 671-680.</p>
+</li>
+<li>
+<p><strong>Kadowaki, T., &amp; Nishimori, H. (1998).</strong> &ldquo;Quantum annealing in the transverse Ising model&rdquo;. <em>Physical Review E</em>, 58(5), 5355.</p>
+</li>
+<li>
+<p><strong>Farhi, E., et al. (2001).</strong> &ldquo;A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem&rdquo;. <em>Science</em>, 292(5516), 472-475.</p>
+</li>
+<li>
+<p><strong>Hebb, D. O. (1949).</strong> <em>The Organization of Behavior: A Neuropsychological Theory</em>. Wiley.</p>
+</li>
+<li>
+<p><strong>Hopfield, J. J. (1982).</strong> &ldquo;Neural networks and physical systems with emergent collective computational abilities&rdquo;. <em>Proceedings of the National Academy of Sciences (PNAS)</em>, 79(8), 2554-2558.</p>
+</li>
+<li>
+<p><strong>Amit, D. J., Gutfreund, H., &amp; Sompolinsky, H. (1985).</strong> &ldquo;Spin-glass models of neural networks&rdquo;. <em>Physical Review A</em>, 32(2), 1007.</p>
+</li>
+<li>
+<p><strong>Rao, R. P., &amp; Ballard, D. H. (1999).</strong> &ldquo;Predictive coding in the visual cortex: a functional.</p>
+</li>
+<li>
+<p><strong>Friston, K. (2010).</strong> &ldquo;The free-energy principle: a unified brain theory?&rdquo;. <em>Nature Reviews Neuroscience</em>, 11(2), 127-138.</p>
+</li>
+<li>
+<p><strong>Whittington, J. C., &amp; Bogacz, R. (2017).</strong> &ldquo;An approximation of the error backpropagation algorithm in a predictive coding network with local hebbian synaptic plasticity&rdquo;. <em>Neural Computation</em>, 29(5), 1229-1262.</p>
+</li>
+<li>
+<p><strong>Millidge, B., Tschantz, A., &amp; Buckley, C. L. (2021).</strong> &ldquo;Predictive Coding: A Theoretical and Experimental Review&rdquo;. <em>arXiv preprint arXiv:2107.12979</em>.</p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ising-model/">Ising Model</a>
+        
+            <a href="/tags/predictive-coding/">Predictive Coding</a>
+        
+            <a href="/tags/hopfield-network/">Hopfield Network</a>
+        
+            <a href="/tags/quantum-annealing/">Quantum Annealing</a>
+        
+            <a href="/tags/simulated-annealing/">Simulated Annealing</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyleft">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyleft" 
+     width="24" height="24" viewBox="0 0 24 24" 
+     stroke-width="2" stroke="currentColor" fill="none" 
+     stroke-linecap="round" stroke-linejoin="round"
+     transform="scale(-1, 1)">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://testingcf.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const fixMathEmphasis = () => {
+            const blockSelectors = ".article-content p, .article-content div";
+            document.querySelectorAll(blockSelectors).forEach((el) => {
+                const text = el.textContent ? el.textContent.trim() : "";
+                if (!text || !(text.startsWith("$$") || text.startsWith("\\["))) {
+                    return;
+                }
+                if (!el.innerHTML.includes("<em>")) {
+                    return;
+                }
+                el.innerHTML = el.innerHTML
+                    .replace(/<em>/g, "_")
+                    .replace(/<\/em>/g, "_");
+            });
+        };
+
+        fixMathEmphasis();
+
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });
+    });
+</script>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+     
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css"/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+        min-height: 200px;
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script type="module">
+  
+  const CDN_SOURCES = [
+    'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js',
+    'https://unpkg.com/@waline/client@v3/dist/waline.js'
+  ];
+
+  let initAttempts = 0;
+  const MAX_ATTEMPTS = 10;
+  let walineInit = null;
+
+  async function loadWaline(cdnIndex = 0) {
+    try {
+      const module = await import(CDN_SOURCES[cdnIndex]);
+      walineInit = module.init;
+      return true;
+    } catch (error) {
+      console.warn(`Failed to load Waline from ${CDN_SOURCES[cdnIndex]}:`, error);
+      if (cdnIndex < CDN_SOURCES.length - 1) {
+        return await loadWaline(cdnIndex + 1);
+      }
+      return false;
+    }
+  }
+
+  async function initWaline() {
+    const el = document.querySelector('#waline');
+    if (!el) {
+      initAttempts++;
+      if (initAttempts < MAX_ATTEMPTS) {
+        setTimeout(initWaline, 100);
+      } else {
+        console.error('Waline container not found after multiple attempts');
+      }
+      return;
+    }
+
+    
+    if (!el.parentNode) {
+      console.error('Waline container is not attached to DOM');
+      return;
+    }
+
+    
+    if (!walineInit) {
+      const loaded = await loadWaline();
+      if (!loaded) {
+        console.error('Failed to load Waline library from all CDN sources');
+        el.innerHTML = '<p style="color: var(--card-text-color-main);">评论系统加载失败，请刷新页面重试。</p>';
+        return;
+      }
+    }
+
+    try {
+      const config = {"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","sofa":"Nobody，Sleep Now..."},"placeholder":"欢迎留下宝贵的评论！","requiredMeta":["name","email","url"],"serverURL":"https://waline1-eight.vercel.app/","visitor":true};
+      walineInit(config);
+    } catch (error) {
+      console.error('Failed to initialize Waline:', error);
+      el.innerHTML = '<p style="color: var(--card-text-color-main);">评论系统初始化失败：' + error.message + '</p>';
+    }
+  }
+
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWaline);
+  } else {
+    
+    requestAnimationFrame(() => {
+      setTimeout(initWaline, 100);
+    });
+  }
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//testingcf.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyleft">
+         @ 
+        
+            2020 - 
+        
+        2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了24k字·共 12篇文章</br><span><p>
+    </section>
+
+    <section class="powerby">
+        
+
+        <p>本博客所有内容无特殊标注均为Eugene原创内容，复制请保留原文出处。</p>Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://codeberg.org/iceyear/hugo-theme-stack-mod" target="_blank" rel="noopener" data-version="3.29.0">Stack Mod</a></b> designed by <a href="https://iceyear.eu.org" target="_blank" rel="noopener">Ice Year</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2025-04-11';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://testingcf.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://testingcf.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://testingcf.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://testingcf.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://testingcf.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.f8be92ae649a8253d1dc85a9497534d061b99b635e540f44300c244af4398f69.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.bunny.net/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
+

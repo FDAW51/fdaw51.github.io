@@ -1,7 +1,7 @@
 ---
 
-title: "Process|Molecular_Motor"
-slug: "Process|Molecular_Motor"
+title: "Process|多分量超导"
+slug: "Process|多分量超导"
 description: ""
 image: ""
 categories: ["Process"]
