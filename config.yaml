@@ -220,9 +220,23 @@ related:
 markup:
   goldmark:
     extensions:
-      math: true       # 一定要有这一行
+      math: false      # ❌ 关掉这个！不要让 Hugo 尝试解析公式
+      passthrough:     # ✅ 开启这个！让 Hugo 跳过公式块，原样输出
+        enable: true
+        delimiters:
+          block:
+          - - $$
+            - $$
+          - - \\[
+            - \\]
+          inline:
+          - - $
+            - $
+          - - \\(
+            - \\)
     renderer:
-      unsafe: true
+      unsafe: true     # 保持开启，MathJax 需要插入 HTML/JS
+  # 其他配置保持不变...
   tableOfContents:
     startLevel: 2
     endLevel: 6

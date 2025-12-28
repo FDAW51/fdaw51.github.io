@@ -32,7 +32,11 @@ math: true
 
   
 
-  $$H(\sigma) = -\sum_{<i,j>} J_{ij} \sigma_i \sigma_j - \mu \sum_{j} h_j \sigma_j$$
+   $$
+   \begin{aligned}
+   H(\sigma) = -\sum_{\langle i,j\rangle} J_{ij} \sigma_i \sigma_j - \mu \sum_{j} h_j \sigma_j
+   \end{aligned}
+   $$
 
   - 其中 $J_{ij}$ 代表每个自旋之间的相互作用强度，$h_j$ 代表外部磁场。第一项是相互作用能，第二项是外部磁场的能量。
   - 通过这个哈密顿量，就可以研究这个系统的相变过程以及其相变温度Tc。
@@ -72,7 +76,7 @@ $$
 
 ### 具体算法：
 
-对于一个优化问题 $\bold{min}_x f(x)$,f(x)是目标函数。
+对于一个优化问题 $\min_{x} f(x)$，$f(x)$ 是目标函数。
 
 模拟退火算法的流程如下：
 
@@ -100,7 +104,7 @@ $$
 
 ## 3 .量子退火算法
 
-![img](../../../Downloads/上海大学课程论文模板/figures/energy_landscape.png)
+![img](https://henrywang7.com/wp-content/uploads/2014/01/quantum_annealing1.jpg)
 
 首先，在经典中，想要找到全局的最优解需要翻过一些山峰。
 
@@ -114,9 +118,9 @@ $$
 
 > 任意NP类型组合优化问题（SAT、Max-Cut、TSP、Partition、QUBO…）
 >  其目标函数都可以转成 **二值变量的二次型**：
-> $$
-> E(x) = x^T Q x
-> $$
+   $$
+   E(x) = x^T Q x
+   $$
 > 其中 $x_i \in \{0,1\}$ 或 $x_i=\pm1$。
 
 而Ising model的哈密顿量：
@@ -151,9 +155,10 @@ H(t) = A(t) H_D + B(t) H_C
 $$
 边界条件：
 $$
-A(0)=1,\ B(0)=0 \quad\text{（完全量子）}
-\\
-A(T)=0,\ B(T) =1 \quad \text{(完全经典)}
+\begin{aligned}
+A(0) &= 1,\quad B(0) = 0 && \text{（完全量子）} \\
+A(T) &= 0,\quad B(T) = 1 && \text{（完全经典）}
+\end{aligned}
 $$
 从初始哈密顿量：
 $$
@@ -274,8 +279,10 @@ $$\mathbf{e} = \mathbf{x} - W\mathbf{r}$$
 为了同时满足“解释数据”和“先验约束（Prior）”，总能量 $F$ 通常被定义为：
 
 $$
-F = \underbrace{\frac{1}{2} ||\mathbf{x} - W\mathbf{r}||^2}\_{\text{Sensory Prediction Error}}
-  + \underbrace{\frac{\lambda}{2} ||\mathbf{r} - \mathbf{r}\_{prior}||^2}\_{\text{Prior Prediction Error (Regularization)}}
+\begin{aligned}
+F &= \underbrace{\frac{1}{2} \lVert \mathbf{x} - W\mathbf{r} \rVert^2}_{\text{Sensory Prediction Error}} \\
+  &\quad + \underbrace{\frac{\lambda}{2} \lVert \mathbf{r} - \mathbf{r}_{\text{prior}} \rVert^2}_{\text{Prior Prediction Error (Regularization)}}
+\end{aligned}
 $$
 为简化讨论，我们暂时忽略先验项，只关注第一项（感觉误差）。
 

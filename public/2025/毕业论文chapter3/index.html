@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/'>
 
-<link rel="stylesheet" href="/scss/style.min.27f98f87ba8fa0710c61fd4182de065b9b07dcc853a5f3272da209117b478a36.css"><meta property='og:title' content="毕业论文｜chapter3">
+<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="毕业论文｜chapter3">
 <meta property='og:description' content="量子纠缠的应用 可能很多人会想，量子纠缠这么神秘，众多科学家历经坎坷终于证明了量子纠缠存在的合理性。那么它有什么用呢？或者说，它能够解决哪些问题呢？\n对于量子纠缠，首先想到的是Alice和Bob双方共享的Bell态，只要有一方对于自己的系统进行测量，无论多远，都会影响另一方的测量结果，即纠缠的关联性。那么由此，我们可以联想到它与并行计算有同理之处，只不过，量子纠缠里的并行是双方互相影响的并行，而并行计算里是计算机对于一个大任务进行分解成许多小的，可以独立执行，或者合作完成的子任务，然后将这些子任务分配给多个处理器，让其同时进行计算。\n">
 <meta property='og:url' content='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/'>
 <meta property='og:site_name' content='Eugene'>
@@ -350,6 +350,8 @@
     
     <div class="widget-body">
         <div class="category-list">
+            <div class="category-list-item"><a href="http://localhost:1313/categories/ai/" class="category-list-link">ai<span class="category-list-count">1</a>
+            </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/homewok/" class="category-list-link">homewok<span class="category-list-count">1</a>
             </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/notes/" class="category-list-link">notes<span class="category-list-count">2</a>
@@ -390,7 +392,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">12</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -433,6 +435,10 @@
                 Ising Model
             </a>
         
+            <a href="/tags/machine-learning/" class="font_size_1">
+                Machine Learning
+            </a>
+        
             <a href="/tags/movie/" class="font_size_1">
                 Movie
             </a>
@@ -447,10 +453,6 @@
         
             <a href="/tags/shor%E7%AE%97%E6%B3%95/" class="font_size_1">
                 Shor算法
-            </a>
-        
-            <a href="/tags/simulated-annealing/" class="font_size_1">
-                Simulated Annealing
             </a>
         
     </div>
@@ -514,7 +516,7 @@
 
                 
                 <time class="article-words">
-                    7022 字
+                    926 字
                 </time>
             </div>
         
@@ -568,20 +570,23 @@
 <h5 id="模n">模N
 </h5>
 <p>我们说一个整数的模N，即用这个数Q去除以N取余数的操作，那么自然而然这个可能的余数就会组成一个模N意义下的整数集合$\Z_N$（即所有可能的余数）是：
+</p>
 $$
-\Z_N = {0，1，2，\dots，N-1}
-$$
-比如，$Q=6 ，N =5，那么Q \pmod N = 6%5 = 1$</p>
+\Z_N = \{0，1，2，\dots，N-1\}
+$$<p>
+比如，$Q=6 ，N =5，那么Q \pmod N = 6\%5 = 1$</p>
 <h5 id="模n的乘法群">模N的乘法群
 </h5>
 <p>模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：
+</p>
 $$
-a \in Z ,1\leq a &lt;N , \gcd{(a,N)} =1
-$$
+a \in Z ,1\leq a <N , \gcd{(a,N)} =1
+$$<p>
 该群的运算是模N下的乘法运算：
+</p>
 $$
 a\cdot b \pmod N
-$$
+$$<p>
 该群的性质有：</p>
 <ol>
 <li>
@@ -589,10 +594,10 @@ $$
 </li>
 <li>
 <p>逆元的存在性：$\forall a \in \Z_N^{\ast} ,\exist a^{-1}$ ,使得 ：
+</p>
 $$
-a \cdot a^{-1} = 1 \pmod{N}
-$$</p>
-</li>
+    a \cdot a^{-1} = 1 \pmod{N}
+    $$</li>
 <li>
 <p>封闭性：如果$a，b \in \Z_N^*$，则有$\gcd{(ab,N)} = 1$，即a，b的乘积也在模N群中</p>
 </li>
@@ -676,40 +681,50 @@ $$</p>
 </li>
 <li>
 <p>然后对前面n个qubit做Handmard 门操作$H^{\otimes n}\otimes I_m$,得到态$\ket{\Psi_1}$,即：
+</p>
 $$
-\ket{\Psi_1} = (H^{\otimes n}\otimes I_m)(\ket{\Psi_0}) = \frac{1}{2^{\frac{n}{2}}}(\ket{0}+\ket{1})^{\otimes n }\ket{\psi} \\
-= \frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\ket{\psi}
-$$</p>
-</li>
+  \begin{aligned}
+  \ket{\Psi_1} &= (H^{\otimes n}\otimes I_m)(\ket{\Psi_0}) = \frac{1}{2^{\frac{n}{2}}}(\ket{0}+\ket{1})^{\otimes n }\ket{\psi} \\
+               &= \frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\ket{\psi}
+  \end{aligned}
+  $$</li>
 <li>
 <p>对态$\ket{\Psi_1}$做受控U门操作，$U = \sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k$,由此得到态$\ket{\Psi_2}$:
+</p>
 $$
-\ket{\Psi_2} =\sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k(\frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\otimes\ket{\psi}) \\
-= \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}\sum_{j=0}^{2^n-1}\ket{k}\delta_{jk}\otimes e^{2\pi ik\theta}\ket{\psi} \\
-=\frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}e^{2\pi ij\theta}\ket{j}\otimes \ket{\psi} \\
-= \ket{\Phi_2} \otimes\ket{\psi}
-$$
+  \begin{aligned}
+  \ket{\Psi_2} &=\sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k\left(\frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\otimes\ket{\psi}\right) \\
+               &= \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}\sum_{j=0}^{2^n-1}\ket{k}\delta_{jk}\otimes e^{2\pi ik\theta}\ket{\psi} \\
+               &= \frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}e^{2\pi ij\theta}\ket{j}\otimes \ket{\psi} \\
+               &= \ket{\Phi_2} \otimes\ket{\psi}
+  \end{aligned}
+  $$<p>
 所以这就由对于纠缠态$\ket{j}\ket{\psi}$的操作，使得$\ket{\psi}$中信息（本征值中的相位），传递到了前一部分的叠加态的振幅当中。</p>
 </li>
 <li>
 <p>对态$\ket{\Psi_2}$中的$\ket{\Phi_2}$进行大小为N=$2^n$量子傅立叶逆变换（$QFT_{2^n}^{-1}$）,得到态$\ket{\Phi_3}$。量子傅立叶变换为(上式为变换，下式为逆变换)：
+</p>
 $$
-QFT_N \ket{x} = N^{-1/2} \sum_{k=0}^{N-1} e^{\frac{2\pi i}{N} kx} \ket{k} \\
-QFT_N^{-1} \ket{k} = N^{-1/2} \sum_{x=0}^{N-1} e^{-\frac{2\pi i}{N} kx} \ket{x}
-$$
+  \begin{aligned}
+  QFT_N \ket{x} &= N^{-1/2} \sum_{k=0}^{N-1} e^{\frac{2\pi i}{N} kx} \ket{k} \\
+  QFT_N^{-1} \ket{k} &= N^{-1/2} \sum_{x=0}^{N-1} e^{-\frac{2\pi i}{N} kx} \ket{x}
+  \end{aligned}
+  $$<p>
 那么对于态$\ket{\Phi_2}$进行$QFT_{2^n}^{-1}$，得到：
+</p>
 $$
-\ket{\Phi_3} = QFT_{2^n}^{-1} \left( \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \ket{j} \right) \\
-= \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \left(\frac{1}{2^{n/2}} \sum_{x=0}^{2^n-1} e^{\frac{-2\pi ijx}{2^n}} \ket{x} \right) \\
-= \frac{1}{2^{n}} \sum_{j=0}^{2^n -1} \sum_{x=0}^{2^n -1} \exp{\left( 2\pi ij (\theta -\frac{jx}{2^n})\right)} \ket{x}
-$$</p>
-</li>
+  \begin{aligned}
+  \ket{\Phi_3} &= QFT_{2^n}^{-1} \left( \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \ket{j} \right) \\
+               &= \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \left(\frac{1}{2^{n/2}} \sum_{x=0}^{2^n-1} e^{\frac{-2\pi ijx}{2^n}} \ket{x} \right) \\
+               &= \frac{1}{2^{n}} \sum_{j=0}^{2^n -1} \sum_{x=0}^{2^n -1} \exp{\left( 2\pi ij \left(\theta -\frac{jx}{2^n}\right)\right)} \ket{x}
+  \end{aligned}
+  $$</li>
 <li>
-<p>然后对上面的态在计算基${\ket{x}}$测量，测得不同x的概率为：$|c_x|^2$,并且我们定义$2^n \theta = a+2^n \delta$，其中$a$是最接近$2^n\theta$的整数，所以$2^n \delta$要满足$0\leq|2^n\delta|\leq 1/2$(因为，如果a是2.4，那么估计值就是2，误差为0.4,如果a = 2.7，那么估计值为3，误差为0.3，所以$2^n \delta$不会超过0.5)。由于这个定义，$c_x$就变成了：
+<p>然后对上面的态在计算基$\{\ket{x}\}$测量，测得不同x的概率为：$|c_x|^2$,并且我们定义$2^n \theta = a+2^n \delta$，其中$a$是最接近$2^n\theta$的整数，所以$2^n \delta$要满足$0\leq|2^n\delta|\leq 1/2$(因为，如果a是2.4，那么估计值就是2，误差为0.4,如果a = 2.7，那么估计值为3，误差为0.3，所以$2^n \delta$不会超过0.5)。由于这个定义，$c_x$就变成了：
+</p>
 $$
-c_x = \frac{1}{2^n}\sum_{j=0}^{2^n-1} e^{\frac{2\pi ij}{2^n}(x-a)}e^{2\pi i\delta j}
-$$</p>
-</li>
+   c_x = \frac{1}{2^n}\sum_{j=0}^{2^n-1} e^{\frac{2\pi ij}{2^n}(x-a)}e^{2\pi i\delta j}
+   $$</li>
 <li>
 <p>测量态$\ket{\Phi_3}$,我们可以从式8中发现，测量到$x = 2^n\theta$的概率最高（因为此时处于干涉相加，所以系数最大），因此对于量子相位估计来说，想要估计的量$\theta$被放在测量概率最大的态上。</p>
 </li>
@@ -721,10 +736,10 @@ $$</p>
 <ol>
 <li>
 <p>首先我们对$\alpha$做连分数展开，得到一个整数序列$[a_0;a_1,a_2,\dots,a_n]$，并满足：
+</p>
 $$
-\alpha = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{\ddots + \cfrac{1}{a_k}}}}
-$$</p>
-</li>
+   \alpha = a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{\ddots + \cfrac{1}{a_k}}}}
+   $$</li>
 <li>
 <p>具体获得这个序列的方法如下：</p>
 <ol>
@@ -743,7 +758,7 @@ $$</p>
 </ol>
 </li>
 <li>
-<p>然后生成收敛值序列${\frac{p_0}{q_0},\frac{p_1}{q_1},\dots,\frac{p_n}{q_n}}$,其中p_i,q_i的计算过程如下:</p>
+<p>然后生成收敛值序列$\{\frac{p_0}{q_0},\frac{p_1}{q_1},\dots,\frac{p_n}{q_n}\}$,其中p_i,q_i的计算过程如下:</p>
 <ol>
 <li>
 <p>初始化：$p_0 = a_0,q_0=1$;</p>
@@ -753,11 +768,13 @@ $$</p>
 </li>
 <li>
 <p>对于$i \geq 2$的情况：
+</p>
 $$
-p_i= a_ip_{i-1}+p_{i-2} \\
-q_i = a_iq_{i-1}+q_{i-2}
-$$</p>
-</li>
+     \begin{aligned}
+     p_i &= a_ip_{i-1}+p_{i-2} \\
+     q_i &= a_iq_{i-1}+q_{i-2}
+     \end{aligned}
+     $$</li>
 </ol>
 </li>
 <li>
@@ -777,9 +794,10 @@ $$</p>
 <li>最终生成了公钥$(e，n)$，私钥$(d，n)$</li>
 </ol>
 <p>如果在什么都不知道的前提下，想要直接以暴力的手段破解某一个加密文件，那么就需要分解大整数n为两个大素数p和q，而分解大数这一问题在经典下最快的算法（数域筛选法）的时间复杂度（近似）是：
+</p>
 $$
 \exp(((\frac{64}{9})^{1/3})+o(1))(\log n)^{1/3}(\log{\log n})^{2/3})
-$$
+$$<p>
 虽然不是指数时间，但也比多项式时间慢很多，当解决n比较大（大约1024位）的密钥时，这个算法就不可用了。</p>
 <h3 id="shor算法的逻辑">Shor算法的逻辑：
 </h3>
@@ -815,22 +833,24 @@ $$
 </li>
 <li>
 <p>如果属于步骤1的第二种情况，那么通过乘法群的逆元的存在性，则a在模M整数乘法群中存在逆元 $a^{-1}$使得：
+</p>
 $$
-a \times a^{-1}  = 1 \pmod{M}
-$$
+      a \times a^{-1}  = 1 \pmod{M}
+      $$<p>
 后面的 $1 \pmod{M}$表示在模M群里面的单位元1。</p>
 </li>
 <li>
 <p>然后由我们选择的a来生成包含不同幂次a的序列：
+</p>
 $$
-X：{a^1,a^2,\dots}
-$$</p>
-</li>
+      X：\{a^1,a^2,\dots\}
+      $$</li>
 </ol>
 <p>这个序列的长度是无限的,因为我们可以对a不断做取幂处理，由于$a \in \Z_{M}^{\ast}$，所以每一个幂次的$a$在 $\Z_M^\ast$中都有一个对应的元素，即：
+</p>
 $$
 \forall k \in \N ,\exist Z_{k} \in \Z_{M}^{\ast}，Z_k = a^k \pmod{M}
-$$
+$$<p>
 而$Z_M^\ast$里面包含的元素是有限的（仅包含0，1，2，$\dots$，M-1）。因此我们有：</p>
 <ol>
 <li>
@@ -840,14 +860,16 @@ $$
 <p>每一个幂次的$a^k$都会对应着$\Z^{\ast}_M$中的某一个元素，而$\Z_M^{\ast}$里面的元素是有限的（可以看成不同的抽屉）。</p>
 </li>
 </ol>
-<p>由于抽屉原理，当我们有足够多的小球，那么就一定存在$i,j \in \R\and i &lt;j$，使得：
+<p>由于抽屉原理，当我们有足够多的小球，那么就一定存在$i,j \in \R\and i <j$，使得：
+</p>
 $$
 a^i = a^j \pmod{M} \quad/a^j = a^i \pmod{M}
-$$
+$$<p>
 即两个小球对应于同一个抽屉。然后由于 $a^j和a^i$$在\Z_M^\ast$ 中存在逆元$a^{-j}和a^{-i}$，所以在等式两边乘$a^{-i}$：
+</p>
 $$
 a^j*a^{-i} = a^{j-i} = 1 \pmod{M}
-$$
+$$<p>
 记$r = j-i$,这个r就是a在模M群中的阶（order），它说明了序列X是周期性的。</p>
 <p>​</p>
 <ol start="4">
@@ -859,9 +881,10 @@ $$
 </li>
 <li>
 <p>如果r为偶数，那么 :
+</p>
 $$
-a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
-$$
+            a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
+            $$<p>
 这就说明M可以整除$(a^{r/2}-1)(a^{r/2}+1)$。（<strong>可以注释一下为什么到这没有完成分解</strong>）</p>
 </li>
 </ol>
@@ -871,76 +894,83 @@ $$
 </h3>
 <p>所以现在分解M的问题就转变为找a的序列周期r的问题。</p>
 <p>首先给定了目标分解数M，和一个任意选择的$a$，我们想要找到周期r满足：
+</p>
 $$
 a^r = 1\pmod{M}
-$$
+$$<p>
 shor算法本质上就是通过量子相位估计（QPE），估计出一个结果（包含r的分数），然后用连分数算法将周期r提取出来。对于shor算法的QPE，它的算符U定义为：</p>
-<p>$$
-U|k\rangle = \begin{cases}
-\ket{a^k \pmod{M}} &amp; 0 \le k &lt; M \\
-\ket{k} &amp; M \le k &lt; 2^n .
-\end{cases}
 $$
+U|k\rangle = \begin{cases}
+\ket{a^k \pmod{M}} & 0 \le k < M \\\
+\ket{k} & M \le k < 2^n .
+\end{cases}
+$$<p>
 上面定义表达的意思是，当$k \in \Z_M^\ast$，则计算得到相应$a^k$在$\Z_M^\ast$中对应的元素,如果不在，那么就返回$k$本身。因为我们知道序列X存在最小的周期r，所以当我作用r次U到同一个态$\ket{k}$ ，那么这时候就会返回$\ket{k}$，即$U^r\ket{k} = \ket{k}$，因此$U^r = I$。</p>
 <p>假设U的本征态为$\ket{\psi}$，其本征值为$\omega$,则有：
+</p>
 $$
-U\ket{\psi} = \omega\ket{\psi} \\
+U\ket{\psi} = \omega\ket{\psi} \\\
 U^r\ket{\psi} = \ket{\psi}=\omega^r \ket{\psi}
-$$
-所以有$\omega^r =1$,所以$\omega_r^k = e^{\frac{i2\pi k}{r}}$,这里的角标r说明U有r个特征向量${\ket{\psi_j}}$，每个的特征值为$\omega^j_r$。（这里用几何解释就是：r次单位根，见下图）。</p>
-<p>可以发现${\ket{a^0},\ket{a^1},\dots,\ket{a^{r-1}}}$也构成算符U的一组基矢，我们可以用它们来表示${\ket{\psi_j}}$，关系是(这其实像离散的傅立叶变换)：
+$$<p>
+所以有$\omega^r =1$,所以$\omega_r^k = e^{\frac{i2\pi k}{r}}$,这里的角标r说明U有r个特征向量$\{\ket{\psi_j}\}$，每个的特征值为$\omega^j_r$。（这里用几何解释就是：r次单位根，见下图）。</p>
+<p>可以发现$\{\ket{a^0},\ket{a^1},\dots,\ket{a^{r-1}}\}$也构成算符U的一组基矢，我们可以用它们来表示$\{\ket{\psi_j}\}$，关系是(这其实像离散的傅立叶变换)：
+</p>
 $$
 \ket{\psi_j} = r^{-1/2}\sum_{k=0}^{r-1} w_{r}^{-kj}\ket{a^k}
-$$
+$$<p>
 这里其实也可以用U作用到$\ket{\psi_j}$来验证，然后对$\ket{\psi_j}$求和得到：
+</p>
 $$
-\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} = \frac{1}{r}\sum_{j=0}^{r-1}\sum_{k=0}^{r-1}\omega_r^{jk}\ket{a^k} \\
+\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} = \frac{1}{r}\sum_{j=0}^{r-1}\sum_{k=0}^{r-1}\omega_r^{jk}\ket{a^k} \\\
 =\ket{1} + \frac{1}{r}\sum_{k=0}^{r-1} ( \sum_{j=0}^{r-1}\omega_r^{jk}) \ket{a^k} =\ket{1}
-$$
+$$<p>
 第一个等号是因为$\omega_r^{jk}=\omega_r^{-jk} = e^{2\pi ijk/r}$,最后一个等号是因为：
+</p>
 $$
 \sum_{j=0}^{r-1}e^{2\pi jk/r} = \frac{1-e^{2\pi ik}}{1-e^{2\pi ik/r}} = 0
-$$
+$$<p>
 可以参考等比数列求和公式。</p>
 <p>有了这个关系我们就可以通过制备态$\ket{1}$，然后展开得到U的每一个本征态，即$\ket{1} = \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}$。</p>
 <p>Shor算法寻找r的过程是：</p>
 <ol>
 <li>
-<p>首先根据M来确定说需要的量子比特数n，要满足:$2^n&gt;M$，所以$n =\lceil \log_2 M \rceil$，例如，当M = 31时，n = 5（通常来说只需要满足$n =\lceil \log_2 M \rceil$，但是可以证明2n个比特数可以以足够的精度来寻找周期r）。</p>
+<p>首先根据M来确定说需要的量子比特数n，要满足:$2^n>M$，所以$n =\lceil \log_2 M \rceil$，例如，当M = 31时，n = 5（通常来说只需要满足$n =\lceil \log_2 M \rceil$，但是可以证明2n个比特数可以以足够的精度来寻找周期r）。</p>
 </li>
 <li>
 <p>然后制备初态$\ket{\Phi_0} = \ket{0}^{\otimes{2n}}\ket{1}$<!--这里的态之间的\otimes省略了-->（左边是第一寄存器，右边是第二寄存器），我们知道可以通过展开得到：
+</p>
 $$
-\ket{\Phi_0} = \ket{0}^{\otimes{2n}}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
-$$</p>
-</li>
+   \ket{\Phi_0} = \ket{0}^{\otimes{2n}}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
+   $$</li>
 <li>
 <p>对第一寄存器做Hadamard操作$H^{\otimes2n}\otimes I_m$，得到态
+</p>
 $$
-\ket{\Phi_1} = (H\ket{0})^{\otimes 2n}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} \\
-= \frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\ket{x}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
-$$</p>
-</li>
+   \ket{\Phi_1} = (H\ket{0})^{\otimes 2n}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j} \\\
+   = \frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\ket{x}\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\psi_j}
+   $$</li>
 <li>
 <p>然后对整个系统做受控$U_c$操作，得到态$\ket{\Phi_2}$:
+</p>
 $$
-\ket{\Phi_2} = U_c(\ket{\Phi_1})
-= (\sum_{k = 0}^{2^{2n}-1}\ket{k}\bra{k}\otimes U^k) \ket{\Phi_1} \\
-=\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}U^{k}\ket{\psi_j}) \\
-=\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\omega_j^k\ket{\psi_j}) \\
-=\frac{1}{2^n} \frac{1}{\sqrt{r}}\sum_{x=0}^{2^{2n}-1}\sum_{j=0}^{r-1}\omega^x_j \ket{x}\ket{\psi_j}
-= \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\phi_j}\ket{\psi_j}
-$$
+   \ket{\Phi_2} = U_c(\ket{\Phi_1}) 
+   = (\sum_{k = 0}^{2^{2n}-1}\ket{k}\bra{k}\otimes U^k) \ket{\Phi_1} \\\
+   =\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}U^{k}\ket{\psi_j}) \\\
+   =\frac{1}{2^n} \sum_{x=0}^{2^{2n}-1}\sum_{k=0}^{2^{2n}-1}\delta_{kx}\ket{k}(\frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\omega_j^k\ket{\psi_j}) \\\
+   =\frac{1}{2^n} \frac{1}{\sqrt{r}}\sum_{x=0}^{2^{2n}-1}\sum_{j=0}^{r-1}\omega^x_j \ket{x}\ket{\psi_j} 
+   = \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}\ket{\phi_j}\ket{\psi_j}
+   $$<p>
 其中$\ket{\phi_j}=\frac{1}{2^n}\sum_{x=0}^{2^{2n}-1}e^{2\pi ijx/r}\ket{x}$，从上式可以看出，我们如果对上面的态进行测量，我们测量到每一个结果$\ket{\phi_j}$的概率都是一样的，都是$\frac{1}{r}$，所以我们在做完测量之后不能够知道是哪个$j$。</p>
 </li>
 <li>
 <p>然后对第一个寄存器做逆量子傅立叶变换$QFT_{2^{2n}}^{-1}$，得到即：
+</p>
 $$
-QFT_{2^{2n}}^{-1}\ket{\phi_j}=\frac{1}{2^{n}}\sum_{x=0}^{2^{2n}-1}e^{\frac{2\pi ijx}{r}}\frac{1}{2^{n}}\sum_{k=0}^{2^{2n}-1}e^{\frac{-2\pi ikx}{2^{2n}}}\ket{k} \\
-=\sum_{k=0}^{2^{2n}-1}\frac{1}{2^{2n}}\left( \sum_{x=0}^{2^{2n}-1} \exp\left( 2\pi ix\left(\frac{j}{r} - \frac{k}{2^{2n}}\right) \right) \right)\ket{k} \\
-=\sum_{k=0}^{2^{2n}-1}c_k \ket{k}
-$$
-我们可以看到对于这个态，如果我们以基${\ket{k}}$测量，那么我们测量到$k=2^{2n}\frac{j}{r}$结果的概率最大。</p>
+   QFT_{2^{2n}}^{-1}\ket{\phi_j}=\frac{1}{2^{n}}\sum_{x=0}^{2^{2n}-1}e^{\frac{2\pi ijx}{r}}\frac{1}{2^{n}}\sum_{k=0}^{2^{2n}-1}e^{\frac{-2\pi ikx}{2^{2n}}}\ket{k} \\\
+   =\sum_{k=0}^{2^{2n}-1}\frac{1}{2^{2n}}\left( \sum_{x=0}^{2^{2n}-1} \exp\left( 2\pi ix\left(\frac{j}{r} - \frac{k}{2^{2n}}\right) \right) \right)\ket{k} \\\
+   =\sum_{k=0}^{2^{2n}-1}c_k \ket{k}
+   $$<p>
+我们可以看到对于这个态，如果我们以基$\{\ket{k}\}$测量，那么我们测量到$k=2^{2n}\frac{j}{r}$结果的概率最大。</p>
 <p>这里可能有一个问题，这里只是测量到的概率最大，但是不一定就会测量到这个包含$r的k$。但是我们完全可以多做几次测量，来确保这个结果就是包含$r$的那个结果。</p>
 </li>
 <li>
@@ -955,9 +985,10 @@ $$
 </li>
 <li>
 <p>如果r为偶数，那么 :
+</p>
 $$
-a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
-$$
+         a^r -1 =(a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{M}
+         $$<p>
 这就说明M可以整除$(a^{r/2}-1)(a^{r/2}+1)$。（<strong>可以注释一下为什么到这没有完成分解</strong>）</p>
 </li>
 <li>
@@ -1227,6 +1258,8 @@ $$
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -1246,7 +1279,7 @@ $$
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了24k字·共 12篇文章</br><span><p>
+      共书写了17.2k字·共 13篇文章</br><span><p>
     </section>
 
     <section class="powerby">
@@ -1354,7 +1387,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 src="https://testingcf.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f8be92ae649a8253d1dc85a9497534d061b99b635e540f44300c244af4398f69.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.6e619bb6cd3e0b28c39a05677d11bc0c40a553e33f7623d8a58e10953b2c49f8.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

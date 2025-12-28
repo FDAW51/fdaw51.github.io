@@ -1,4 +1,9 @@
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;max-width:900px;margin:24px auto;padding:0 16px;}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;max-width:1200px;margin:24px auto;padding:0 16px;}
+/* EasyMDE customization */
+.EasyMDEContainer { background: #fff; }
+.editor-toolbar { border-radius: 6px 6px 0 0; border-color: #d0d7de; opacity: 1; }
+.CodeMirror { border-radius: 0 0 6px 6px; border-color: #d0d7de; min-height: 400px; }
+.editor-statusbar { padding: 8px; color: #666; }
 header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
 nav a{margin-right:12px;text-decoration:none;color:#0366d6}
 .flash{list-style:none;padding:0}

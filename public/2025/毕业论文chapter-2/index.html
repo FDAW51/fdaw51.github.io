@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/'>
 
-<link rel="stylesheet" href="/scss/style.min.27f98f87ba8fa0710c61fd4182de065b9b07dcc853a5f3272da209117b478a36.css"><meta property='og:title' content="毕业论文|chapter 2">
+<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="毕业论文|chapter 2">
 <meta property='og:description' content="量子纠缠的验证 Bell不等式 要验证量子纠缠态的存在性，我们首先要证明隐变量理论的矛盾性，这样就证明了非局域性是量子力学的本质特征。前面EPR论文提出了量子力学的不完备性，而应该由额外的变量来补充的论据。这些变量试图去恢复理论中的局域性（一个系统上的测量结果不受过去与之相互作用且遥远系统的影响）和因果性。在之后的一段时间里，有许多试图去完善隐变量理论的工作，但是均已失败告终。\n">
 <meta property='og:url' content='http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/'>
 <meta property='og:site_name' content='Eugene'>
@@ -369,6 +369,8 @@
     
     <div class="widget-body">
         <div class="category-list">
+            <div class="category-list-item"><a href="http://localhost:1313/categories/ai/" class="category-list-link">ai<span class="category-list-count">1</a>
+            </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/homewok/" class="category-list-link">homewok<span class="category-list-count">1</a>
             </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/notes/" class="category-list-link">notes<span class="category-list-count">2</a>
@@ -409,7 +411,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">12</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -452,6 +454,10 @@
                 Ising Model
             </a>
         
+            <a href="/tags/machine-learning/" class="font_size_1">
+                Machine Learning
+            </a>
+        
             <a href="/tags/movie/" class="font_size_1">
                 Movie
             </a>
@@ -466,10 +472,6 @@
         
             <a href="/tags/shor%E7%AE%97%E6%B3%95/" class="font_size_1">
                 Shor算法
-            </a>
-        
-            <a href="/tags/simulated-annealing/" class="font_size_1">
-                Simulated Annealing
             </a>
         
     </div>
@@ -533,7 +535,7 @@
 
                 
                 <time class="article-words">
-                    9043 字
+                    8983 字
                 </time>
             </div>
         
@@ -558,10 +560,9 @@
 </h3>
 <p><strong>（斯特恩-格拉赫实验可以展开说）</strong></p>
 <p>考虑一对自旋为$\frac{1}{2}$的粒子，整个系统处于自旋单态（总自旋为0），两个粒子自由地朝反方向运动。自旋单态的表达式为：</p>
-<p>$$
+$$
 \ket{\psi} = \frac{1}{\sqrt{2}}(\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow})
-$$</p>
-<p>式中$\ket{\uparrow\downarrow}$表示两粒子系统的状态，也可写成$\ket{\uparrow} \otimes \ket{\downarrow}$（左边为粒子1的自旋状态），$\ket{\uparrow}$表示单个粒子自旋向上，$\ket{\downarrow}$表示自旋向下。</p>
+$$<p>式中$\ket{\uparrow\downarrow}$表示两粒子系统的状态，也可写成$\ket{\uparrow} \otimes \ket{\downarrow}$（左边为粒子1的自旋状态），$\ket{\uparrow}$表示单个粒子自旋向上，$\ket{\downarrow}$表示自旋向下。</p>
 <p>定义粒子1和2的自旋算符$\vec{\sigma_1}$和$\vec{\sigma_2}$（Pauli算符形式，自旋算符与Pauli算符的关系为$\vec{S} = \frac{\hbar}{2}\vec{\sigma}$）。通过斯特恩-格拉赫实验测量某个方向（例如$\vec{a}$为粒子1的测量方向）的自旋分量。</p>
 <p>测量粒子1的$\vec{\sigma_1} \cdot \vec{a}$可能得到$+1$或$-1$。由于系统反对称性（<strong>可补充解释</strong>），此时测量粒子2的$\vec{\sigma_2} \cdot \vec{a}$结果必然与粒子1相反（$-1$或$+1$）。</p>
 <hr>
@@ -573,36 +574,31 @@ $$</p>
 <li><strong>因果性假设</strong>：通过测量$\sigma_1$的某个方向分量，可预测对应方向粒子2的自旋分量结果。</li>
 </ol>
 <p>假设1指定了隐变量理论的局域性；假设2说明测量结果可被提前预测，对应隐变量$\lambda$的存在性（$\lambda$可以是单变量、一组变量或函数）。测量结果满足：</p>
-<p>$$
+$$
 A(\vec{a}, \lambda) = \pm 1, \quad B(\vec{b}, \lambda) = \pm 1
-$$</p>
-<p>隐变量理论的期望值为：</p>
-<p>$$
-P(\vec{a}, \vec{b}) = \int d\lambda , \rho(\lambda) A(\vec{a}, \lambda) B(\vec{b}, \lambda)
-$$</p>
-<p>而量子力学对自旋单态的期望值为：</p>
-<p>$$
-\langle \vec{\sigma}_1 \cdot \vec{a} ; \vec{\sigma}_2 \cdot \vec{b} \rangle = -\vec{a} \cdot \vec{b}
-$$</p>
-<hr>
+$$<p>隐变量理论的期望值为：</p>
+$$
+P(\vec{a}, \vec{b}) = \int d\lambda \, \rho(\lambda) A(\vec{a}, \lambda) B(\vec{b}, \lambda)
+$$<p>而量子力学对自旋单态的期望值为：</p>
+$$
+\langle \vec{\sigma}_1 \cdot \vec{a} \; \vec{\sigma}_2 \cdot \vec{b} \rangle = -\vec{a} \cdot \vec{b}
+$$<hr>
 <h3 id="主要证明">主要证明
 </h3>
 <p>Bell不等式的推导步骤如下：</p>
 <ol>
-<li><strong>归一化条件</strong>：$\int d\lambda , \rho(\lambda) = 1$</li>
+<li><strong>归一化条件</strong>：$\int d\lambda \, \rho(\lambda) = 1$</li>
 <li><strong>测量结果限制</strong>：$A(\vec{a}, \lambda), B(\vec{b}, \lambda) = \pm 1$</li>
 <li><strong>引入新方向$\vec{c}$</strong>，计算差值：</li>
 </ol>
-<p>$$
-P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) = \int d\lambda , \rho(\lambda) A(\vec{a}, \lambda) A(\vec{b}, \lambda) \left[ A(\vec{b}, \lambda) A(\vec{c}, \lambda) - 1 \right]
-$$</p>
-<ol start="4">
+$$
+P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c}) = \int d\lambda \, \rho(\lambda) A(\vec{a}, \lambda) A(\vec{b}, \lambda) \left[ A(\vec{b}, \lambda) A(\vec{c}, \lambda) - 1 \right]
+$$<ol start="4">
 <li><strong>取绝对值并利用积分性质</strong>，最终得到Bell不等式：</li>
 </ol>
-<p>$$
+$$
 |P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c})| \leq 1 + P(\vec{b}, \vec{c})
-$$</p>
-<hr>
+$$<hr>
 <h3 id="验证实例">验证实例
 </h3>
 <p>取$\vec{a} = (0,0,1)$, $\vec{b} = (1,0,0)$, $\vec{c} = (1/\sqrt{2}, 0, 1/\sqrt{2})$：</p>
@@ -612,15 +608,15 @@ $$</p>
 <li>$|P(\vec{a}, \vec{b}) - P(\vec{a}, \vec{c})| = 1/\sqrt{2} \approx 0.707$</li>
 <li>$1 + P(\vec{b}, \vec{c}) = 1 - 1/\sqrt{2} \approx 0.293$</li>
 </ul>
-<p>显然$0.707 &gt; 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。
+<p>显然$0.707 > 0.293$，违反Bell不等式，说明隐变量理论无法解释量子力学预测。
+</p>
 $$
-f(g(x)) =
-\begin{cases}
-0, &amp; g(x) &lt; 2 \\
-1, &amp; g(x) \geq 2
+f(g(x)) = 
+\begin{cases} 
+0, & g(x) < 2 \\\ 
+1, & g(x) \geq 2 
 \end{cases}
-$$</p>
-<hr>
+$$<hr>
 <h3 id="结论">结论
 </h3>
 <p>通过证明Bell不等式在量子力学中不成立，表明非局域性是量子力学的本质特征，从而验证了量子纠缠的合理性。</p>
@@ -631,9 +627,9 @@ $$</p>
 </h3>
 <p>游戏有三个人,一个Alice,一个Bob,一个裁判:</p>
 <ol>
-<li>首先,裁判以均匀的概率随机地选定两个数 $x，y\in {0,1}$</li>
+<li>首先,裁判以均匀的概率随机地选定两个数 $x，y\in \{0,1\}$</li>
 <li>然后，裁判把 $x$给Alice，$y$给Bob</li>
-<li>最后，Alice$需要给出回应a \in {0,1}$,Bob也需要给出回应$b\in{0,1}$</li>
+<li>最后，Alice$需要给出回应a \in \{0,1\}$,Bob也需要给出回应$b\in\{0,1\}$</li>
 </ol>
 <p>如果$x = y = 1$，则只有当Alice和Bob要给出不一样的回应才可以获胜；对于其他的情况，则需要Alice和Bob的回应一样才能获胜。</p>
 <h3 id="经典情况">经典情况：
@@ -676,23 +672,28 @@ $$</p>
 <p>对于量子情况，首先介绍一些对于量子比特和量子态的基础知识。</p>
 <h4 id="基态">基态：
 </h4>
-<p>让$s_1\dots s_n \in {0,1}^n$是一个长度为n的二进制串，$i\in {0,1,\dots,2^{n}-1}$是对应二进制串的值，比如n=2，那么此时二进制串为$s_1s_2={00,01,10,11}$,对应这四个二进制串的值为0,1,2,3。然后根据这个我们可以定义 $\ket{s_1\dots s_n}$是一个长度为 $2^n$的向量，假设这个向量里面的二进制串所对应的值为 $i$，则这个向量的第 $i+1$个位置为1，其余的位置为0，这个向量$\ket{s_1\dots s_n}$我们就称之为n个量子比特的基态。对于n=2(两个量子比特)的情况，那么就有 $\ket{00},\ket{01},\ket{10,\ket{11}}$这些基态，这些基态分别对应(下面的基态都是列向量）：
+<p>让$s_1\dots s_n \in \{0,1\}^n$是一个长度为n的二进制串，$i\in \{0,1,\dots,2^{n}-1\}$是对应二进制串的值，比如n=2，那么此时二进制串为$s_1s_2=\{00,01,10,11\}$,对应这四个二进制串的值为0,1,2,3。然后根据这个我们可以定义 $\ket{s_1\dots s_n}$是一个长度为 $2^n$的向量，假设这个向量里面的二进制串所对应的值为 $i$，则这个向量的第 $i+1$个位置为1，其余的位置为0，这个向量$\ket{s_1\dots s_n}$我们就称之为n个量子比特的基态。对于n=2(两个量子比特)的情况，那么就有 $\ket{00},\ket{01},\ket{10,\ket{11}}$这些基态，这些基态分别对应(下面的基态都是列向量）：
+</p>
 $$
-\ket{00}=[1,0,0,0]^T，\ket{01}=[0,1,0,0]^T \\
-\ket{10}=[0,0,1,0]^T，\ket{11}=[0,0,0,1]^T
-$$</p>
-<h5 id="量子态">量子态：
+\begin{aligned}
+\ket{00} &= [1,0,0,0]^T,\quad \ket{01} = [0,1,0,0]^T \\
+\ket{10} &= [0,0,1,0]^T,\quad \ket{11} = [0,0,0,1]^T
+\end{aligned}
+$$<h5 id="量子态">量子态：
 </h5>
 <p>定义：n个量子比特的量子态是一个向量 $\vec{x}$:
+</p>
 $$
-\vec{x} = x_{0\dots0}\ket{0\dots0}+ \dots + x_{1\dots1}\ket{1\dots1} \\
-= \sum_{S\in{0,1}^n}x_s\ket{S}
-$$
+\begin{aligned}
+\vec{x} &= x_{0\dots0}\ket{0\dots0}+ \dots + x_{1\dots1}\ket{1\dots1} \\
+        &= \sum_{S\in\{0,1\}^n} x_s \ket{S}
+\end{aligned}
+$$<p>
 上式中 $S$是遍历所有长度是n的二进制串，并且 $\vec{x}$满足归一化条件：
+</p>
 $$
 |x_{0\ldots0}|^2 + \cdots + |x_{1\ldots1}|^2 = 1.
-$$</p>
-<p>系数 $x_{0\dots0},\dots,x_{1\dots1}$可以是复数，但是我们只考虑它们是实数的情况。</p>
+$$<p>系数 $x_{0\dots0},\dots,x_{1\dots1}$可以是复数，但是我们只考虑它们是实数的情况。</p>
 <h5 id="量子门">量子门：
 </h5>
 <p>就像函数  $f(x)$一样，有输出对应着输入，这个函数相当于对这个输入做了某种操作；那么对应某个系统的量子态，我们应该如何去操作它改变它呢？上面我们提到了量子态是一个向量 $\vec{x}$,那么量子门操作就是 $f(\vec{x})$,并且要遵循如下的性质：</p>
@@ -708,20 +709,22 @@ $$</p>
 <h4 id="量子系统孤立系统">量子系统，孤立系统：
 </h4>
 <p>对于要如何去实现这样的二进制的量子态我们可以直接想到的是电子，我们可以依靠电子的自旋量子数是1/2的特性（这个特性使得电子再任意方向上的自旋都有两个本征态，自旋向上，自旋向下）去实现基态是 $\ket{0},\ket{1}$的量子系统。顺着这个思路，我们可以得出量子系统其实就是多个有顺序的电子的集合表示为 $E =(e_1,\dots,e_n)$。</p>
-<p>因为每个电子要么自旋向上（0）要么自旋向上（1），所以这个量子系统的状态一定是二进制串 $S = s_1\dots s_n\in{0,1}^n$中的一个，那么我们可以将测量这个量子系统中每一个电子的自旋的过程描述为 $E \to S$</p>
+<p>因为每个电子要么自旋向上（0）要么自旋向上（1），所以这个量子系统的状态一定是二进制串 $S = s_1\dots s_n\in\{0,1\}^n$中的一个，那么我们可以将测量这个量子系统中每一个电子的自旋的过程描述为 $E \to S$</p>
 <p>在大部分情况下，我们只关心庞大世界中的某一个系统，那么此时这个孤立系统是怎么样的，和复合系统的区别是什么？一个孤立的量子系统 $E$之所以孤立是因为他的测量事件和其他量子系统的测量是独立的，即：</p>
-<p>这个孤立系统的测量事件：$E \to S$与所有其他的系统的测量 $E’ \to S&rsquo;$是独立的，也就是这个系统的测量结果并不会影响其他系统的结果。</p>
+<p>这个孤立系统的测量事件：$E \to S$与所有其他的系统的测量 $E’ \to S'$是独立的，也就是这个系统的测量结果并不会影响其他系统的结果。</p>
 <p>上面我们提到了测量事件和测量结果，那么对于一个处于某一个量子态的量子系统E，这些是如何定义的呢？</p>
 <h5 id="测量公理">测量公理：
 </h5>
-<p>假设 $E$是一个由n个电子 $(e_1,\dots,e_n)$ 组成的孤立量子系统，根据前面的定义，我们可以用一个向量 $\vec{x}$来表示这个系统的状态，如果我们去测量这个系统的状态，可能的结果是所有二进制串（长度为n） $S\in{0,1}^n$中的一个，或者说这个系统的状态是不同基态的组合：
+<p>假设 $E$是一个由n个电子 $(e_1,\dots,e_n)$ 组成的孤立量子系统，根据前面的定义，我们可以用一个向量 $\vec{x}$来表示这个系统的状态，如果我们去测量这个系统的状态，可能的结果是所有二进制串（长度为n） $S\in\{0,1\}^n$中的一个，或者说这个系统的状态是不同基态的组合：
+</p>
 $$
-\ket{\psi} = \sum_{S\in{0,1}^n}x_s\ket{S}
-$$
+\ket{\psi} = \sum_{S\in\{0,1\}^n}x_s\ket{S}
+$$<p>
 那么此时我们知道当我们观测这个系统的时候，这个系统一定会处于基态中的一个，但是在观测前我们也许可以知道我们测量得到不同基态的概率 $|x_s|^2$,测量公理定义了这样的概率是：
+</p>
 $$
 Pr [E \to S] =|x_s|^2
-$$
+$$<p>
 以及将我们可能对这个处于 $\vec{x}$ 孤立系统E做出的物理操作定义为一个量子门 $f$，这样就使得前面有关与量子门的操作和定义能够在实际物理世界中存在对应。</p>
 <p>总而言之，这个公理将一个孤立的系统描述为某一个量子态，以及每一个物理上的操作（Physical process）描述为某一个量子门。</p>
 <h4 id="张量积tensor-product">张量积（Tensor Product）：
@@ -730,19 +733,23 @@ $$
 <h5 id="向量的张量积">向量的张量积：
 </h5>
 <p>我们这里引入向量之间的张量积，定义为：
+</p>
 $$
 \vec{\Phi} = \vec{x}\otimes\vec{y}
-$$
+$$<p>
 并且这个向量 $\vec{\Phi}$的长度是nm，并且 $\otimes$被称之为张量积。向量$\vec{x}$和向量$\vec{y}$之间的张量积定义为：
+</p>
 $$
 \vec{x}\otimes\vec{y} = (a_1b_1,a_1b_2,\dots,a_nb_{n-1},a_nb_n
-$$
+$$<p>
 比如，但两个系统（$E_1，E_2$）的状态分别为 $\vec{a}=(a_1,a_2)$和 $\vec{b}=(b_1,b_2,b_3)$，那么这两个系统组合的状态 $\vec{\psi}$为：
+</p>
 $$
-\vec{\psi}=\vec{a}\otimes \vec{b}=[a_1(b_1,b_2,b_3),a_2(b_1,b_2,b_3)] \\
-=(a_1b_1,a_1b_2,a_1b_3,a_2b_1,a_2b_2,a_2b_3)
-$$</p>
-<h5 id="不同孤立系统状态的张量积">不同孤立系统状态的张量积：
+\begin{aligned}
+\vec{\psi} = \vec{a}\otimes \vec{b} &= [a_1(b_1,b_2,b_3),\,a_2(b_1,b_2,b_3)] \\
+                                    &= (a_1b_1,a_1b_2,a_1b_3,a_2b_1,a_2b_2,a_2b_3)
+\end{aligned}
+$$<h5 id="不同孤立系统状态的张量积">不同孤立系统状态的张量积：
 </h5>
 <p>上面对于两个系统组合起来的张量积表示有一个前提条件就是，它们两个都是孤立系统，即它们不能有相互作用或者纠缠（如EPR态）。它表述为一个定理：</p>
 <p>如果两个系统 $E_1$和 $E_2$都是孤立的系统，并且两个分别由向量 $\vec{x}$和$\vec{y}$表示，则它们的联合系统状态 $E_1E_2$ 用向量 $\vec{x}\otimes\vec{y}$表示</p>
@@ -750,9 +757,10 @@ $$</p>
 </h5>
 <p>我们已经定义了两个孤立系统的联合状态是怎么样的，那么我们想，如果我们想对系统（A和B）进行物理操作（相当于作用量子门）,那么这些操作是如何影响整个系统的联合状态的呢？我们可以定义：</p>
 <p>让 $f：V^n\to V^n$表示对于系统A的一个线性操作（线性的量子门），$g:V^m\to V^m$表示对于系统B的一个线性操作，则对于这整个系统的联合状态 $\vec{a}\otimes\vec{b}$而言，我们对于整个系统的操作 $f\otimes g$作用效果为：
+</p>
 $$
 (f\otimes g)(\vec{a}\otimes\vec{b}) = f(\vec{a})\otimes g(\vec{b})
-$$
+$$<p>
 这里对于整个系统AB的操作 $f\otimes g$ 可以由一个公理指定（$f$作用与A系统，$g$作用于B系统）。（<strong>此处可以说明一下这里如果两个操作并不同时发生，这个定义还是有效的吗？，因为两个系统是孤立系统，所以互不影响。</strong>）</p>
 <h4 id="chsh游戏的一种解法">CHSH游戏的一种解法：
 </h4>
@@ -762,52 +770,53 @@ $$
 <h5 id="旋转门的引入">旋转门的引入：
 </h5>
 <p>因为我们知道，Alice和Bob都是将各自电子自旋的测量结果（进行处理），最后返回给裁判是0和1，但是其实对于电子的自旋测量可以改变方向，那么就需要引入一个量子门操作 $R_{\theta}$，它的几何意义其实就是将二维空间中的某一个向量顺时针旋转 $\theta$角度，由此可以得到他的数学定义是<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
-<p>$$
+$$
 \begin{aligned}
-R_{\theta}(a_1\ket{0}+a_2\ket{1})
-&amp;= (a_1\cos{\theta}-a_2\sin{\theta})\ket{0} \
-&amp;\quad + (a_1\sin{\theta}+a_2\cos{\theta})\ket{1}
+R_{\theta}(a_1\ket{0}+a_2\ket{1}) 
+&= (a_1\cos{\theta}-a_2\sin{\theta})\ket{0} \\
+&\quad + (a_1\sin{\theta}+a_2\cos{\theta})\ket{1}
 \end{aligned}
-$$</p>
-<p>有了旋转门之后，Alice和Bob就可以分别对于各自的电子进行旋转，之后再执行测量操作，我们可以将Alice和Bob的操作记为 $R_{A_{0,1}}\otimes R_{B_{0,1}}$，这里的角标对应着，当Alice或者Bob收到x或者y为0和1的情况。</p>
+$$<p>有了旋转门之后，Alice和Bob就可以分别对于各自的电子进行旋转，之后再执行测量操作，我们可以将Alice和Bob的操作记为 $R_{A_{0,1}}\otimes R_{B_{0,1}}$，这里的角标对应着，当Alice或者Bob收到x或者y为0和1的情况。</p>
 <h5 id="胜率的定义">胜率的定义：
 </h5>
 <p>我们这里将Alice和Bob的总胜率定义为 $w$。在CHSH游戏中，Alice和Bob分别收到来自裁判的x,y，Alice和Bob分别给出回应a，b。对于每一对可能的$(x,y)$，他们获胜的条件可以简化为：
+</p>
 $$
 a \oplus b = x \cdot y
-$$
+$$<p>
 前面是逻辑上的异或操作（简而言之就是相同为0，不同为1），后面是普通的乘法操作（只有当 $x=y=1$时，右边才等于1）<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>假设对于每一种 $(x,y)$的胜率记作 $Pr[win|(x,y)]$，由于每种 $(x,y)$出现的概率相同都是1/4，所以总的胜率 $w$为：
+</p>
 $$
 w=\frac{1}{4}\sum_{(x,y)}Pr[win|(x,y)]
-$$</p>
-<h5 id="测量结果的处理">测量结果的处理：
+$$<h5 id="测量结果的处理">测量结果的处理：
 </h5>
 <p>我们知道Alice和Bob对于任意方向电子自旋的测量结果是+1/-1，但是游戏规则中需要Alice和Bob做出回应0/1，那么我们就需要做出如下的处理：
+</p>
 $$
-a = \frac{1 - a^\ast}{2}, \quad
+a = \frac{1 - a^\ast}{2}, \quad 
 b = \frac{1 - b^\ast}{2}
-$$
+$$<p>
 这里的 Alice和Bob的测量结果$a^\ast=\pm1,b^\ast=\pm1$，而 $a$和$b$就是Alice和Bob对于测量结果处理之后给裁判各自的回应，回应0就对应着测量结果1，回应1就对应测量结果是-1。</p>
 <p>因此上面对于a,b的获胜条件，转化为测量结果$ a^\ast $和 $ b^\ast $的获胜条件为：</p>
-<p>$$
+$$
 \begin{aligned}
-a \oplus b &amp;= x \cdot y  \
-\left(\frac{1-a^\ast}{2}\right)\oplus\left(\frac{1-b^\ast }{2}\right) &amp;= x \cdot y
+a \oplus b &= x \cdot y  \\
+\left(\frac{1-a^\ast}{2}\right)\oplus\left(\frac{1-b^\ast }{2}\right) &= x \cdot y
 \end{aligned}
-$$</p>
-<p>代入之后第二个式子可以用一个公式化简：
+$$<p>代入之后第二个式子可以用一个公式化简：
+</p>
 $$
 u \oplus v = u+v-2uv
-$$
+$$<p>
 上面的 $u和v$都代表的是二进制数。所以得到：
+</p>
 $$
 \begin{aligned}
-\frac{1-a^\ast b^\ast}{2} &amp;= x \cdot y \\
-a^\ast b^\ast &amp;= 1-2xy
+\frac{1-a^\ast b^\ast}{2} &= x \cdot y \\\
+a^\ast b^\ast &= 1-2xy
 \end{aligned}
-$$</p>
-<p>我们可以用一个表格看到$1-2xy$其实可以等价为$(-1)^{xy}$：</p>
+$$<p>我们可以用一个表格看到$1-2xy$其实可以等价为$(-1)^{xy}$：</p>
 <div class="table-wrapper"><table>
   <thead>
       <tr>
@@ -850,182 +859,194 @@ $$</p>
   </tbody>
 </table></div>
 <p>由此可以得到获胜条件变成Alice和Bob的测量结果要满足：
+</p>
 $$
 a^\ast b^\ast =(-1)^{xy}
-$$</p>
-<h5 id="用测量结果的乘积表示赢的概率">用测量结果的乘积表示赢的概率：
+$$<h5 id="用测量结果的乘积表示赢的概率">用测量结果的乘积表示赢的概率：
 </h5>
-<p>记任意一次测量 $(a^\ast,b^\ast)$的概率分布为${P_{++},P_{+-},P_{-+},P_{&ndash;}}$为对应结果的概率，角标的左边表示Alice的测量结果，右边表示Bob的测量结果，正负号代表测量结果为1和-1。所以双方测量结果乘积的期望是：
+<p>记任意一次测量 $(a^\ast,b^\ast)$的概率分布为$\{P_{++},P_{+-},P_{-+},P_{--}\}$为对应结果的概率，角标的左边表示Alice的测量结果，右边表示Bob的测量结果，正负号代表测量结果为1和-1。所以双方测量结果乘积的期望是：
+</p>
 $$
-E[a^\ast b^\ast]=(+1)P_{++}+(-1)P_{+-}+(-1)P_{-+}+(1)P_{&ndash;}
-$$</p>
-<p>因为赢得条件是$a^\ast b^\ast =(-1)^{xy}$，所以对于每一种情况的$(x,y)$而言，获胜的概率$Pr[win|(x,y)]$就等价于 $Pr[a^\ast b^\ast=(-1)^{xy}]$。</p>
-<p>对于任意一次测量$(a^\ast,b^\ast)$的概率分布${P_{++},P_{+-},P_{-+},P_{&ndash;}}$，有：
+E[a^\ast b^\ast]=(+1)P_{++}+(-1)P_{+-}+(-1)P_{-+}+(1)P_{--}
+$$<p>因为赢得条件是$a^\ast b^\ast =(-1)^{xy}$，所以对于每一种情况的$(x,y)$而言，获胜的概率$Pr[win|(x,y)]$就等价于 $Pr[a^\ast b^\ast=(-1)^{xy}]$。</p>
+<p>对于任意一次测量$(a^\ast,b^\ast)$的概率分布$\{P_{++},P_{+-},P_{-+},P_{--}\}$，有：
+</p>
 $$
 Pr[a^\ast b^\ast=(-1)^{xy}] = \sum_{a^\ast b^\ast=(-1)^{xy}}Pr[a^\ast,b^\ast]
-$$
+$$<p>
 式中$Pr[a^\ast,b^\ast]$代表两者测量的概率分布（离散的），所以对于等式的右侧，我们可以分两种情况：
+</p>
 $$
-\sum_{a^\ast b^\ast=(-1)^{xy}} \mathrm{Pr}[a^\ast,b^\ast] =
-\begin{cases}
-P_{++}+P_{&ndash;}, &amp; (-1)^{xy}=+1 \
-P_{+-}+P_{-+}, &amp; (-1)^{xy}=-1
+\sum_{a^\ast b^\ast=(-1)^{xy}} \mathrm{Pr}[a^\ast,b^\ast] = 
+\begin{cases} 
+P_{++}+P_{--}, & (-1)^{xy}=+1 \\
+P_{+-}+P_{-+}, & (-1)^{xy}=-1
 \end{cases}
-$$</p>
-<p>可以看到：
+$$<p>可以看到：
+</p>
 $$
 \begin{aligned}
-P_{++}+P_{&ndash;}
-&amp;= \frac{1}{2}\left[1+(P_{++}+P_{&ndash;}-P_{+-}-P_{-+})\right] \
-&amp;= \frac{1}{2}(1+E[a^\ast b^\ast])
+P_{++}+P_{--} 
+&= \frac{1}{2}\left[1+(P_{++}+P_{--}-P_{+-}-P_{-+})\right] \\
+&= \frac{1}{2}(1+E[a^\ast b^\ast])
 \end{aligned}
-$$
-第二个等号是由归一化 $P_{++}+P_{+-}+P_{-+}+P_{&ndash;}=1$。同样的，对于$P_{-+}+P_{+-}$有：
+$$<p>
+第二个等号是由归一化 $P_{++}+P_{+-}+P_{-+}+P_{--}=1$。同样的，对于$P_{-+}+P_{+-}$有：
+</p>
 $$
 P_{-+}+P_{-+}=\frac{1}{2}(1-E[a^\ast b^\ast])
-$$</p>
-<p>所以可以得到：
+$$<p>所以可以得到：
+</p>
 $$
 Pr[win|x,y]=\frac{1+(-1)^{xy}E[a^\ast b^\ast]}{2}
-$$</p>
-<p>在Alice和Bob收到$(x,y)$后，他们对应的做出对于各自电子自旋测量方向的旋转操作$A_x$和$B_y$，对于他们共享的Bell态$\ket{\psi}$而言就是量子门操作$A_x \otimes B_y$，那么他们测量结果的乘积的期望$E[a^\ast b^\ast]$就是：
+$$<p>在Alice和Bob收到$(x,y)$后，他们对应的做出对于各自电子自旋测量方向的旋转操作$A_x$和$B_y$，对于他们共享的Bell态$\ket{\psi}$而言就是量子门操作$A_x \otimes B_y$，那么他们测量结果的乘积的期望$E[a^\ast b^\ast]$就是：
+</p>
 $$
 E[a^\ast b^\ast] = \bra{\psi}A_x \otimes B_y\ket{\psi}
-$$</p>
-<p>然后将这个期望值代入式23，再将式23代入总的获胜概率$w$的定义，得到：
+$$<p>然后将这个期望值代入式23，再将式23代入总的获胜概率$w$的定义，得到：
+</p>
 $$
 \begin{aligned}
-\omega&amp;=\frac{1}{4}\sum_{x,y}\frac{1+(-1)^{xy},\langle\psi|A_x\otimes B_y|\psi\rangle}{2} \
-&amp;=\frac{1}{2}+\frac{1}{8}\sum_{x,y}(-1)^{xy},\langle\psi|A_x\otimes B_y|\psi\rangle.
+\omega&=\frac{1}{4}\sum_{x,y}\frac{1+(-1)^{xy}\,\langle\psi|A_x\otimes B_y|\psi\rangle}{2} \\
+&=\frac{1}{2}+\frac{1}{8}\sum_{x,y}(-1)^{xy}\,\langle\psi|A_x\otimes B_y|\psi\rangle.
 \end{aligned}
-$$</p>
-<p>我们可以定义总获胜概率为$w$和失败概率为$L$，以及两者之间的差值为$D=w-L$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，然后
+$$<p>我们可以定义总获胜概率为$w$和失败概率为$L$，以及两者之间的差值为$D=w-L$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，然后
+</p>
 $$
 D = w-(1-w) = 2w-1
-$$</p>
-<p>所以要得到总的获胜概率的上界等价于找到D的上界，由上可以得到：
+$$<p>所以要得到总的获胜概率的上界等价于找到D的上界，由上可以得到：
+</p>
 $$
 \begin{aligned}
-D&amp;=2\omega-1=2\left[\frac{1}{2}+\frac{1}{8}\sum_{x,y}(-1)^{xy}\langle\psi|A_x\otimes B_y|\psi\rangle\right]-1 \
-&amp;=\frac{1}{4}\sum_{x,y\in{0,1}}(-1)^{xy},\langle\psi|A_x\otimes B_y|\psi\rangle.
+D&=2\omega-1=2\left[\frac{1}{2}+\frac{1}{8}\sum_{x,y}(-1)^{xy}\langle\psi|A_x\otimes B_y|\psi\rangle\right]-1 \\
+&=\frac{1}{4}\sum_{x,y\in\{0,1\}}(-1)^{xy}\,\langle\psi|A_x\otimes B_y|\psi\rangle.
 \end{aligned}
-$$</p>
-<p>那么现在应该如何找到这个D的上界呢？</p>
+$$<p>那么现在应该如何找到这个D的上界呢？</p>
 <p>如果根据量子力学的期望的定义，D可以写成：
+</p>
 $$
 D=\frac{1}{4}\left(\langle A_0B_0\rangle+\langle A_0B_1\rangle+\langle A_1B_0\rangle-\langle A_1B_1\rangle\right)
-$$
+$$<p>
 其中，$\langle A_0B_0\rangle$表示在量子态 $\ket{\psi}$下算符 $A_0 \otimes B_0$的期望值，其余同理。</p>
-<p>然后定义四个投影算符 $P,P&rsquo;,Q,Q&rsquo;$，我们可以看成是一个投影操作，那么这个算符的本征值只有两个0和1<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，我们作用到Alice和Bob各自电子上的算符仅仅改变了电子的自旋方向，但是所得到的测量值还是+1和-1，所以可以做出如下的变换：
+<p>然后定义四个投影算符 $P,P',Q,Q'$，我们可以看成是一个投影操作，那么这个算符的本征值只有两个0和1<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>，我们作用到Alice和Bob各自电子上的算符仅仅改变了电子的自旋方向，但是所得到的测量值还是+1和-1，所以可以做出如下的变换：
+</p>
 $$
 \begin{aligned}
-A_0 &amp;= 2P-1 \
-B_0 &amp;= 2Q&rsquo;-1 \
-A_1 &amp;= 2Q-1 \
-B_1 &amp;= 2P&rsquo;-1
+A_0 &= 2P-1 \\
+B_0 &= 2Q'-1 \\
+A_1 &= 2Q-1 \\
+B_1 &= 2P'-1
 \end{aligned}
-$$
+$$<p>
 做出这个变换的理由是：我们对于电子的旋转的操作总可以等效成将电子的自旋向某个方向投影，并且保持了测量值的不变性。</p>
 <p>然后定义R：
+</p>
 $$
 R =\langle A_0B_0\rangle+\langle A_0B_1\rangle+\langle A_1B_0\rangle-\langle A_1B_1\rangle
-$$</p>
-<p>令$C =A_0B_0+A_0B_1+A_1B_0-A_1B_1$ 可以得到：
+$$<p>令$C =A_0B_0+A_0B_1+A_1B_0-A_1B_1$ 可以得到：
+</p>
 $$
 R =\langle C\rangle
-$$
+$$<p>
 其中：
+</p>
 $$
 C = A_0(B_1+B_0)+A_1(B_0-B_1)
-$$</p>
-<p>然后我们计算$C^2$，因为$A_0，A_1，B_0，B_1$的本征值都是 $\pm 1$，所以有：
+$$<p>然后我们计算$C^2$，因为$A_0，A_1，B_0，B_1$的本征值都是 $\pm 1$，所以有：
+</p>
 $$
 A_0^2=A_1^2=B_0^2=B_1^2=1
-$$
+$$<p>
 <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 <p>由此可以推出：
+</p>
 $$
 C^2 = 4+[A_0,A_1][B_1,B_0]
-$$
+$$<p>
 其中$[A,B]$表示算符的对易子$AB-BA$，从这个等式可以看出，在经典情况下，Alice和Bob并不做出任何操作，所以等式右侧的第二项就是0，但是这一项正表现出了量子的非定域性特点。</p>
 <p>然后我们将变换关系29，代入计算得到：
+</p>
 $$
-C^2 =4+16[P,Q][P&rsquo;,Q&rsquo;]
-$$</p>
-<p>由于P，Q都是投影算符，所以有：
+C^2 =4+16[P,Q][P',Q']
+$$<p>由于P，Q都是投影算符，所以有：
+</p>
 $$
 P^2 = P ,\quad Q^2=Q ,\quad P^{\dagger} =P,\quad  Q^{\dagger} = Q
-$$</p>
-<p>因为$A_0 = 2P-1$，所以：
+$$<p>因为$A_0 = 2P-1$，所以：
+</p>
 $$
 \begin{aligned}
-A_0^2 &amp;= (2P-1)(2P-1) \
-&amp;=4P^2-4P+I \
-&amp;=4P^2-4P^2+I \
-&amp;=I
+A_0^2 &= (2P-1)(2P-1) \\
+&=4P^2-4P+I \\
+&=4P^2-4P^2+I \\
+&=I
 \end{aligned}
-$$
-所以$|A_0|=1$，同理$A_1^2 = I$，$|A_1|=1$。</p>
-<p>我们想得到$[P,Q]$的范围，有$|A_0|，|A_1|=1$，以及：
+$$<p>
+所以$\|A_0\|=1$，同理$A_1^2 = I$，$\|A_1\|=1$。</p>
+<p>我们想得到$[P,Q]$的范围，有$\|A_0\|，\|A_1\|=1$，以及：
+</p>
 $$
 \begin{aligned}
-[A_0,A_1] &amp;= (2P-I)(2Q-I)-(2Q-I)(2P-I) \
-&amp;=4(PQ-QP) \
-&amp;=4[P,Q]
+[A_0,A_1] &= (2P-I)(2Q-I)-(2Q-I)(2P-I) \\
+&=4(PQ-QP) \\
+&=4[P,Q]
 \end{aligned}
-$$</p>
-<p>所以我们有$[P,Q] = \frac{1}{4}[A_0,A_1]$。所以现在的想法是找一下$[A_0.A_1]$的范围。</p>
+$$<p>所以我们有$[P,Q] = \frac{1}{4}[A_0,A_1]$。所以现在的想法是找一下$[A_0.A_1]$的范围。</p>
 <p>考虑$[A_0,A_1]$的范数（大小），再根据三角不等式，可以得到：
+</p>
 $$
 \begin{aligned}
-|[A_0,A_1]|&amp;=|A_0A_1-A_1A_0| \
-&amp;\leq |A_0A_1|+|A_1A_0| \
-&amp;\leq 2|A_0||A_1|=2
+\|[A_0,A_1]\|&=\|A_0A_1-A_1A_0\| \\
+&\leq \|A_0A_1\|+\|A_1A_0\| \\
+&\leq 2\|A_0\|\|A_1\|=2
 \end{aligned}
-$$</p>
-<p>然后根据$[P,Q] = \frac{1}{4}[A_0,A_1]$，得到：
+$$<p>然后根据$[P,Q] = \frac{1}{4}[A_0,A_1]$，得到：
+</p>
 $$
-|[P.Q]| \leq \frac{1}{2}
-$$</p>
-<p>对于$[P&rsquo;,Q&rsquo;]$的范数也同理小于等于二分之一，所以对于式（35）而言有范数形式：
+\|[P.Q]\| \leq \frac{1}{2}
+$$<p>对于$[P',Q']$的范数也同理小于等于二分之一，所以对于式（35）而言有范数形式：
+</p>
 $$
-|C^2| = 4+16|[P,Q][P&rsquo;,Q&rsquo;]|
-$$</p>
-<p>又因为$|[P.Q][P&rsquo;,Q&rsquo;]|\leq |[P,Q]||[P&rsquo;,Q&rsquo;]|$(三角不等式)，所以：
+\|C^2\| = 4+16\|[P,Q][P',Q']\|
+$$<p>又因为$\|[P.Q][P',Q']\|\leq \|[P,Q]\|\|[P',Q']\|$(三角不等式)，所以：
+</p>
 $$
 \begin{aligned}
-|C^2| &amp;\leq 4+16|[P,Q]||[P&rsquo;,Q&rsquo;]| \
-&amp;\leq 4+16\times\frac{1}{4} \leq 8
+\|C^2\| &\leq 4+16\|[P,Q]\|\|[P',Q']\| \\
+&\leq 4+16\times\frac{1}{4} \leq 8
 \end{aligned}
-$$
-第二个不等式代入了$|[P,Q]| \leq \frac{1}{2}$和$|[P&rsquo;,Q&rsquo;]| \leq \frac{1}{2}$。所以得到了$|C| \leq 2\sqrt{2}$ 这一结论。</p>
+$$<p>
+第二个不等式代入了$\|[P,Q]\| \leq \frac{1}{2}$和$\|[P',Q']\| \leq \frac{1}{2}$。所以得到了$\|C\| \leq 2\sqrt{2}$ 这一结论。</p>
 <p>因为$R = \langle C\rangle$，所以对于R的绝对值有：
+</p>
 $$
-|R| = |\bra{\psi}C\ket{\psi}| \leq |\psi||C\psi| = |C\psi|
+|R| = |\bra{\psi}C\ket{\psi}| \leq \|\psi\|\|C\psi\| = \|C\psi\|
+$$<p>
+上式中不等号是由于施瓦茨不等式$|uv|\leq \|u\|\|v\|$，最后的等号是因为$\ket{\psi}$是单位向量（所以它的模是1）。</p>
+<p>然后通过算符范数的定义：$\|C\|$是拉伸向量的最大的因子<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。由这个定义我们可以得到：
+</p>
 $$
-上式中不等号是由于施瓦茨不等式$|uv|\leq |u||v|$，最后的等号是因为$\ket{\psi}$是单位向量（所以它的模是1）。</p>
-<p>然后通过算符范数的定义：$|C|$是拉伸向量的最大的因子<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。由这个定义我们可以得到：
-$$
-|C| = \sup_{|\psi|=1}{|C\psi|}
-$$
+\|C\| = \sup_{\|\psi\|=1}\{\|C\psi\|\}
+$$<p>
 其中$\sup$是对于所有满足要求的$\psi$找到目标函数的上界。于是对于式（19）有：
+</p>
 $$
-|R| \leq |C\psi| \leq \sup_{|\psi|=1}{|C\psi|}=|C|
-$$</p>
-<p>所以对于$|R|^2$有：
+|R| \leq \|C\psi\| \leq \sup_{\|\psi\|=1}\{\|C\psi\|\}=\|C\|
+$$<p>所以对于$|R|^2$有：
+</p>
 $$
-|R|^2 \leq |C|^2 = |C^2| \leq 8
-$$
+|R|^2 \leq \|C\|^2 = \|C^2\| \leq 8
+$$<p>
 <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
 <p>所以，对于R来说，有$|R| \leq 2\sqrt{2}$。然后根据定义$D = \frac{1}{4}R$，得到总胜率和总败率之间的偏差D的上界是$\frac{\sqrt{2}}{2}$，即：
+</p>
 $$
 D = \frac{1}{4}R \leq \frac{\sqrt{2}}{2}
-$$</p>
-<p>最后我们通过$D = 2w-1$，得到量子情况下，总胜率$w$的上界为：
+$$<p>最后我们通过$D = 2w-1$，得到量子情况下，总胜率$w$的上界为：
+</p>
 $$
-w = \frac{D+1}{2} \leq \frac{\sqrt{2}}{4}+\frac{1}{2} \approx 85%
-$$</p>
-<p>所以可以通过CHSH游戏<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>表明，通过两个距离很远（足以排除以光速进行信息传递）的双方，各自可以访问（可以测量并且操作）一个量子纠缠态的一半，通过合适的测量操作，可以给出比经典最优策略更优的量子策略。因此对于这个游戏的分析表明没有经典的隐变量理论（局域性理论）可以解释量子纠缠所带来的一系列的相关性（一方的测量可以非局域性地影响另一方的测量结果）和后果（比经典更优的策略）。</p>
+w = \frac{D+1}{2} \leq \frac{\sqrt{2}}{4}+\frac{1}{2} \approx 85\%
+$$<p>所以可以通过CHSH游戏<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>表明，通过两个距离很远（足以排除以光速进行信息传递）的双方，各自可以访问（可以测量并且操作）一个量子纠缠态的一半，通过合适的测量操作，可以给出比经典最优策略更优的量子策略。因此对于这个游戏的分析表明没有经典的隐变量理论（局域性理论）可以解释量子纠缠所带来的一系列的相关性（一方的测量可以非局域性地影响另一方的测量结果）和后果（比经典更优的策略）。</p>
 <h2 id="附录">附录
 </h2>
 <h3 id="参考文献">参考文献
@@ -1056,7 +1077,7 @@ $$</p>
 <p>原文注释：详细定义见附录&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>原文注释：上式中$|C|^2 = |C^2|$对于一般的normal算符是成立的（具体证明在附录）&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>原文注释：上式中$\|C\|^2 = \|C^2\|$对于一般的normal算符是成立的（具体证明在附录）&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8">
 <p>原文注释：CHSH游戏是可以在实验上实现的&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -1301,6 +1322,8 @@ $$</p>
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -1320,7 +1343,7 @@ $$</p>
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了24k字·共 12篇文章</br><span><p>
+      共书写了17.2k字·共 13篇文章</br><span><p>
     </section>
 
     <section class="powerby">
@@ -1428,7 +1451,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 src="https://testingcf.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f8be92ae649a8253d1dc85a9497534d061b99b635e540f44300c244af4398f69.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.6e619bb6cd3e0b28c39a05677d11bc0c40a553e33f7623d8a58e10953b2c49f8.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

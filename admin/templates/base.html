@@ -1,34 +1,39 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hugo Admin</title>
   <link rel="stylesheet" href="{{ url_for('static_files', filename='style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+  <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
 </head>
-<body>
-<header>
-  <h1>Hugo Admin</h1>
-  <nav>
-    <a href="{{ url_for('index') }}">主页</a>
-    <a href="{{ url_for('posts') }}">文章列表</a>
-    <a href="{{ url_for('new_post') }}">新建文章</a>
-    <a href="{{ url_for('new_category') }}">新建分类</a>
-    <a href="{{ url_for('preview') }}" target="_blank">预览网站</a>
-  </nav>
-</header>
 
-<main>
-  {% with messages = get_flashed_messages(with_categories=true) %}
+<body>
+  <header>
+    <h1>Hugo Admin</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">主页</a>
+      <a href="{{ url_for('posts') }}">文章列表</a>
+      <a href="{{ url_for('new_post') }}">新建文章</a>
+      <a href="{{ url_for('new_category') }}">新建分类</a>
+      <a href="{{ url_for('preview') }}" target="_blank">预览网站</a>
+    </nav>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-      <ul class="flash">
+    <ul class="flash">
       {% for cat, msg in messages %}
-        <li class="{{ cat }}">{{ msg }}</li>
+      <li class="{{ cat }}">{{ msg }}</li>
       {% endfor %}
-      </ul>
+    </ul>
     {% endif %}
-  {% endwith %}
-  {% block content %}{% endblock %}
-</main>
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
 </body>
+
 </html>

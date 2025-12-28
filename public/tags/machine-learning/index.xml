@@ -53,10 +53,10 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;我们只需要通过一点点的观察和心算就能够发现这组数据中存在的关系是：
+&lt;/p&gt;
 $$
 y = x_1+2x_2
-$$&lt;/p&gt;
-&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。&lt;/p&gt;
+$$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。&lt;/p&gt;
 &lt;p&gt;然后你可以通过一些测试数据来判读这一组系数的好坏（离最优的系数差多远，最优的系数当然是通过每一个数据点，但是实际上并不能很好的做到），最后得到这组数据的最优解，接下来你就可以通过这样的关系来predict不同的input，会有怎么样的output了。就好像天气一样，你可以通过之前每一天的数据来预测之后的数据一样，只不过天气与很多因素有关。&lt;/p&gt;
 &lt;p&gt;所以Regression Method的具体步骤是：&lt;/p&gt;
 &lt;ol&gt;
@@ -107,13 +107,12 @@ $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：&lt;/p&gt;
-&lt;p&gt;$$
+$$
 f(g(x)) =
-\begin{cases}0, &amp;amp; g(x) &amp;lt; \theta \\
-1, &amp;amp; g(x) \geq \theta
+\begin{cases}0, &amp; g(x) &lt; \theta \\\ 
+1, &amp; g(x) \geq \theta
 \end{cases}
-$$&lt;/p&gt;
-&lt;p&gt;有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
+$$&lt;p&gt;有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。&lt;/p&gt;
 &lt;p&gt;首先对于AND逻辑来说：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -152,13 +151,12 @@ $$&lt;/p&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：&lt;/p&gt;
-&lt;p&gt;$$
+$$
 f(g(x)) =
-\begin{cases}0, &amp;amp; g(x) &amp;lt; 2 \\
-1, &amp;amp; g(x) \geq 2
+\begin{cases}0, &amp; g(x) &lt; 2 \\\ 
+1, &amp; g(x) \geq 2
 \end{cases}
-$$&lt;/p&gt;
-&lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。&lt;/p&gt;
+$$&lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。&lt;/p&gt;
 &lt;p&gt;但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？&lt;/p&gt;
 &lt;p&gt;Tips:下次记得分段公式要三条斜杆（调试了一上午）&lt;/p&gt;
 &lt;h2 id=&#34;learning-from-mistakes&#34;&gt;Learning From Mistakes：
@@ -192,16 +190,18 @@ $$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;整个过程可以简化为两个函数$g和f$，一个函数$g$负责做求和操作：
+&lt;/p&gt;
 $$
 g(\vec{x}) = \sum_{i=1}^{n} w_ix_i+b,\quad 其中\vec{x} = (x_1,\dots,x_n)
-$$
+$$&lt;p&gt;
 然后函数f做判断：
+&lt;/p&gt;
 $$
 f(g(x)) =
-\begin{cases}-1, &amp;amp; g(x) &amp;lt; 0 \\
-1, &amp;amp; g(x) \geq 0
+\begin{cases}-1, &amp; g(x) &lt; 0 \\\ 
+1, &amp; g(x) \geq 0
 \end{cases}
-$$
+$$&lt;p&gt;
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;

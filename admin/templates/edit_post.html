@@ -6,4 +6,12 @@
   <textarea name="content" rows="28" spellcheck="false">{{ content }}</textarea>
   <div class="actions"><button type="submit">保存</button></div>
 </form>
+<script>
+  const easyMDE = new EasyMDE({
+    element: document.querySelector('textarea[name="content"]'),
+    spellChecker: false,
+    maxHeight: "500px",
+    status: ["lines", "words", "cursor"],
+  });
+</script>
 {% endblock %}

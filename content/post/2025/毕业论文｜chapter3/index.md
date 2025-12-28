@@ -115,31 +115,39 @@ $$
 1. 首先准备好一个初态$\ket{\Psi_0}=\ket{0}^{\otimes n}\ket{\psi}$，其中$\ket{\psi}=\sum_{j=0}^{2^m-1}\alpha_j\ket{j}$是代表m个qubit的状态，其中j代表不同的长度为m的二进制串的值。
 
 2. 然后对前面n个qubit做Handmard 门操作$H^{\otimes n}\otimes I_m$,得到态$\ket{\Psi_1}$,即：
-   $$
-   \ket{\Psi_1} = (H^{\otimes n}\otimes I_m)(\ket{\Psi_0}) = \frac{1}{2^{\frac{n}{2}}}(\ket{0}+\ket{1})^{\otimes n }\ket{\psi} \\\
-   = \frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\ket{\psi}
-   $$
+  $$
+  \begin{aligned}
+  \ket{\Psi_1} &= (H^{\otimes n}\otimes I_m)(\ket{\Psi_0}) = \frac{1}{2^{\frac{n}{2}}}(\ket{0}+\ket{1})^{\otimes n }\ket{\psi} \\
+               &= \frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\ket{\psi}
+  \end{aligned}
+  $$
 
 3. 对态$\ket{\Psi_1}$做受控U门操作，$U = \sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k$,由此得到态$\ket{\Psi_2}$:
-   $$
-   \ket{\Psi_2} =\sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k(\frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\otimes\ket{\psi}) \\\
-   = \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}\sum_{j=0}^{2^n-1}\ket{k}\delta_{jk}\otimes e^{2\pi ik\theta}\ket{\psi} \\\
-   =\frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}e^{2\pi ij\theta}\ket{j}\otimes \ket{\psi} \\\
-   = \ket{\Phi_2} \otimes\ket{\psi}
-   $$
+  $$
+  \begin{aligned}
+  \ket{\Psi_2} &=\sum_{k=0}^{2^n-1}\ket{k}\bra{k}\otimes U^k\left(\frac{1}{2^{n/2}}\sum_{j = 0}^{2^n-1}\ket{j}\otimes\ket{\psi}\right) \\
+               &= \frac{1}{2^{n/2}}\sum_{k=0}^{2^n-1}\sum_{j=0}^{2^n-1}\ket{k}\delta_{jk}\otimes e^{2\pi ik\theta}\ket{\psi} \\
+               &= \frac{1}{2^{n/2}}\sum_{j=0}^{2^n-1}e^{2\pi ij\theta}\ket{j}\otimes \ket{\psi} \\
+               &= \ket{\Phi_2} \otimes\ket{\psi}
+  \end{aligned}
+  $$
    所以这就由对于纠缠态$\ket{j}\ket{\psi}$的操作，使得$\ket{\psi}$中信息（本征值中的相位），传递到了前一部分的叠加态的振幅当中。
 
 4. 对态$\ket{\Psi_2}$中的$\ket{\Phi_2}$进行大小为N=$2^n$量子傅立叶逆变换（$QFT_{2^n}^{-1}$）,得到态$\ket{\Phi_3}$。量子傅立叶变换为(上式为变换，下式为逆变换)：
-   $$
-   QFT_N \ket{x} = N^{-1/2} \sum_{k=0}^{N-1} e^{\frac{2\pi i}{N} kx} \ket{k} \\\
-   QFT_N^{-1} \ket{k} = N^{-1/2} \sum_{x=0}^{N-1} e^{-\frac{2\pi i}{N} kx} \ket{x}
-   $$
+  $$
+  \begin{aligned}
+  QFT_N \ket{x} &= N^{-1/2} \sum_{k=0}^{N-1} e^{\frac{2\pi i}{N} kx} \ket{k} \\
+  QFT_N^{-1} \ket{k} &= N^{-1/2} \sum_{x=0}^{N-1} e^{-\frac{2\pi i}{N} kx} \ket{x}
+  \end{aligned}
+  $$
    那么对于态$\ket{\Phi_2}$进行$QFT_{2^n}^{-1}$，得到：
-   $$
-   \ket{\Phi_3} = QFT_{2^n}^{-1} \left( \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \ket{j} \right) \\\
-   = \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \left(\frac{1}{2^{n/2}} \sum_{x=0}^{2^n-1} e^{\frac{-2\pi ijx}{2^n}} \ket{x} \right) \\\
-   = \frac{1}{2^{n}} \sum_{j=0}^{2^n -1} \sum_{x=0}^{2^n -1} \exp{\left( 2\pi ij (\theta -\frac{jx}{2^n})\right)} \ket{x}
-   $$
+  $$
+  \begin{aligned}
+  \ket{\Phi_3} &= QFT_{2^n}^{-1} \left( \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \ket{j} \right) \\
+               &= \frac{1}{2^{n/2}} \sum_{j=0}^{2^n - 1} e^{2\pi i j \theta} \left(\frac{1}{2^{n/2}} \sum_{x=0}^{2^n-1} e^{\frac{-2\pi ijx}{2^n}} \ket{x} \right) \\
+               &= \frac{1}{2^{n}} \sum_{j=0}^{2^n -1} \sum_{x=0}^{2^n -1} \exp{\left( 2\pi ij \left(\theta -\frac{jx}{2^n}\right)\right)} \ket{x}
+  \end{aligned}
+  $$
    
 5. 然后对上面的态在计算基$\{\ket{x}\}$测量，测得不同x的概率为：$|c_x|^2$,并且我们定义$2^n \theta = a+2^n \delta$，其中$a$是最接近$2^n\theta$的整数，所以$2^n \delta$要满足$0\leq|2^n\delta|\leq 1/2$(因为，如果a是2.4，那么估计值就是2，误差为0.4,如果a = 2.7，那么估计值为3，误差为0.3，所以$2^n \delta$不会超过0.5)。由于这个定义，$c_x$就变成了：
    $$
@@ -176,10 +184,12 @@ $$
    2. $p_1 =a_0a_1+1,q_1 = a_1$;
 
    3. 对于$i \geq 2$的情况：
-      $$
-      p_i= a_ip_{i-1}+p_{i-2} \\\
-      q_i = a_iq_{i-1}+q_{i-2}
-      $$
+     $$
+     \begin{aligned}
+     p_i &= a_ip_{i-1}+p_{i-2} \\
+     q_i &= a_iq_{i-1}+q_{i-2}
+     \end{aligned}
+     $$
 
 4. 这个收敛值序列的值会越来越接近我们的实数$\alpha$,所以最后我们可以选取符合我们要求的$p_i和q_i$作为我们的$b和c$。
 

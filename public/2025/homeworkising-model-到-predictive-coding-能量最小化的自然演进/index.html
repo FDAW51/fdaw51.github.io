@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/'>
 
-<link rel="stylesheet" href="/scss/style.min.27f98f87ba8fa0710c61fd4182de065b9b07dcc853a5f3272da209117b478a36.css"><meta property='og:title' content="Ising model 到 Predictive Coding-能量最小化的自然演进">
+<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="Ising model 到 Predictive Coding-能量最小化的自然演进">
 <meta property='og:description' content="物理创新实践的课程论文，主要内容如下：简单的介绍了一下Ising model ，对于Ising model的应用从传统的优化问题出发，介绍了模拟退火算法和Quantum Annealing,然后到神经网络的基础理论-Hopfield Theory，最后讲了现代神经科学的一种新的双层范式- Predictive Coding">
 <meta property='og:url' content='http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/'>
 <meta property='og:site_name' content='Eugene'>
@@ -358,6 +358,8 @@
     
     <div class="widget-body">
         <div class="category-list">
+            <div class="category-list-item"><a href="http://localhost:1313/categories/ai/" class="category-list-link">ai<span class="category-list-count">1</a>
+            </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/homewok/" class="category-list-link">homewok<span class="category-list-count">1</a>
             </span></div>
             <div class="category-list-item"><a href="http://localhost:1313/categories/notes/" class="category-list-link">notes<span class="category-list-count">2</a>
@@ -398,7 +400,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">12</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -441,6 +443,10 @@
                 Ising Model
             </a>
         
+            <a href="/tags/machine-learning/" class="font_size_1">
+                Machine Learning
+            </a>
+        
             <a href="/tags/movie/" class="font_size_1">
                 Movie
             </a>
@@ -455,10 +461,6 @@
         
             <a href="/tags/shor%E7%AE%97%E6%B3%95/" class="font_size_1">
                 Shor算法
-            </a>
-        
-            <a href="/tags/simulated-annealing/" class="font_size_1">
-                Simulated Annealing
             </a>
         
     </div>
@@ -526,7 +528,7 @@
 
                 
                 <time class="article-words">
-                    5712 字
+                    1884 字
                 </time>
             </div>
         
@@ -566,8 +568,11 @@
 </li>
 <li>
 <p>哈密顿量 (能量函数)：</p>
-<p>$$H(\sigma) = -\sum_{&lt;i,j&gt;} J_{ij} \sigma_i \sigma_j - \mu \sum_{j} h_j \sigma_j$$</p>
-<ul>
+$$
+   \begin{aligned}
+   H(\sigma) = -\sum_{\langle i,j\rangle} J_{ij} \sigma_i \sigma_j - \mu \sum_{j} h_j \sigma_j
+   \end{aligned}
+   $$<ul>
 <li>其中 $J_{ij}$ 代表每个自旋之间的相互作用强度，$h_j$ 代表外部磁场。第一项是相互作用能，第二项是外部磁场的能量。</li>
 <li>通过这个哈密顿量，就可以研究这个系统的相变过程以及其相变温度Tc。</li>
 </ul>
@@ -591,9 +596,10 @@
 <p>模拟退火算法就是物理学家类比固体退火过程得出的。</p>
 <p>固体在温度比较高的时候，此时固体内部的原子剧烈运动（热运动剧烈的程度与温度相关），逐渐降温（退火过程）整个系统接近平衡，最终就会达到一个平衡态，这个平衡态的能量最低。</p>
 <p>其中，固体在温度T时处于能量E的状态的概率遵循Boltzmann分布：
+</p>
 $$
 P(E) \propto e^{-E/(kT)}
-$$
+$$<p>
 那么物理学家就将这么一个过程类比到一个优化问题：</p>
 <ol>
 <li>将一个物理系统的能量类比为优化问题的目标函数 $f(x)$。</li>
@@ -603,7 +609,7 @@ $$
 </ol>
 <h3 id="具体算法">具体算法：
 </h3>
-<p>对于一个优化问题 $\bold{min}_x f(x)$,f(x)是目标函数。</p>
+<p>对于一个优化问题 $\min_{x} f(x)$，$f(x)$ 是目标函数。</p>
 <p>模拟退火算法的流程如下：</p>
 <ol>
 <li>
@@ -620,9 +626,10 @@ $$
 </li>
 <li>
 <p>若更差（ΔE &gt; 0）：以概率
+</p>
 $$
-P = \exp(-\Delta E / T)
-$$
+     P = \exp(-\Delta E / T)
+     $$<p>
 接受</p>
 </li>
 </ul>
@@ -640,7 +647,7 @@ $$
 </ol>
 <h2 id="3-量子退火算法">3 .量子退火算法
 </h2>
-<p><img src="/Downloads/%e4%b8%8a%e6%b5%b7%e5%a4%a7%e5%ad%a6%e8%af%be%e7%a8%8b%e8%ae%ba%e6%96%87%e6%a8%a1%e6%9d%bf/figures/energy_landscape.png"
+<p><img src="https://henrywang7.com/wp-content/uploads/2014/01/quantum_annealing1.jpg"
 	
 	
 	
@@ -659,58 +666,68 @@ $$
 <blockquote>
 <p>任意NP类型组合优化问题（SAT、Max-Cut、TSP、Partition、QUBO…）
 其目标函数都可以转成 <strong>二值变量的二次型</strong>：
+</p>
 $$
-E(x) = x^T Q x
-$$
-其中 $x_i \in {0,1}$ 或 $x_i=\pm1$。</p></blockquote>
+   E(x) = x^T Q x
+   $$<p>
+其中 $x_i \in \{0,1\}$ 或 $x_i=\pm1$。</p></blockquote>
 <p>而Ising model的哈密顿量：
+</p>
 $$
-H = -\sum_{i&lt;j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
-$$
+H = -\sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
+$$<p>
 可以发现，Ising model中的能量函数与组合优化问题中二值变量的二次型类似，其中自旋的取值为正负1。因此可以通过Ising model 的哈密顿量来表达所有NP类型的组合问题的哈密顿量。</p>
 <h3 id="具体流程">具体流程
 </h3>
 <p>首先我们将目标函数类比为经典Ising model的哈密顿量：<strong>经典 Ising 哈密顿量（目标函数）：</strong>
+</p>
 $$
-H_C = -\sum_{i&lt;j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
-$$
+H_C = -\sum_{i<j} J_{ij} \sigma_i^z \sigma_j^z - \sum_i h_i \sigma_i^z
+$$<p>
 其中：</p>
 <ul>
 <li>$\sigma_i^z$ 是 Pauli Z 矩阵</li>
 <li>自旋向上对应 $s_i = +1$，向下对应 $s_i = -1$</li>
 </ul>
 <p>然后我们加入一个量子涨落（一个外部的扰动/影响），使得整个系统可以进行量子隧穿：
+</p>
 $$
 H_D = -\Gamma \sum_i \sigma_i^x
-$$
+$$<p>
 其中：</p>
 <ul>
 <li>$\sigma_i^x$ 会翻转自旋（量子涨落）</li>
 <li>$\Gamma$ 是横场强度（影响整个系统x方向上的自旋）</li>
 </ul>
 <p>将两个项结合就是总的哈密顿量：
+</p>
 $$
 H(t) = A(t) H_D + B(t) H_C
-$$
+$$<p>
 边界条件：
+</p>
 $$
-A(0)=1,\ B(0)=0 \quad\text{（完全量子）}
-\
-A(T)=0,\ B(T) =1 \quad \text{(完全经典)}
-$$
+\begin{aligned}
+A(0) &= 1,\quad B(0) = 0 && \text{（完全量子）} \\
+A(T) &= 0,\quad B(T) = 1 && \text{（完全经典）}
+\end{aligned}
+$$<p>
 从初始哈密顿量：
+</p>
 $$
 H(0) = H_D
-$$
+$$<p>
 一开始系统的状态为：
+</p>
 $$
 |\psi(0)\rangle = \bigotimes_i \frac{|0\rangle_i + |1\rangle_i}{\sqrt{2}}
-$$
+$$<p>
 也就是 <strong>所有自旋均匀叠加</strong>，完全无偏（这么选择的原因是：这个状态是 $\sigma_x$的本征态，并且这个态可以通过演化到达其他所有的状态，因此就允许了系统在一开始能够对于整个状态空间的量子态进行搜索）。</p>
 <p>最终哈密顿量：
+</p>
 $$
 H(T) = H_C
-$$
+$$<p>
 最终哈密顿量的基态即为优化问题的最优解（因为基态的能量最低，前面将优化问题的目标函数类比为Ising model的能量，那么最优解对应的态自然就是基态）。</p>
 <p>那么现在有1个问题：</p>
 <ol>
@@ -723,9 +740,10 @@ $$
 <blockquote>
 <p>当对于某一个事件而言，若两个神经元之间同时处于激活状态，那么它们之间的连接强度增强。</p></blockquote>
 <p>由此，Hopfield就联想到了物理中的Ising Model：
+</p>
 $$
-E=-\frac{1}{2}\sum_{i,j}J_{ij}\sigma_i\sigma_j
-$$
+ E=-\frac{1}{2}\sum_{i,j}J_{ij}\sigma_i\sigma_j
+$$<p>
 这里不考虑外部影响，只考虑神经元之间的耦合，每个神经元都与其他所有的神经元有连接（这个连接时对称的，即A和B之间的耦合强度 $J_{AB} = J_{BA}$）。</p>
 <p>仅仅用Ising model来解释神经元之间的连接是不够的，还需要解释，一个神经网络是如何学习与回忆的。</p>
 <h3 id="记忆">记忆：
@@ -737,9 +755,10 @@ $$
 <h3 id="学习">学习：
 </h3>
 <p>假设有N个神经元，正在学习某一个方面的内容，接收信息，更新N个神经元之间的连接强度 $W_{ij}$:
+</p>
 $$
 W_{ij}=\frac{1}{N}\sum_{\mu=1}^P\xi_i^\mu\xi_j^\mu
-$$
+$$<p>
 其中i,j 表示不同的神经元。</p>
 <p>Tips:</p>
 <ol>
@@ -752,9 +771,10 @@ $$
 <p>当你完成了对于某一个方面内容的学习，下一次你需要这方面内容的时候，你就需要去回忆&ndash;找到这个记忆&ndash;找到当前记忆空间中的最低谷。</p>
 <p>此时，神经元之间的强度固定（其实应该是减弱的，但是是整体减弱，所以忽略），但是此时你神经元的状态却是随机的，所以回忆的过程是：在记忆空间中，随机地释放小球，让小球寻找记忆的过程。</p>
 <p>举一个具体的例子就是，比如说图片识别，当一个神经网络学会了图像识别，当放一个模糊的照片给神经网络，让其进行识别，那么此时网络就会按照如下的规则来更新每个神经元的状态：
+</p>
 $$
 S_i\leftarrow\mathrm{sign}\left(\sum_jW_{ij}S_j\right)
-$$
+$$<p>
 这个规则要表达的意思其实是将第i个神经元周围所有神经元的状态及其突触连接强度综合起来，去更新其状态。sign函数是一个符号函数，内部结果大于0，则返回1，反之-1。</p>
 <h3 id="问题">问题：
 </h3>
@@ -787,15 +807,14 @@ $$
 <p>在物理学中，系统倾向于演化到能量最低的状态。在这里，我们定义一个目标函数 $F$（即变分自由能的简化形式，在统计学上等价于负对数似然），它衡量了“预测误差”的大小。</p>
 <p>假设高层 $\mathbf{r}$ 通过权重矩阵 $W$ 线性预测低层，预测值为 $\hat{\mathbf{x}} = W\mathbf{r}$。</p>
 <p>此时，预测误差 $\mathbf{e}$ 为：</p>
-<p>$$\mathbf{e} = \mathbf{x} - W\mathbf{r}$$</p>
-<p>为了同时满足“解释数据”和“先验约束（Prior）”，总能量 $F$ 通常被定义为：</p>
-<p>$$
-F = \underbrace{\frac{1}{2} ||\mathbf{x} - W\mathbf{r}||^2}_{\text{Sensory Prediction Error}}</p>
-<ul>
-<li>\underbrace{\frac{\lambda}{2} ||\mathbf{r} - \mathbf{r}_{prior}||^2}_{\text{Prior Prediction Error (Regularization)}}
+$$\mathbf{e} = \mathbf{x} - W\mathbf{r}$$<p>为了同时满足“解释数据”和“先验约束（Prior）”，总能量 $F$ 通常被定义为：</p>
 $$
-为简化讨论，我们暂时忽略先验项，只关注第一项（感觉误差）。</li>
-</ul>
+\begin{aligned}
+F &= \underbrace{\frac{1}{2} \lVert \mathbf{x} - W\mathbf{r} \rVert^2}_{\text{Sensory Prediction Error}} \\
+  &\quad + \underbrace{\frac{\lambda}{2} \lVert \mathbf{r} - \mathbf{r}_{\text{prior}} \rVert^2}_{\text{Prior Prediction Error (Regularization)}}
+\end{aligned}
+$$<p>
+为简化讨论，我们暂时忽略先验项，只关注第一项（感觉误差）。</p>
 <h4 id="2-两个过程推断-inference-与-学习-learning">2. 两个过程：推断 (Inference) 与 学习 (Learning)
 </h4>
 <p>Predictive Coding 的核心在于它将神经网络的运作分为了两个不同时间尺度的动力学过程：<strong>快过程（神经元活动）**和**慢过程（突触可塑性）</strong>。两者都是为了最小化 $F$。</p>
@@ -803,25 +822,18 @@ $$
 </h5>
 <p>当一张图片 $\mathbf{x}$ 输入进来时，权重 $W$ 是固定的。网络需要调整神经元状态 $\mathbf{r}$，使其生成的预测尽可能接近 $\mathbf{x}$。这就是“感知”。</p>
 <p>我们在 $\mathbf{r}$ 空间进行梯度下降：</p>
-<p>$$\dot{\mathbf{r}} = -\frac{\partial F}{\partial \mathbf{r}}$$</p>
-<p>计算梯度：</p>
-<p>$$\frac{\partial F}{\partial \mathbf{r}} = \frac{\partial}{\partial \mathbf{r}} \left( \frac{1}{2} (\mathbf{x} - W\mathbf{r})^T (\mathbf{x} - W\mathbf{r}) \right) = -(\mathbf{x} - W\mathbf{r})^T W = -\mathbf{e}^T W$$</p>
-<p>所以，神经元的动力学方程为：</p>
-<p>$$\dot{\mathbf{r}} = W^T \mathbf{e}$$</p>
-<blockquote>
+$$\dot{\mathbf{r}} = -\frac{\partial F}{\partial \mathbf{r}}$$<p>计算梯度：</p>
+$$\frac{\partial F}{\partial \mathbf{r}} = \frac{\partial}{\partial \mathbf{r}} \left( \frac{1}{2} (\mathbf{x} - W\mathbf{r})^T (\mathbf{x} - W\mathbf{r}) \right) = -(\mathbf{x} - W\mathbf{r})^T W = -\mathbf{e}^T W$$<p>所以，神经元的动力学方程为：</p>
+$$\dot{\mathbf{r}} = W^T \mathbf{e}$$<blockquote>
 <p><strong>物理直觉：</strong> 这是一个<strong>局部计算</strong>。误差 $\mathbf{e}$ 在底层计算出来，通过转置矩阵 $W^T$（反馈连接）传回高层，驱动 $\mathbf{r}$ 改变，直到预测误差最小化（即 $\dot{\mathbf{r}} \to 0$）。</p></blockquote>
 <h5 id="b-慢过程突触权重更新-learning">B. 慢过程：突触权重更新 (Learning)
 </h5>
 <p>这是你最关心的部分。当我们推断出较好的 $\mathbf{r}$ 后（或者在推断的同时），我们需要更新突触权重 $W$，以便下次能更准地预测。</p>
 <p>我们在参数 $W$ 空间进行梯度下降：</p>
-<p>$$\dot{W} = -\mu \frac{\partial F}{\partial W}$$</p>
-<p>其中 $\mu$ 是学习率。计算梯度：</p>
-<p>$$\frac{\partial F}{\partial W} = -(\mathbf{x} - W\mathbf{r}) \mathbf{r}^T = -\mathbf{e} \mathbf{r}^T$$</p>
-<p>所以，权重的更新规则为：</p>
-<p>$$\Delta W \propto \mathbf{e} \cdot \mathbf{r}^T$$</p>
-<p>或者写成张量形式（针对单个权重 $w_{ij}$）：</p>
-<p>$$\Delta w_{ij} \propto e_i \cdot r_j$$</p>
-<h4 id="pc与hopfield-神经网络的区别">PC与Hopfield 神经网络的区别：
+$$\dot{W} = -\mu \frac{\partial F}{\partial W}$$<p>其中 $\mu$ 是学习率。计算梯度：</p>
+$$\frac{\partial F}{\partial W} = -(\mathbf{x} - W\mathbf{r}) \mathbf{r}^T = -\mathbf{e} \mathbf{r}^T$$<p>所以，权重的更新规则为：</p>
+$$\Delta W \propto \mathbf{e} \cdot \mathbf{r}^T$$<p>或者写成张量形式（针对单个权重 $w_{ij}$）：</p>
+$$\Delta w_{ij} \propto e_i \cdot r_j$$<h4 id="pc与hopfield-神经网络的区别">PC与Hopfield 神经网络的区别：
 </h4>
 <p>Hopfield 神经网络中的神经元是局部的，它只关心他和邻居有没有同时处于激活状态，但是不知道整体网络的目标是什么？（例如：这张图是不是猫？），所以当这个网络变深之后，就不知道哪个神经元应该为错误的输出负责，去纠正错误。</p>
 <p>现代深度学习使用反向传播解决了这个谁应该为错误负责的问题。具体是这样：比如当我们在做图像识别的时候，当我识别出的图片与目标图片存在偏差的时候，这时候计算出一个损失函数，这个损失函数通过反向传播可以看到谁对这个偏差的影响更大，此时通过调整对应的神经元即可修正这个偏差。但是问题是，大脑中并没有这种误差传导通路。</p>
@@ -1080,6 +1092,8 @@ $$
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -1099,7 +1113,7 @@ $$
             2020 - 
         
         2025 <a href="https://quantum51.top/">Eugene</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了24k字·共 12篇文章</br><span><p>
+      共书写了17.2k字·共 13篇文章</br><span><p>
     </section>
 
     <section class="powerby">
@@ -1207,7 +1221,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 src="https://testingcf.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f8be92ae649a8253d1dc85a9497534d061b99b635e540f44300c244af4398f69.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.6e619bb6cd3e0b28c39a05677d11bc0c40a553e33f7623d8a58e10953b2c49f8.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
