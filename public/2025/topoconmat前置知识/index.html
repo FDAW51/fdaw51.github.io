@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
-<title>AI|Why Machines Learn?</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Band Structure Theory 拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。\n">
+<title>前置知识</title>
 
-<link rel='canonical' href='http://localhost:1313/2025/aiwhy-machines-learn/'>
+<link rel='canonical' href='http://localhost:1313/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="AI|Why Machines Learn?">
-<meta property='og:description' content="">
-<meta property='og:url' content='http://localhost:1313/2025/aiwhy-machines-learn/'>
+<link rel="stylesheet" href="/scss/style.min.bf18fcf82a2a97e4fbb4488930b6ea063f27919af0927ef975c6016a66292846.css"><meta property='og:title' content="前置知识">
+<meta property='og:description' content="Band Structure Theory 拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。\n">
+<meta property='og:url' content='http://localhost:1313/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/'>
 <meta property='og:site_name' content='Eugene'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='machine learning' /><meta property='article:published_time' content='2025-04-19T09:34:28&#43;08:00'/><meta property='article:modified_time' content='2025-04-19T09:34:28&#43;08:00'/>
-<meta name="twitter:title" content="AI|Why Machines Learn?">
-<meta name="twitter:description" content=""><style>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-28T22:16:20&#43;08:00'/><meta property='article:modified_time' content='2025-12-28T22:16:20&#43;08:00'/>
+<meta name="twitter:title" content="前置知识">
+<meta name="twitter:description" content="Band Structure Theory 拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。\n"><style>
     :root {
         --article-font-family: "Noto Serif SC", var(--base-font-family);
     }
@@ -296,13 +296,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#chapter1deseperatly-seeking-pattern">Chapter1:Deseperatly seeking pattern</a>
-      <ol>
-        <li><a href="#从现象出发">从现象出发</a></li>
-        <li><a href="#神经元的逻辑化">神经元的逻辑化</a></li>
-      </ol>
-    </li>
-    <li><a href="#learning-from-mistakes">Learning From Mistakes：</a></li>
+    <li><a href="#电子的量子力学">电子的量子力学：</a></li>
+    <li><a href="#tight-binding-model">Tight Binding Model</a></li>
+    <li><a href="#bloch-theorem-for-bulk-electrons">Bloch Theorem For Bulk Electrons</a></li>
+    <li><a href="#kp-perturbation-theory">k.p Perturbation Theory</a></li>
   </ol>
 </nav>
         </div>
@@ -440,8 +437,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/ai/" >
-                AI
+            <a href="/categories/topoconmat/" style="background-color: #e76f51; color: #000000;">
+                TopoConMat
             </a>
         
     </header>
@@ -449,13 +446,9 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/2025/aiwhy-machines-learn/">AI|Why Machines Learn?</a>
+            <a href="/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/">前置知识</a>
         </h2>
     
-        
-        <h3 class="article-subtitle">
-            &lt;Why machines learn这本书的笔记&gt;
-        </h3>
         
     </div>
 
@@ -475,7 +468,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 19, 2025</time>
+                <time class="article-time--published">Dec 28, 2025</time>
             </div>
         
 
@@ -491,7 +484,7 @@
 
                 
                 <time class="article-words">
-                    3186 字
+                    2322 字
                 </time>
             </div>
         
@@ -506,232 +499,204 @@
     <section class="article-content">
     
     
-    <h1 id="why-machines-learn">Why machines learn？
+    <h1 id="band-structure-theory">Band Structure Theory
 </h1>
-<h2 id="chapter1deseperatly-seeking-pattern">Chapter1:Deseperatly seeking pattern
+<p>拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。</p>
+<p>首先，固体中的电子波函数遵循量子力学且受晶格周期性的影响（对称性也有）。</p>
+<h2 id="电子的量子力学">电子的量子力学：
 </h2>
-<h3 id="从现象出发">从现象出发
-</h3>
-<p>这里面的pattern其实就是数据中某种模式特征，打个比方，每一个人对于每一年每一个季度的天气的理解和判断，都是基于一段时间（几年）的生活，通过观察每一年的天气（数据），然后得出一些经验（特征）。</p>
-<p>然而令人惊讶的是，小小的鸭苗在没有父母的帮助下，也可以从运动的物体中找到一定的规律，这些规律可以是相似之处，也可以是不同之处，比如，小鸭苗如果看见有5个黑鸭苗和2个白鸭苗的队伍，它会知道自己是黑的还是白的，并且知道黑色和白色的差别，最后他会加入到其中一个队伍里面。</p>
-<p>这就是令人惊讶的动物的学习能力。在早些年，就有科学家提出“动物（人）是怎么学习的”这一问题，他们就想到先从学习数据中的特征入手，于是就有科学家开发了Perceptron（感知机）来模拟人类的思考。当你给这个感知机下面这些数据的时候：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>$x_1$</th>
-          <th>$x_2$</th>
-          <th>$y$</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>4</td>
-          <td>2</td>
-          <td>8</td>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>5</td>
-      </tr>
-      <tr>
-          <td>0</td>
-          <td>5</td>
-          <td>10</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>1</td>
-          <td>4</td>
-      </tr>
-  </tbody>
-</table></div>
-<p>我们只需要通过一点点的观察和心算就能够发现这组数据中存在的关系是：
+<p>量子力学的基本方程是薛定谔方程：
 </p>
 $$
-y = x_1+2x_2
-$$<p>而对于现在的机器而言无非就是一个Regression算法，这个算法的意思是：你给他很多的train data（有input和output），然后它会通过学习这些数据来给出这些量之间的线性关系（$y =w_1x_1+w_2x_2+b$），也就是学习得到 $w_1,w_2$(系数，weight)以及偏差（截距）。</p>
-<p>然后你可以通过一些测试数据来判读这一组系数的好坏（离最优的系数差多远，最优的系数当然是通过每一个数据点，但是实际上并不能很好的做到），最后得到这组数据的最优解，接下来你就可以通过这样的关系来predict不同的input，会有怎么样的output了。就好像天气一样，你可以通过之前每一天的数据来预测之后的数据一样，只不过天气与很多因素有关。</p>
-<p>所以Regression Method的具体步骤是：</p>
-<ol>
-<li>给他一定的训练数据，并且指定一开始的 $w_1,w2，b$</li>
-<li>然后计算这一组的系数所给出的output $y_{predict}和y_{train}$之间的差距，然后通过这个差距反过来调节系数</li>
-<li>不断的执行，直到这个差距小到我们的要求为止</li>
-</ol>
-<h3 id="神经元的逻辑化">神经元的逻辑化
-</h3>
-<p>言归正传（Regression后面还会系统的说明），我们也许可以通过理解机器是怎么学习的来完全理解人类是怎么学习的（这里我的理解是我们可以在让机器逐步学会学习的过程中，不断地深化我们对于自己学习过程的理解）。</p>
-<p>19世纪，图灵等科学家就认为logic和computation之间有很深厚的联系，他们断言“所有的计算都可以被简化为某种逻辑”。然后就引出了这样一个问题：既然人脑是可以执行计算的，那么它是怎么样执行逻辑操作的（它底层是否像逻辑门一样呢？）。</p>
-<p>带着这样的问题，有生物学家通过类比一个神经元：<img src="/2025/aiwhy-machines-learn/1.png"
-	width="948"
-	height="421"
-	srcset="/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, /2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w"
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="225"
-		data-flex-basis="540px"
-	
-></p>
-<p>图中Dendrites就是神经元的树突，它负责接受各种刺激，树突中间的就是细胞体，他可以处理树突接受到的刺激（相当于进行计算），然后Axon（轴突）负责转递细胞体的结果到Axon terminals（端粒），端粒在将这个结果传递给周边其他的神经元。</p>
-<p>然后生物学家希望把这一机构转化为一个简单的计算模型，理由是：他很像一个机器，你给他一个输入（刺激），他就会给输出。因此他们想要通过类比用神经元来构建逻辑AND，OR操作。</p>
-<p>他们首先将这个神经元定义为这个样子：</p>
-<p><img src="/2025/aiwhy-machines-learn/2.png"
-	width="974"
-	height="382"
-	srcset="/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, /2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w"
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="254"
-		data-flex-basis="611px"
-	
-></p>
-<p>上图的左侧就是给神经元的输入，然后中间的g，f就代表的是神经元对于输入的处理，然后再到右侧的输入y（其实我们可以在g，f的中间再加一个传输的过程，就是将g的处理结果传输到下一个f神经元处）。</p>
-<p>然后这里假设 $x_1，x_2 \in {0,1}$,并且神经元会这样处理输入：</p>
-<ol>
-<li>
-<p>Sum  = x1+x2</p>
-</li>
-<li>
-<p>If  $Sum\geq \theta :y=1$</p>
-<p>else:y = 0</p>
-</li>
-</ol>
-<p>所以这里我们就可以认为g其实就是对输入做了一个加法，而f函数就是对g的输出做了一个判断，但是这个 $\theta$要根据具体的情况而定的（这也是人脑的神秘之处），这一整个可以表示为：</p>
+i \hbar \frac { \partial \Psi } { \partial t } = H \Psi
+$$<p>
+其中 $\Psi$是电子的波函数，H是电子的哈密顿量（能量函数）。</p>
+<p>电子的H即它的能量为：
+</p>
 $$
-f(g(x)) =
-\begin{cases}0, & g(x) < \theta \\\ 
-1, & g(x) \geq \theta
-\end{cases}
-$$<p>有了这样的前提，我们就可以来设计基础的布尔逻辑门的操作了。</p>
-<p>首先对于AND逻辑来说：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>x1</th>
-          <th>x2</th>
-          <th>sum</th>
-          <th>x1 And x2</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>1</td>
-          <td>2</td>
-          <td>1</td>
-      </tr>
-  </tbody>
-</table></div>
-<p>我们可以看到这么一个逻辑对于Sum小于等于1的输出都是0，而大于1的就是1，所以我们要神经元完成这个逻辑只需要将 $\theta = 2$ ,得到：</p>
+H = \frac{p^2}{2m} + V(x)
+$$<p>
+其中p为电子的动量，V(x)为电子在环境中所受的势能。</p>
+<p>电子的波函数为 $\Psi(x,t)$ ,需要注意以下几点：</p>
+<ol>
+<li>波函数是一个Complex Number。</li>
+<li>H是Hermitian的（$H^{\dagger} = H = \left( (H)^{T} \right)^{*}$）</li>
+<li>$| \Psi | ^ { 2 } = \Psi ^ { * } \Psi \propto n _ { e }$（$n_e$ 表示电子的密度）</li>
+<li>如果有N个电子，这N个电子的系统的波函数：$\Psi_N = \psi_1 \otimes \psi_2 \otimes \psi_3 \otimes \cdots \otimes \psi_N$，并且其中任意两个波函数之间都是正交的（$\langle \psi_i | \psi_j \rangle = \delta_{ij}$）&mdash;这是由Pauli不相容原则保证的（Pauli 不相容原则：不可能存在两个处于相同状态的电子。）</li>
+</ol>
+<p>如果假设电子的波函数满足：
+</p>
 $$
-f(g(x)) =
-\begin{cases}0, & g(x) < 2 \\\ 
-1, & g(x) \geq 2
-\end{cases}
-$$<p>对于OR逻辑操作也是同理，读者可以自行一试（答案是 $\theta=1$）。</p>
-<p>但是这里有一个比较有意思的问题：但神经元需要处理不同种类的逻辑的时候，他是如何调整这个 $\theta$的值呢？</p>
-<p>Tips:下次记得分段公式要三条斜杆（调试了一上午）</p>
-<h2 id="learning-from-mistakes">Learning From Mistakes：
+\Psi(x,t) = \sum_n e^{-i \frac{E_n t}{\hbar}} \psi_n(x)
+$$<p>
+代入薛定谔方程得到定态薛定谔方程：
+</p>
+$$
+H\psi_n(x) = E_n\psi_n(x)
+$$<p>
+如果把H看成矩阵的话，$\psi_n$是H的特征值为En的特征向量，$E_n$是H的本征值。</p>
+<h2 id="tight-binding-model">Tight Binding Model
 </h2>
-<p>我们常说，要从失败中汲取教训，这句话对于早期的Machine来说有所表现。早期Rosenblatt和Nagy 开发出的Mark I神经网络模型（就是根据前面的神经元模型建造的，这个名字让我想起Severance的Mark 🤣），这个模型能够识别图片的字母（20*20像素的图片）。但是据我们所知，光学识别系统也可以完成一样的工作，那么我们可以说它们是等价的吗？</p>
-<p>不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。</p>
-<p><strong>光学系统识别图片上的字母</strong>（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。</p>
-<p>而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。</p>
-<p>那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：<img src="/2025/aiwhy-machines-learn/4.png"
-	width="1444"
-	height="570"
-	srcset="/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, /2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w"
-	loading="lazy"
-	
-		alt="截屏2025-05-20 20.10.37"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="253"
-		data-flex-basis="608px"
-	
-></p>
-<p>它的过程是这样的：</p>
-<ol>
-<li>
-<p>首先计算 $Sum = w_1x_1+w_2x_2+b$，</p>
-</li>
-<li>
-<p>然后 If:  $Sum \leq 0 : y = 1$ ;</p>
-<p>​	Else:   y  =-1.</p>
-</li>
-</ol>
-<p>整个过程可以简化为两个函数$g和f$，一个函数$g$负责做求和操作：
+<p>如果将固体内的电子当成主体的话，近自由电子模型将电子看作在整个晶格中自由奔跑的平面波。</p>
+<p>紧束缚模型将电子在整个晶体中的波函数 $\psi_k(r)$看作在某一个原子附近的运动与不同原子之间的运动（平面波）的叠加：
 </p>
 $$
-g(\vec{x}) = \sum_{i=1}^{n} w_ix_i+b,\quad 其中\vec{x} = (x_1,\dots,x_n)
+\psi_{\mathbf{k}}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}  e^{i \mathbf{k} \cdot \mathbf{R}} \phi(\mathbf{r} - \mathbf{R})
 $$<p>
-然后函数f做判断：
+其中 $e^{i\mathbf{k\cdot R}}$是电子在原子间的周期性运动。这个周期性运动是由晶格的平移对称性保证的（平移对称性使得动量守恒，所以电子的波函数在原子间像一个自由的平面波， $p = \hbar k$，即波矢不变）。</p>
+<p>那么电子在原子附近(在某一个原子中)的运动如何表达呢？ $\phi$</p>
+<p>单原子附近有许多离散的轨道（如1s,2p等），TBM（Tight binding mode）假设电子在原子轨道内并不动，但是它有可能跳跃到相邻的轨道内。</p>
+<p>通过求解电子在单原子内部的定态薛定谔方程，得到原子内轨道 $\{\ket{\psi_a}\}$,不同的下标a代表不同的轨道的电子波函数，在不同的轨道内电子的能量为 $E_a$。这些轨道构成了一组正交完备集，满足：
 </p>
 $$
-f(g(x)) =
-\begin{cases}-1, & g(x) < 0 \\\ 
-1, & g(x) \geq 0
-\end{cases}
+\left\{
+\begin{array}{l}
+\langle \psi_a | \psi_b \rangle = \delta_{ab} \\
+\sum\limits_a | \psi_a \rangle \langle \psi_a | = I
+\end{array}
+\right.
 $$<p>
-我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：</p>
-<p>如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：</p>
-<p><img src="/2025/aiwhy-machines-learn/5.png"
-	width="767"
-	height="586"
-	srcset="/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, /2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w"
+那么对于任意的波函数 $\ket{\psi}$和H都可以展开成：
+</p>
+$$
+|\psi\rangle = \sum_a c_a |\psi_a\rangle
+$$<p>
+</p>
+$$
+H = \sum_{ab} H_{ab} |a\rangle\langle b|
+$$<p>其中 $H_{ab} = \langle \psi_a | H | \psi_b \rangle$，表示H在这组基下的矩阵元。</p>
+<p>Example：三角形的原子</p>
+<p>假设电子运动在三个原子之间，每个原子都有一个轨道，记为： $\ket{0},\ket{1},\ket{2}$。首先电子的哈密顿量（能量是多少？），TBM假设了电子是在轨道之间跳跃，电子跳跃在原子之间就会形成化学键，形成化学键之后结构更稳定，体系的能量就越低。那么H可写为：
+</p>
+$$
+H = -t \left( |0\rangle\langle 1| + |1\rangle\langle 2| + |2\rangle\langle 0| \right) + \text{h.c.}
+$$<p>
+前面这个-t（t是一个跳跃的系数，负号为了保证电子发生跳跃的时候，系统的能量降低。）这一项代表了，电子从1跳到0，0跳到2，2跳到1，顺时针的情况，那么后面的h.c代表的就是逆时针的跳跃可能性（为了保证H的厄米性）</p>
+<p>其中 $\ket{0}\bra{1}$为什么代表了电子从1跳到0呢？，解释如下：</p>
+<p>如果此时电子处于轨道1（$\ket{1}$），将这一项作用上去有：
+</p>
+$$
+|0\rangle\langle1|1\rangle = |0\rangle
+$$<p>
+即输入是1，而输出的是0轨道，因此表示电子从1跳到0。</p>
+<h2 id="bloch-theorem-for-bulk-electrons">Bloch Theorem For Bulk Electrons
+</h2>
+<p>有了上面的TBM的基础之后，我们将记号变得紧凑一些。</p>
+<p>在固体物理中，晶格是可以由原胞通过周期性平移得到的。</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/219/2016/08/09045711/CNX_Chem_10_06_UnitCell1.jpg"
+	
+	
+	
 	loading="lazy"
 	
-		alt="截屏2025-05-20 20.13.09"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="130"
-		data-flex-basis="314px"
 	
 ></p>
-<p>​      我们可以看到，Mark I在学习如何将这样的数据集分成两部分，即学习数据中的某种规律（学习这条separating line 的slope和bias），但是这样分类的学习有一定的前提：</p>
-<ol>
-<li>我们所提供的数据集是可以分的</li>
-</ol>
-<p>并且这种通过training data学习到的分类模型，在面对不在training data里面的数据的时候并不能100%地做出正确的分类，这是因为，我们可以看到上图中，三角形所在的区域和圆形所在的区域之间存在很多条可以区分训练数据的直线，所以仅仅通过训练数据来训练这个分类模型是不够的，它还得用一些testing data来进行反馈（这里很像人，人在看了很久的书之后，你要让他在新的环境下去实践，才会提高人对于这本书的掌握。）</p>
-<p>所以Learning from  mistake 还是有一定部分从人类角度的启发的。并且我们可以看到上面神经元最后的输出其实可以是任意的数，那就使得这个神经元可以做的事情很多了</p>
-<p>本文原载于 <a class="link" href="https://quantum51.top"  target="_blank" rel="noopener"
-    >quantum51.top</a>，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。</p>
+<p>Bloch Theorem给出，电子在整个晶格中的波函数可以写成原胞之间的平面波和在单个原胞内行为的叠加：
+</p>
+$$
+\psi_{(l,n)} = e^{i k n} \cdot u_l
+$$<p>
+$(l,n)$表示在第n个原胞内的电子在轨道l上的波函数（这里表示的是1维晶格的情况，可以把这个拓展到3维的情况，kn&ndash;&gt; $\mathbf{k\cdot R_n}$,其中 $R_n = p\mathbf{a}+q\mathbf{b}+r\mathbf{c}$, a,b,c代表构成晶格原胞的基矢量）</p>
+<p>k表示电子在晶体中的动量，范围是 $[-\pi,\pi]$，这个范围在晶格的倒空间中表示一个布里渊区。</p>
+<p>那么在这个表示下的H的矩阵元为：
+</p>
+$$
+H_{(l,m),(l',n)}= H_{(l,m-n),(l',0)}
+$$<p>
+为什么这是成立的呢？因为晶格的周期性平移的特点，第二个参数m描述的是在第m个原胞上，所有的原胞在某种意义上等价。</p>
+<p>首先实空间的波函数满足的定态薛定谔方程为：
+</p>
+$$
+\sum_{l', m} H_{(l,n), (l',m)} \psi_{(l',m)} = E \psi_{(l,n)}
+$$<p>
+代入bloch 定理下的波函数：
+</p>
+$$
+\psi_{(l,n)} = e^{ikn} u_l(k)
+$$<p>
+消去因子：
+</p>
+$$
+\sum_{l', m} H_{(l,n), (l',m)} e^{ik(m-n)} u_{l'}(k) = E(k) u_l(k)
+$$<p>
+整理求和项：
+</p>
+$$
+\sum_{l'} \left[ \sum_{m} H_{(l,n), (l',m)} e^{ik(m-n)} \right] u_{l'}(k) = E(k) u_l(k)
+$$<p>
+根据平移不变的假设：
+</p>
+$$
+H_{(l,n), (l',m)} = H_{(l, n-m), (l', 0)}
+$$<p>
+可以得到：
+</p>
+$$
+H(k)_{ll'} = \sum_{m} H_{(l,-m), (l',0)} e^{-ikm}
+$$<p>
+最后的形式是：
+</p>
+$$
+\sum_{l'} H(k)_{ll'} u_{l'}(k) = E(k) u_l(k)
+$$<p>
+矩阵形式：
+</p>
+$$
+H(k) u(k) = E(k) u(k)
+$$<p>Example：SSH model</p>
+<h2 id="kp-perturbation-theory">k.p Perturbation Theory
+</h2>
+<p>对于在倒空间的H(k)，如果只关心k = 0 附近的能量，或者Energy Gap（Energy Gap是定义在价带与导带之间的最小间隔）</p>
+<p>可以对H(k)在 k = 0 附近做Taylor expansion：
+</p>
+$$
+H(k) \approx \underbrace{H(k=0)}_{H_0(k)} + \underbrace{k H'(k=0) + \frac{k^2}{2} H''(k=0)}_{\text{Perturbation } V(k)}
+$$<p>
+通过量子力学中的微扰论可以得到。</p>
+<p>能量的一阶微扰修正是：
+</p>
+$$
+E_1^{(n)} = \langle n | V(k) | n \rangle
+$$<p>
+二阶微扰为：
+</p>
+$$
+E_{2}^{(n)}(k) = \sum_{m \neq n} \frac{|\langle n | V | m \rangle|^{2}}{E_{0}^{(n)} - E_{0}^{(m)}}
+$$<p>
+得出第n个本征态的能量为：
+</p>
+$$
+E^{(n)}(k=0) \approx E_0^{(n)}(k=0) + \langle n | V(k=0) | n \rangle +\sum_{m \neq n} \frac{|\langle n | V | m \rangle|^{2}}{E_{0}^{(n)} - E_{0}^{(m)}}
+$$<p>
+后面两项分别是1阶和2阶微扰。</p>
+<p>在k = 0 处，电子波包在晶体中传播的速度为 $\mathbf{v}_g(\mathbf{k})$:
+</p>
+$$
+\mathbf{v}_g(\mathbf{k}) = \frac{1}{\hbar} \nabla_{\mathbf{k}} E(\mathbf{k})
+$$<p>
+以及电子波包的有效质量 $m^*$:
+</p>
+$$
+\left( \frac{1}{m^*} \right)_{ij} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_i \partial k_j}
+$$<p>
+代入对应的E，可以得到电子在第n个能级的传播速度 $v_n$ 和有效质量($m_n$)：
+</p>
+$$
+V_n = \partial_k E^{(n)}(k) \big|_{k=0} = \langle n | H'(k=0) | n \rangle
+$$<p>
+$$
+m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&rsquo;&rsquo;(k=0) | n \rangle</p>
+<ul>
+<li>2 \sum_{m \neq n} \frac{|\langle n | H&rsquo; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
+<br>
+$$</li>
+</ul>
 
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/machine-learning/">Machine Learning</a>
-        
-    </section>
-
 
     
     <section class="article-copyleft">
