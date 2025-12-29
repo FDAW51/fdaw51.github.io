@@ -196,15 +196,9 @@ $$&lt;p&gt;
 &lt;/p&gt;
 $$
 V_n = \partial_k E^{(n)}(k) \big|_{k=0} = \langle n | H&#39;(k=0) | n \rangle
-$$&lt;p&gt;
-$$
-m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&amp;rsquo;&amp;rsquo;(k=0) | n \rangle&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2 \sum_{m \neq n} \frac{|\langle n | H&amp;rsquo; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
-&lt;br&gt;
-$$&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+$$$$
+m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&#39;&#39;(k=0) | n \rangle + 2 \sum_{m \neq n} \frac{|\langle n | H&#39; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
+$$</description>
         </item>
         
     </channel>

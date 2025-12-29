@@ -192,9 +192,8 @@ $$
 $$
 V_n = \partial_k E^{(n)}(k) \big|_{k=0} = \langle n | H'(k=0) | n \rangle
 $$
+
 $$
-m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H''(k=0) | n \rangle 
-+ 2 \sum_{m \neq n} \frac{|\langle n | H' | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
-\
+m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H''(k=0) | n \rangle + 2 \sum_{m \neq n} \frac{|\langle n | H' | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
 $$
 

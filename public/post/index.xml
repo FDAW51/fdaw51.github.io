@@ -2,16 +2,215 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Eugene</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://quantum51.top/post/</link>
         <description>Recent content in Posts on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 25 Nov 2025 17:40:16 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 28 Dec 2025 22:16:20 +0800</lastBuildDate><atom:link href="https://quantum51.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>前置知识</title>
+        <link>https://quantum51.top/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
+        <pubDate>Sun, 28 Dec 2025 22:16:20 +0800</pubDate>
+        
+        <guid>https://quantum51.top/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
+        <description>&lt;h1 id=&#34;band-structure-theory&#34;&gt;Band Structure Theory
+&lt;/h1&gt;
+&lt;p&gt;拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。&lt;/p&gt;
+&lt;p&gt;首先，固体中的电子波函数遵循量子力学且受晶格周期性的影响（对称性也有）。&lt;/p&gt;
+&lt;h2 id=&#34;电子的量子力学&#34;&gt;电子的量子力学：
+&lt;/h2&gt;
+&lt;p&gt;量子力学的基本方程是薛定谔方程：
+&lt;/p&gt;
+$$
+i \hbar \frac { \partial \Psi } { \partial t } = H \Psi
+$$&lt;p&gt;
+其中 $\Psi$是电子的波函数，H是电子的哈密顿量（能量函数）。&lt;/p&gt;
+&lt;p&gt;电子的H即它的能量为：
+&lt;/p&gt;
+$$
+H = \frac{p^2}{2m} + V(x)
+$$&lt;p&gt;
+其中p为电子的动量，V(x)为电子在环境中所受的势能。&lt;/p&gt;
+&lt;p&gt;电子的波函数为 $\Psi(x,t)$ ,需要注意以下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;波函数是一个Complex Number。&lt;/li&gt;
+&lt;li&gt;H是Hermitian的（$H^{\dagger} = H = \left( (H)^{T} \right)^{*}$）&lt;/li&gt;
+&lt;li&gt;$| \Psi | ^ { 2 } = \Psi ^ { * } \Psi \propto n _ { e }$（$n_e$ 表示电子的密度）&lt;/li&gt;
+&lt;li&gt;如果有N个电子，这N个电子的系统的波函数：$\Psi_N = \psi_1 \otimes \psi_2 \otimes \psi_3 \otimes \cdots \otimes \psi_N$，并且其中任意两个波函数之间都是正交的（$\langle \psi_i | \psi_j \rangle = \delta_{ij}$）&amp;mdash;这是由Pauli不相容原则保证的（Pauli 不相容原则：不可能存在两个处于相同状态的电子。）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果假设电子的波函数满足：
+&lt;/p&gt;
+$$
+\Psi(x,t) = \sum_n e^{-i \frac{E_n t}{\hbar}} \psi_n(x)
+$$&lt;p&gt;
+代入薛定谔方程得到定态薛定谔方程：
+&lt;/p&gt;
+$$
+H\psi_n(x) = E_n\psi_n(x)
+$$&lt;p&gt;
+如果把H看成矩阵的话，$\psi_n$是H的特征值为En的特征向量，$E_n$是H的本征值。&lt;/p&gt;
+&lt;h2 id=&#34;tight-binding-model&#34;&gt;Tight Binding Model
+&lt;/h2&gt;
+&lt;p&gt;如果将固体内的电子当成主体的话，近自由电子模型将电子看作在整个晶格中自由奔跑的平面波。&lt;/p&gt;
+&lt;p&gt;紧束缚模型将电子在整个晶体中的波函数 $\psi_k(r)$看作在某一个原子附近的运动与不同原子之间的运动（平面波）的叠加：
+&lt;/p&gt;
+$$
+\psi_{\mathbf{k}}(\mathbf{r}) = \frac{1}{\sqrt{N}} \sum_{\mathbf{R}}  e^{i \mathbf{k} \cdot \mathbf{R}} \phi(\mathbf{r} - \mathbf{R})
+$$&lt;p&gt;
+其中 $e^{i\mathbf{k\cdot R}}$是电子在原子间的周期性运动。这个周期性运动是由晶格的平移对称性保证的（平移对称性使得动量守恒，所以电子的波函数在原子间像一个自由的平面波， $p = \hbar k$，即波矢不变）。&lt;/p&gt;
+&lt;p&gt;那么电子在原子附近(在某一个原子中)的运动如何表达呢？ $\phi$&lt;/p&gt;
+&lt;p&gt;单原子附近有许多离散的轨道（如1s,2p等），TBM（Tight binding mode）假设电子在原子轨道内并不动，但是它有可能跳跃到相邻的轨道内。&lt;/p&gt;
+&lt;p&gt;通过求解电子在单原子内部的定态薛定谔方程，得到原子内轨道 $\{\ket{\psi_a}\}$,不同的下标a代表不同的轨道的电子波函数，在不同的轨道内电子的能量为 $E_a$。这些轨道构成了一组正交完备集，满足：
+&lt;/p&gt;
+$$
+\left\{
+\begin{array}{l}
+\langle \psi_a | \psi_b \rangle = \delta_{ab} \\
+\sum\limits_a | \psi_a \rangle \langle \psi_a | = I
+\end{array}
+\right.
+$$&lt;p&gt;
+那么对于任意的波函数 $\ket{\psi}$和H都可以展开成：
+&lt;/p&gt;
+$$
+|\psi\rangle = \sum_a c_a |\psi_a\rangle
+$$&lt;p&gt;
+&lt;/p&gt;
+$$
+H = \sum_{ab} H_{ab} |a\rangle\langle b|
+$$&lt;p&gt;其中 $H_{ab} = \langle \psi_a | H | \psi_b \rangle$，表示H在这组基下的矩阵元。&lt;/p&gt;
+&lt;p&gt;Example：三角形的原子&lt;/p&gt;
+&lt;p&gt;假设电子运动在三个原子之间，每个原子都有一个轨道，记为： $\ket{0},\ket{1},\ket{2}$。首先电子的哈密顿量（能量是多少？），TBM假设了电子是在轨道之间跳跃，电子跳跃在原子之间就会形成化学键，形成化学键之后结构更稳定，体系的能量就越低。那么H可写为：
+&lt;/p&gt;
+$$
+H = -t \left( |0\rangle\langle 1| + |1\rangle\langle 2| + |2\rangle\langle 0| \right) + \text{h.c.}
+$$&lt;p&gt;
+前面这个-t（t是一个跳跃的系数，负号为了保证电子发生跳跃的时候，系统的能量降低。）这一项代表了，电子从1跳到0，0跳到2，2跳到1，顺时针的情况，那么后面的h.c代表的就是逆时针的跳跃可能性（为了保证H的厄米性）&lt;/p&gt;
+&lt;p&gt;其中 $\ket{0}\bra{1}$为什么代表了电子从1跳到0呢？，解释如下：&lt;/p&gt;
+&lt;p&gt;如果此时电子处于轨道1（$\ket{1}$），将这一项作用上去有：
+&lt;/p&gt;
+$$
+|0\rangle\langle1|1\rangle = |0\rangle
+$$&lt;p&gt;
+即输入是1，而输出的是0轨道，因此表示电子从1跳到0。&lt;/p&gt;
+&lt;h2 id=&#34;bloch-theorem-for-bulk-electrons&#34;&gt;Bloch Theorem For Bulk Electrons
+&lt;/h2&gt;
+&lt;p&gt;有了上面的TBM的基础之后，我们将记号变得紧凑一些。&lt;/p&gt;
+&lt;p&gt;在固体物理中，晶格是可以由原胞通过周期性平移得到的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/219/2016/08/09045711/CNX_Chem_10_06_UnitCell1.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Bloch Theorem给出，电子在整个晶格中的波函数可以写成原胞之间的平面波和在单个原胞内行为的叠加：
+&lt;/p&gt;
+$$
+\psi_{(l,n)} = e^{i k n} \cdot u_l
+$$&lt;p&gt;
+$(l,n)$表示在第n个原胞内的电子在轨道l上的波函数（这里表示的是1维晶格的情况，可以把这个拓展到3维的情况，kn&amp;ndash;&amp;gt; $\mathbf{k\cdot R_n}$,其中 $R_n = p\mathbf{a}+q\mathbf{b}+r\mathbf{c}$, a,b,c代表构成晶格原胞的基矢量）&lt;/p&gt;
+&lt;p&gt;k表示电子在晶体中的动量，范围是 $[-\pi,\pi]$，这个范围在晶格的倒空间中表示一个布里渊区。&lt;/p&gt;
+&lt;p&gt;那么在这个表示下的H的矩阵元为：
+&lt;/p&gt;
+$$
+H_{(l,m),(l&#39;,n)}= H_{(l,m-n),(l&#39;,0)}
+$$&lt;p&gt;
+为什么这是成立的呢？因为晶格的周期性平移的特点，第二个参数m描述的是在第m个原胞上，所有的原胞在某种意义上等价。&lt;/p&gt;
+&lt;p&gt;首先实空间的波函数满足的定态薛定谔方程为：
+&lt;/p&gt;
+$$
+\sum_{l&#39;, m} H_{(l,n), (l&#39;,m)} \psi_{(l&#39;,m)} = E \psi_{(l,n)}
+$$&lt;p&gt;
+代入bloch 定理下的波函数：
+&lt;/p&gt;
+$$
+\psi_{(l,n)} = e^{ikn} u_l(k)
+$$&lt;p&gt;
+消去因子：
+&lt;/p&gt;
+$$
+\sum_{l&#39;, m} H_{(l,n), (l&#39;,m)} e^{ik(m-n)} u_{l&#39;}(k) = E(k) u_l(k)
+$$&lt;p&gt;
+整理求和项：
+&lt;/p&gt;
+$$
+\sum_{l&#39;} \left[ \sum_{m} H_{(l,n), (l&#39;,m)} e^{ik(m-n)} \right] u_{l&#39;}(k) = E(k) u_l(k)
+$$&lt;p&gt;
+根据平移不变的假设：
+&lt;/p&gt;
+$$
+H_{(l,n), (l&#39;,m)} = H_{(l, n-m), (l&#39;, 0)}
+$$&lt;p&gt;
+可以得到：
+&lt;/p&gt;
+$$
+H(k)_{ll&#39;} = \sum_{m} H_{(l,-m), (l&#39;,0)} e^{-ikm}
+$$&lt;p&gt;
+最后的形式是：
+&lt;/p&gt;
+$$
+\sum_{l&#39;} H(k)_{ll&#39;} u_{l&#39;}(k) = E(k) u_l(k)
+$$&lt;p&gt;
+矩阵形式：
+&lt;/p&gt;
+$$
+H(k) u(k) = E(k) u(k)
+$$&lt;p&gt;Example：SSH model&lt;/p&gt;
+&lt;h2 id=&#34;kp-perturbation-theory&#34;&gt;k.p Perturbation Theory
+&lt;/h2&gt;
+&lt;p&gt;对于在倒空间的H(k)，如果只关心k = 0 附近的能量，或者Energy Gap（Energy Gap是定义在价带与导带之间的最小间隔）&lt;/p&gt;
+&lt;p&gt;可以对H(k)在 k = 0 附近做Taylor expansion：
+&lt;/p&gt;
+$$
+H(k) \approx \underbrace{H(k=0)}_{H_0(k)} + \underbrace{k H&#39;(k=0) + \frac{k^2}{2} H&#39;&#39;(k=0)}_{\text{Perturbation } V(k)}
+$$&lt;p&gt;
+通过量子力学中的微扰论可以得到。&lt;/p&gt;
+&lt;p&gt;能量的一阶微扰修正是：
+&lt;/p&gt;
+$$
+E_1^{(n)} = \langle n | V(k) | n \rangle
+$$&lt;p&gt;
+二阶微扰为：
+&lt;/p&gt;
+$$
+E_{2}^{(n)}(k) = \sum_{m \neq n} \frac{|\langle n | V | m \rangle|^{2}}{E_{0}^{(n)} - E_{0}^{(m)}}
+$$&lt;p&gt;
+得出第n个本征态的能量为：
+&lt;/p&gt;
+$$
+E^{(n)}(k=0) \approx E_0^{(n)}(k=0) + \langle n | V(k=0) | n \rangle +\sum_{m \neq n} \frac{|\langle n | V | m \rangle|^{2}}{E_{0}^{(n)} - E_{0}^{(m)}}
+$$&lt;p&gt;
+后面两项分别是1阶和2阶微扰。&lt;/p&gt;
+&lt;p&gt;在k = 0 处，电子波包在晶体中传播的速度为 $\mathbf{v}_g(\mathbf{k})$:
+&lt;/p&gt;
+$$
+\mathbf{v}_g(\mathbf{k}) = \frac{1}{\hbar} \nabla_{\mathbf{k}} E(\mathbf{k})
+$$&lt;p&gt;
+以及电子波包的有效质量 $m^*$:
+&lt;/p&gt;
+$$
+\left( \frac{1}{m^*} \right)_{ij} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_i \partial k_j}
+$$&lt;p&gt;
+代入对应的E，可以得到电子在第n个能级的传播速度 $v_n$ 和有效质量($m_n$)：
+&lt;/p&gt;
+$$
+V_n = \partial_k E^{(n)}(k) \big|_{k=0} = \langle n | H&#39;(k=0) | n \rangle
+$$&lt;p&gt;
+$$
+m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&amp;rsquo;&amp;rsquo;(k=0) | n \rangle&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 \sum_{m \neq n} \frac{|\langle n | H&amp;rsquo; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
+$$&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Ising model 到 Predictive Coding-能量最小化的自然演进</title>
-        <link>http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</link>
+        <link>https://quantum51.top/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</link>
         <pubDate>Tue, 25 Nov 2025 17:40:16 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</guid>
+        <guid>https://quantum51.top/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</guid>
         <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要：
 &lt;/h2&gt;
 &lt;p&gt;本文系统探讨了统计物理模型与神经计算理论之间的深刻联系，阐述了基于“能量最小化”原理的计算框架如何从物理系统延伸至生物智能。&lt;/p&gt;
@@ -347,115 +546,20 @@ $$\Delta w_{ij} \propto e_i \cdot r_j$$&lt;h4 id=&#34;pc与hopfield-神经网络
 </description>
         </item>
         <item>
-        <title>test|fdsdfds</title>
-        <link>http://localhost:1313/2025/test213ewddf/</link>
-        <pubDate>Thu, 20 Nov 2025 10:34:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/2025/test213ewddf/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Test|1</title>
-        <link>http://localhost:1313/2025/test1/</link>
-        <pubDate>Thu, 20 Nov 2025 10:58:21 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/test1/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>三人行</title>
-        <link>http://localhost:1313/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</link>
+        <link>https://quantum51.top/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</link>
         <pubDate>Thu, 20 Nov 2025 10:03:11 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</guid>
+        <guid>https://quantum51.top/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</guid>
         <description>&lt;p&gt;三人行讲的是2033年的赵左右对于现在的生活并不满意，通过时间旅行技术想要回到过去（2008）改变自己的人生，他化名荀未来回到2008年遇到了过去（赵左右）与未来的自己（赵了），未来的自己想阻止他改变它的人生，因为另一种人生的他失去了他所爱之人。就这样两个人通过时空旅行改变了过去的自己，虽然最后赵左右成功带着他们的影响继续一个人生活，但是因为时间的影响，他逐渐发现无论自己如何试图改变，但始终战胜不了时间，不能够改变自己的人生。其实这种全知人生的无奈才是时间最痛苦的事，人生的快乐其实就是就是对于未来人生的未知，未知即未来。最后荀未来不忍心看到过去的自己这样挣扎的活着，他出手帮助过去的自己抹去了对于未来所知的一切，让时间回归正轨，但是这么多的努力真的无法改变什么吗？ 当然有！赵左右与徐图图之间的爱无法被时间改变！ 未来就是未知，但是爱或者感觉是永恒的，找到自己所爱的事，不后悔，不试图知晓未来或者改变过去，享受人生的未知，全知是如此的枯燥，探索体验才能在无数条可能的人生道路中走向那条属于自己的道路。&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Notes|电动力学</title>
-        <link>http://localhost:1313/2025/notes%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/</link>
-        <pubDate>Fri, 12 Sep 2025 11:50:15 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/notes%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/</guid>
-        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;
-&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
-&lt;/h3&gt;
-&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
-&lt;/h3&gt;
-&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Notes|AI</title>
-        <link>http://localhost:1313/2025/notesai/</link>
-        <pubDate>Fri, 12 Sep 2025 11:49:55 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/notesai/</guid>
-        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;
-&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
-&lt;/h3&gt;
-&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
-&lt;/h3&gt;
-&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Process|Maze_Agent</title>
-        <link>http://localhost:1313/2025/processmaze_agent/</link>
-        <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/processmaze_agent/</guid>
-        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;
-&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
-&lt;/h3&gt;
-&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
-&lt;/h3&gt;
-&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Process|多分量超导</title>
-        <link>http://localhost:1313/2025/process%E5%A4%9A%E5%88%86%E9%87%8F%E8%B6%85%E5%AF%BC/</link>
-        <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/process%E5%A4%9A%E5%88%86%E9%87%8F%E8%B6%85%E5%AF%BC/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Process|进程</title>
-        <link>http://localhost:1313/2025/process%E8%BF%9B%E7%A8%8B/</link>
-        <pubDate>Fri, 12 Sep 2025 11:48:35 +0800</pubDate>
-        
-        <guid>http://localhost:1313/2025/process%E8%BF%9B%E7%A8%8B/</guid>
-        <description>&lt;h2 id=&#34;plan使用光子晶体进行计算并且与传统的光学计算进行比较&#34;&gt;Plan：使用光子晶体进行计算并且与传统的光学计算进行比较
-&lt;/h2&gt;
-&lt;p&gt;Details：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. Master the Theorem of the Photonic Crystal
-1. Simulated the Crystal
-1. Compare it 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;
-&lt;h3 id=&#34;参考文献&#34;&gt;参考文献
-&lt;/h3&gt;
-&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
-&lt;/h3&gt;
-&lt;p&gt;本文原载于 &lt;a class=&#34;link&#34; href=&#34;https://quantum51.top&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;quantum51.top&lt;/a&gt;，遵循 CC BY-NC-SA 4.0 协议，复制请保留原文出处。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>毕业论文｜chapter3</title>
-        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
+        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
         <pubDate>Fri, 09 May 2025 14:06:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
+        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的应用&#34;&gt;量子纠缠的应用
 &lt;/h1&gt;
 &lt;p&gt;可能很多人会想，量子纠缠这么神秘，众多科学家历经坎坷终于证明了量子纠缠存在的合理性。那么它有什么用呢？或者说，它能够解决哪些问题呢？&lt;/p&gt;
@@ -475,7 +579,7 @@ $$\Delta w_{ij} \propto e_i \cdot r_j$$&lt;h4 id=&#34;pc与hopfield-神经网络
 &lt;p&gt;如果我们说两个自然数$a和b$共素（互质），也就是说，他们的最大公因数为1（记为$\gcd(a,b)=1$）。&lt;/p&gt;
 &lt;h5 id=&#34;最大公因数the-greatest-common-divisor&#34;&gt;最大公因数（the greatest common divisor）
 &lt;/h5&gt;
-&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b))}$，具体的计算过程如下：&lt;/p&gt;
+&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b)}$，具体的计算过程如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;写出a的因子&lt;/p&gt;
@@ -502,13 +606,10 @@ $$&lt;p&gt;
 比如，$Q=6 ，N =5，那么Q \pmod N = 6\%5 = 1$&lt;/p&gt;
 &lt;h5 id=&#34;模n的乘法群&#34;&gt;模N的乘法群
 &lt;/h5&gt;
-&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：
-&lt;/p&gt;
+&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：&lt;/p&gt;
 $$
 a \in Z ,1\leq a &lt;N , \gcd{(a,N)} =1
-$$&lt;p&gt;
-该群的运算是模N下的乘法运算：
-&lt;/p&gt;
+$$&lt;p&gt;该群的运算是模N下的乘法运算：&lt;/p&gt;
 $$
 a\cdot b \pmod N
 $$&lt;p&gt;
@@ -531,7 +632,7 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;下图就是单位元上的六个单位根，可以将其看成模6群的几何结构（因为两者同构）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
 	
 	
 	
@@ -591,7 +692,7 @@ $$
 &lt;/table&gt;
 &lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计：
 &lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
 	
 	
 	
@@ -727,7 +828,7 @@ $$&lt;p&gt;
 &lt;h3 id=&#34;shor算法的逻辑&#34;&gt;Shor算法的逻辑：
 &lt;/h3&gt;
 &lt;p&gt;前面说了，经典计算里面可以通过并行计算来加速任务的完成时间，那么分解大数的问题可不可以用并行计算来处理，答案是并行计算的加速效果是线性的，而shor算法具有指数级的加速效果，并且shor算法的时间复杂度是： $O((\log{n})^3)$，所以经典中的并行计算对于任务的加速效果并不如shor算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
 	
 	
 	
@@ -941,10 +1042,10 @@ $$
         </item>
         <item>
         <title>AI|Why Machines Learn?</title>
-        <link>http://localhost:1313/2025/aiwhy-machines-learn/</link>
+        <link>https://quantum51.top/2025/aiwhy-machines-learn/</link>
         <pubDate>Sat, 19 Apr 2025 09:34:28 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/aiwhy-machines-learn/</guid>
+        <guid>https://quantum51.top/2025/aiwhy-machines-learn/</guid>
         <description>&lt;h1 id=&#34;why-machines-learn&#34;&gt;Why machines learn？
 &lt;/h1&gt;
 &lt;h2 id=&#34;chapter1deseperatly-seeking-pattern&#34;&gt;Chapter1:Deseperatly seeking pattern
@@ -1001,10 +1102,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;/h3&gt;
 &lt;p&gt;言归正传（Regression后面还会系统的说明），我们也许可以通过理解机器是怎么学习的来完全理解人类是怎么学习的（这里我的理解是我们可以在让机器逐步学会学习的过程中，不断地深化我们对于自己学习过程的理解）。&lt;/p&gt;
 &lt;p&gt;19世纪，图灵等科学家就认为logic和computation之间有很深厚的联系，他们断言“所有的计算都可以被简化为某种逻辑”。然后就引出了这样一个问题：既然人脑是可以执行计算的，那么它是怎么样执行逻辑操作的（它底层是否像逻辑门一样呢？）。&lt;/p&gt;
-&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1.png&#34;
+&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1.png&#34;
 	width=&#34;948&#34;
 	height=&#34;421&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
+	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1016,10 +1117,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;p&gt;图中Dendrites就是神经元的树突，它负责接受各种刺激，树突中间的就是细胞体，他可以处理树突接受到的刺激（相当于进行计算），然后Axon（轴突）负责转递细胞体的结果到Axon terminals（端粒），端粒在将这个结果传递给周边其他的神经元。&lt;/p&gt;
 &lt;p&gt;然后生物学家希望把这一机构转化为一个简单的计算模型，理由是：他很像一个机器，你给他一个输入（刺激），他就会给输出。因此他们想要通过类比用神经元来构建逻辑AND，OR操作。&lt;/p&gt;
 &lt;p&gt;他们首先将这个神经元定义为这个样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2.png&#34;
 	width=&#34;974&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
+	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1098,10 +1199,10 @@ $$&lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案�
 &lt;p&gt;不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;光学系统识别图片上的字母&lt;/strong&gt;（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。&lt;/p&gt;
 &lt;p&gt;而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。&lt;/p&gt;
-&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4.png&#34;
+&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4.png&#34;
 	width=&#34;1444&#34;
 	height=&#34;570&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
+	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.10.37&#34;
@@ -1137,10 +1238,10 @@ f(g(x)) =
 $$&lt;p&gt;
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5.png&#34;
 	width=&#34;767&#34;
 	height=&#34;586&#34;
-	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
+	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.13.09&#34;
@@ -1163,10 +1264,10 @@ $$&lt;p&gt;
         </item>
         <item>
         <title>毕业论文|chapter 2</title>
-        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</link>
+        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</link>
         <pubDate>Wed, 16 Apr 2025 16:39:44 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</guid>
+        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的验证&#34;&gt;量子纠缠的验证
 &lt;/h1&gt;
 &lt;h2 id=&#34;bell不等式&#34;&gt;Bell不等式
@@ -1705,10 +1806,10 @@ $$&lt;p&gt;所以可以通过CHSH游戏&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a hre
         </item>
         <item>
         <title>毕业论文|chapter 1</title>
-        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</link>
+        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</link>
         <pubDate>Wed, 16 Apr 2025 16:38:41 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</guid>
+        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的早期视角&#34;&gt;量子纠缠的早期视角
 &lt;/h1&gt;
 &lt;h2 id=&#34;epr佯谬&#34;&gt;EPR佯谬

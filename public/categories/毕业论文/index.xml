@@ -31,7 +31,7 @@
 &lt;p&gt;如果我们说两个自然数$a和b$共素（互质），也就是说，他们的最大公因数为1（记为$\gcd(a,b)=1$）。&lt;/p&gt;
 &lt;h5 id=&#34;最大公因数the-greatest-common-divisor&#34;&gt;最大公因数（the greatest common divisor）
 &lt;/h5&gt;
-&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b))}$，具体的计算过程如下：&lt;/p&gt;
+&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b)}$，具体的计算过程如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;写出a的因子&lt;/p&gt;
@@ -58,13 +58,10 @@ $$&lt;p&gt;
 比如，$Q=6 ，N =5，那么Q \pmod N = 6\%5 = 1$&lt;/p&gt;
 &lt;h5 id=&#34;模n的乘法群&#34;&gt;模N的乘法群
 &lt;/h5&gt;
-&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：
-&lt;/p&gt;
+&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：&lt;/p&gt;
 $$
 a \in Z ,1\leq a &lt;N , \gcd{(a,N)} =1
-$$&lt;p&gt;
-该群的运算是模N下的乘法运算：
-&lt;/p&gt;
+$$&lt;p&gt;该群的运算是模N下的乘法运算：&lt;/p&gt;
 $$
 a\cdot b \pmod N
 $$&lt;p&gt;

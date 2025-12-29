@@ -203,8 +203,43 @@ def preview():
             flash(f"启动预览失败: {e}", "error")
             return redirect(url_for('index'))
 
+
     return redirect("http://localhost:1313/")
 
 
+@app.route("/check_math")
+def check_math():
+    # Attempt to run scripts/check_math.py
+    # We assume the user is running this from repo root or we know where it is.
+    # BASE_DIR is the repo root.
+    script_path = BASE_DIR / "scripts" / "check_math.py"
+    if not script_path.exists():
+        flash("未找到 check_math.py 脚本", "error")
+        return redirect(url_for("index"))
+
+    try:
+        # Run the script
+        result = subprocess.run(
+            ["python3", str(script_path)],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            flash("数学公式检查通过！", "success")
+        else:
+            # Show stderr or stdout as error message
+            error_msg = f"检查失败:\n{result.stdout}\n{result.stderr}"
+            flash(error_msg, "error")
+    except Exception as e:
+        flash(f"运行脚本出错: {e}", "error")
+
+    # Redirect back to referring page if possible, else index
+    print(f"Check math result: {result.returncode}")
+    return redirect(url_for("index"))
+
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Port 5000 is often taken by macOS AirPlay Receiver
+    app.run(debug=True, port=5001)

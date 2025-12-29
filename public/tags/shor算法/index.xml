@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shor算法 on Eugene</title>
-        <link>http://localhost:1313/tags/shor%E7%AE%97%E6%B3%95/</link>
+        <link>https://quantum51.top/tags/shor%E7%AE%97%E6%B3%95/</link>
         <description>Recent content in Shor算法 on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 09 May 2025 14:06:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/shor%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 May 2025 14:06:10 +0800</lastBuildDate><atom:link href="https://quantum51.top/tags/shor%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>毕业论文｜chapter3</title>
-        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
+        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
         <pubDate>Fri, 09 May 2025 14:06:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
+        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的应用&#34;&gt;量子纠缠的应用
 &lt;/h1&gt;
 &lt;p&gt;可能很多人会想，量子纠缠这么神秘，众多科学家历经坎坷终于证明了量子纠缠存在的合理性。那么它有什么用呢？或者说，它能够解决哪些问题呢？&lt;/p&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;如果我们说两个自然数$a和b$共素（互质），也就是说，他们的最大公因数为1（记为$\gcd(a,b)=1$）。&lt;/p&gt;
 &lt;h5 id=&#34;最大公因数the-greatest-common-divisor&#34;&gt;最大公因数（the greatest common divisor）
 &lt;/h5&gt;
-&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b))}$，具体的计算过程如下：&lt;/p&gt;
+&lt;p&gt;两个数$a和b$的最大公因数为$\gcd{(a,b)}$，具体的计算过程如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;写出a的因子&lt;/p&gt;
@@ -58,13 +58,10 @@ $$&lt;p&gt;
 比如，$Q=6 ，N =5，那么Q \pmod N = 6\%5 = 1$&lt;/p&gt;
 &lt;h5 id=&#34;模n的乘法群&#34;&gt;模N的乘法群
 &lt;/h5&gt;
-&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：
-&lt;/p&gt;
+&lt;p&gt;模N群就是有所有与N共素的整数在模N意义下构成的乘法群，这个群记为$\Z_N^{\ast}$,群中的元素a满足条件：&lt;/p&gt;
 $$
 a \in Z ,1\leq a &lt;N , \gcd{(a,N)} =1
-$$&lt;p&gt;
-该群的运算是模N下的乘法运算：
-&lt;/p&gt;
+$$&lt;p&gt;该群的运算是模N下的乘法运算：&lt;/p&gt;
 $$
 a\cdot b \pmod N
 $$&lt;p&gt;
@@ -87,7 +84,7 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;下图就是单位元上的六个单位根，可以将其看成模6群的几何结构（因为两者同构）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
 	
 	
 	
@@ -147,7 +144,7 @@ $$
 &lt;/table&gt;
 &lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计：
 &lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
 	
 	
 	
@@ -283,7 +280,7 @@ $$&lt;p&gt;
 &lt;h3 id=&#34;shor算法的逻辑&#34;&gt;Shor算法的逻辑：
 &lt;/h3&gt;
 &lt;p&gt;前面说了，经典计算里面可以通过并行计算来加速任务的完成时间，那么分解大数的问题可不可以用并行计算来处理，答案是并行计算的加速效果是线性的，而shor算法具有指数级的加速效果，并且shor算法的时间复杂度是： $O((\log{n})^3)$，所以经典中的并行计算对于任务的加速效果并不如shor算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
 	
 	
 	
