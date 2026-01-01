@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>量子纠缠的应用 on Eugene</title>
-        <link>https://quantum51.top/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+        <link>http://localhost:1313/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0%E7%9A%84%E5%BA%94%E7%94%A8/</link>
         <description>Recent content in 量子纠缠的应用 on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 09 May 2025 14:06:10 +0800</lastBuildDate><atom:link href="https://quantum51.top/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0%E7%9A%84%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 May 2025 14:06:10 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%87%8F%E5%AD%90%E7%BA%A0%E7%BC%A0%E7%9A%84%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>毕业论文｜chapter3</title>
-        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
+        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
         <pubDate>Fri, 09 May 2025 14:06:10 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
+        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的应用&#34;&gt;量子纠缠的应用
 &lt;/h1&gt;
 &lt;p&gt;可能很多人会想，量子纠缠这么神秘，众多科学家历经坎坷终于证明了量子纠缠存在的合理性。那么它有什么用呢？或者说，它能够解决哪些问题呢？&lt;/p&gt;
@@ -84,7 +84,7 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;下图就是单位元上的六个单位根，可以将其看成模6群的几何结构（因为两者同构）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
 	
 	
 	
@@ -144,7 +144,7 @@ $$
 &lt;/table&gt;
 &lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计：
 &lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
 	
 	
 	
@@ -280,7 +280,7 @@ $$&lt;p&gt;
 &lt;h3 id=&#34;shor算法的逻辑&#34;&gt;Shor算法的逻辑：
 &lt;/h3&gt;
 &lt;p&gt;前面说了，经典计算里面可以通过并行计算来加速任务的完成时间，那么分解大数的问题可不可以用并行计算来处理，答案是并行计算的加速效果是线性的，而shor算法具有指数级的加速效果，并且shor算法的时间复杂度是： $O((\log{n})^3)$，所以经典中的并行计算对于任务的加速效果并不如shor算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
 	
 	
 	

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Machine Learning on Eugene</title>
-        <link>https://quantum51.top/tags/machine-learning/</link>
+        <link>http://localhost:1313/tags/machine-learning/</link>
         <description>Recent content in Machine Learning on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 19 Apr 2025 09:34:28 +0800</lastBuildDate><atom:link href="https://quantum51.top/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 19 Apr 2025 09:34:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI|Why Machines Learn?</title>
-        <link>https://quantum51.top/2025/aiwhy-machines-learn/</link>
+        <link>http://localhost:1313/2025/aiwhy-machines-learn/</link>
         <pubDate>Sat, 19 Apr 2025 09:34:28 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/aiwhy-machines-learn/</guid>
+        <guid>http://localhost:1313/2025/aiwhy-machines-learn/</guid>
         <description>&lt;h1 id=&#34;why-machines-learn&#34;&gt;Why machines learn？
 &lt;/h1&gt;
 &lt;h2 id=&#34;chapter1deseperatly-seeking-pattern&#34;&gt;Chapter1:Deseperatly seeking pattern
@@ -68,10 +68,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;/h3&gt;
 &lt;p&gt;言归正传（Regression后面还会系统的说明），我们也许可以通过理解机器是怎么学习的来完全理解人类是怎么学习的（这里我的理解是我们可以在让机器逐步学会学习的过程中，不断地深化我们对于自己学习过程的理解）。&lt;/p&gt;
 &lt;p&gt;19世纪，图灵等科学家就认为logic和computation之间有很深厚的联系，他们断言“所有的计算都可以被简化为某种逻辑”。然后就引出了这样一个问题：既然人脑是可以执行计算的，那么它是怎么样执行逻辑操作的（它底层是否像逻辑门一样呢？）。&lt;/p&gt;
-&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1.png&#34;
+&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1.png&#34;
 	width=&#34;948&#34;
 	height=&#34;421&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -83,10 +83,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;p&gt;图中Dendrites就是神经元的树突，它负责接受各种刺激，树突中间的就是细胞体，他可以处理树突接受到的刺激（相当于进行计算），然后Axon（轴突）负责转递细胞体的结果到Axon terminals（端粒），端粒在将这个结果传递给周边其他的神经元。&lt;/p&gt;
 &lt;p&gt;然后生物学家希望把这一机构转化为一个简单的计算模型，理由是：他很像一个机器，你给他一个输入（刺激），他就会给输出。因此他们想要通过类比用神经元来构建逻辑AND，OR操作。&lt;/p&gt;
 &lt;p&gt;他们首先将这个神经元定义为这个样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2.png&#34;
 	width=&#34;974&#34;
 	height=&#34;382&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -165,10 +165,10 @@ $$&lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案�
 &lt;p&gt;不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;光学系统识别图片上的字母&lt;/strong&gt;（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。&lt;/p&gt;
 &lt;p&gt;而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。&lt;/p&gt;
-&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4.png&#34;
+&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4.png&#34;
 	width=&#34;1444&#34;
 	height=&#34;570&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.10.37&#34;
@@ -204,10 +204,10 @@ f(g(x)) =
 $$&lt;p&gt;
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;
 	width=&#34;767&#34;
 	height=&#34;586&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.13.09&#34;

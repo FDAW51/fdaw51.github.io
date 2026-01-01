@@ -2,16 +2,428 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Eugene</title>
-        <link>https://quantum51.top/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 28 Dec 2025 22:16:20 +0800</lastBuildDate><atom:link href="https://quantum51.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 Dec 2025 10:26:59 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>单分量超导</title>
+        <link>http://localhost:1313/2025/superconductor%E5%8D%95%E5%88%86%E9%87%8F%E8%B6%85%E5%AF%BC/</link>
+        <pubDate>Mon, 29 Dec 2025 10:26:59 +0800</pubDate>
+        
+        <guid>http://localhost:1313/2025/superconductor%E5%8D%95%E5%88%86%E9%87%8F%E8%B6%85%E5%AF%BC/</guid>
+        <description>&lt;h1 id=&#34;1单分量超导&#34;&gt;1.单分量超导
+&lt;/h1&gt;
+&lt;h2 id=&#34;什么是超导&#34;&gt;什么是超导？
+&lt;/h2&gt;
+&lt;p&gt;首先在一个金属导体中，电子围绕在原子核周围，有许多自由电子在固体的晶格中运动。而超导现象，最常见的就是磁悬浮了，磁悬浮的意思是当给一个固体下方打入磁场，此时固体克服重力漂浮起来，但是在室温下，这种现象不存在，只有在极低温下才会出现，但是为什么这个固体会漂浮，这就是超导理论所解释的了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://images.newscientist.com/wp-content/uploads/2016/11/16180000/e8x750.jpg?width=1900&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;超导现象&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;解释超导现象的理论有两个，其一是BCS理论，其二是GL理论，前者通过微观解释超导现象（从Cooper pair 出发），后者通过宏观的自由能取极小值出发。&lt;/p&gt;
+&lt;h2 id=&#34;bcs理论&#34;&gt;BCS理论：
+&lt;/h2&gt;
+&lt;h3 id=&#34;1固体中的电子&#34;&gt;1.固体中的电子：
+&lt;/h3&gt;
+&lt;p&gt;由于固体内部的周期性结构，相当于给电子施加了一个周期性的边界条件，根据量子力学，其空间波函数由下面的平面波表示：
+&lt;/p&gt;
+$$
+\psi_\mathbf{k}(\mathbf{r})=e^{i\mathbf{k}\cdot\mathbf{r}}u_\mathbf{k}(\mathbf{r})
+$$&lt;p&gt;
+右边的第一项表示由于固体中的周期性边界条件，电子在固体内像自由粒子一样 以波矢k沿着晶体运动，而第二项表示电子在固体中一个晶格内（周期）的行为。&lt;/p&gt;
+&lt;p&gt;电子除了空间分布，还有其自身的运动（自旋s = 1/2），电子可以处于自旋向上或者自旋向下。&lt;/p&gt;
+&lt;p&gt;固体内有许多处于不同状态的电子（$E_k = \frac{\hbar^2 k ^2}{2m}$），根据Pauli不相容原理：任何的两个电子不能够处于完全相同的量子态（空间+自旋）。&lt;/p&gt;
+&lt;p&gt;为了简化，先不考虑电子的自旋，那么每一个能级Ek上要么只有一个电子，要么就没有电子，那么可以导出Fermi-Dirac 统计（在能级E处，电子的占据概率是多少）（&lt;strong&gt;差一个推导&lt;/strong&gt;）：
+&lt;/p&gt;
+$$
+f(E)=\frac{1}{e^{(E-E_F)/k_BT}+1}
+$$&lt;p&gt;
+其中 $E_F$表示电子的Fermi Energy，表示在温度T=0时，电子占据概率为1的最大占据能量，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ebrary.net/htm/img/33/1483/52.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;因为电子的波矢是一个矢量，并且以相同长度波矢运动的电子处于同一个球面上：&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/K-space.JPG/250px-K-space.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在T等于0时，最大半径的球面就是Fermi面，此时低能级依次全部被占据，当温度升高时，由于热激发，开始有电子从跳跃到更高的能级（上面的f（E）图也能很好的表示这个特征）。&lt;/p&gt;
+&lt;h3 id=&#34;2fermi-surface-上的两个电子&#34;&gt;2.Fermi Surface 上的两个电子
+&lt;/h3&gt;
+&lt;p&gt;两个电子（速度为$v_F \sim10^6\mathrm{~m/s})$）经过费米面，此时费米海已经填满了&lt;/p&gt;
+&lt;p&gt;首先，两个电子之间有column排斥作用（就好像两个电子之间存在一个弹簧，两个电子靠的很近就会排斥，拉的太远会吸引），它们存在如下的Column作用力：&lt;/p&gt;
+&lt;p&gt;所以费米面应该是排斥这个电子的，但是由于电子在晶格中运动，晶格由正殿的离子实组成，这当电子1路过的时候，周围的正离子都会靠近这个电子，于是晶格发生了一定的形状变化，导致了局域的正电荷密度增加。&lt;/p&gt;
+&lt;p&gt;电子2随后经过了这个区域，就被之前电子1吸引的正电荷所吸引，但是由于电子的速度极快，最后看起来电子2被电子1吸引。&lt;/p&gt;
+&lt;p&gt;有一个形象的比喻：快电子利用笨重的正离子背景做了一个“局部的正电荷陷阱”，并在自己离开后坑了后面来的电子一把。&lt;/p&gt;
+&lt;p&gt;后果是：两个电子在费米面形成Cooper-Pair，两个电子之间的吸引是由于电子声子耦合超过了两个电子之间的Column 相互作用&lt;/p&gt;
+&lt;h3 id=&#34;3cooper-pair&#34;&gt;3.Cooper-Pair：
+&lt;/h3&gt;
+&lt;p&gt;Cooper 在1956年证明，&lt;strong&gt;在费米海背景下&lt;/strong&gt;，只要在 Fermi 面附近存在微弱的吸引相互作用，两个电子就能形成能量低于 $2E_F$ 的束缚态（Cooper 对）。&lt;/p&gt;
+&lt;p&gt;这意味着我们原本认为稳固的&lt;strong&gt;费米海基态其实是不稳定的&lt;/strong&gt;（Cooper Instability）。因为系统总是倾向于处于能量最低的状态，既然形成配对可以降低能量，那么费米面附近的电子就会纷纷两两配对，发生相变。&lt;/p&gt;
+&lt;p&gt;这种 Cooper 对通常具有以下特征：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;动量相反&lt;/strong&gt; $(\mathbf{k}, -\mathbf{k})$：为了保证质心动量为零，利用整个费米面的相空间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自旋相反&lt;/strong&gt; $(\uparrow, \downarrow)$：利用单态（Singlet）配对满足交换反对称性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;那么 BCS 理论（1957）在此基础上，进一步计算了&lt;/strong&gt;在电子电子之间吸引作用下，这个电子气体系统的能谱，并且发现打开了一个Gap。&lt;/p&gt;
+&lt;h3 id=&#34;4简化模型&#34;&gt;4.简化模型
+&lt;/h3&gt;
+&lt;p&gt;首先看一个简化模型，假设两个电子之间的相互作用为：
+&lt;/p&gt;
+$$
+V_{\mathbf{k},\mathbf{q}}=
+\begin{cases}
+-V &amp; \text{if } E_{F}&lt;\epsilon_{\mathbf{k}}, \epsilon_{\mathbf{q}} &lt; E_{F}+\Delta E \\
+0 &amp; \text{otherwise}
+\end{cases}
+\quad(4)
+$$&lt;p&gt;
+上面这个作用势表明，对于两个电子k电子，q电子，而言，当它们的能量处于这个范围内时，感受到的势是-V。&lt;/p&gt;
+&lt;p&gt;并且假设这个Cooper pair 的波函数为：
+&lt;/p&gt;
+$$
+\psi(\mathbf{r_1,r_2})=\sum_\mathbf{k}\left(g_\mathbf{k}e^{i\mathbf{k}(\mathbf{r_1-r_2})}\right)\left(|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle\right).
+$$&lt;p&gt;
+其中上式右边的第一项中的就包含了动量之和为0：
+&lt;/p&gt;
+$$
+\psi_{1spatial} = e^{ik_1\cdot r_1} \\\
+\psi_{2spatial} = e^{ik_2\cdot r_2}
+$$&lt;p&gt;
+因为动量之和为0，所以 $\hbar k_1+\hbar k_2 = 0 $,于是令k1  = k ，则k2 = -k ,于是两个电子的空间波函数项为：
+&lt;/p&gt;
+$$
+\psi_{spatial}(\mathbf{r_1,r_2}) =\psi_{1spatial}\otimes\psi_{2spatial} =\sum_\mathbf{k}\left(g_\mathbf{k}e^{i\mathbf{k}(\mathbf{r_1-r_2})}\right)
+$$&lt;p&gt;
+其中对于所有的波矢线性叠加，表示将所有的动量可能都考虑进去，$g_k$为叠加因子（或者说，现在还不知道Cooper-Pair 的波函数是什么？那么我们先用我们已知的平面波基底对其展开，然后代入薛定谔方程中求解系数）&lt;/p&gt;
+&lt;p&gt;然后代入薛定谔方程中：
+&lt;/p&gt;
+$$
+\left[H_0(\mathbf{r_1})+H_0(\mathbf{r_2})+V(\mathbf{r_1}-\mathbf{r_2})\right]\psi(\mathbf{r_1},\mathbf{r_2})=E\psi(\mathbf{r_1},\mathbf{r_2})
+$$&lt;p&gt;
+其中H_0(r1)与H_0(r2)分别代表了两个自由电子的动能算符：
+&lt;/p&gt;
+$$
+H_0(\mathbf{r1}) = \frac{-\hbar^2 \nabla_1^2}{2m} \\
+H_0(\mathbf{r2}) = \frac{-\hbar^2 \nabla_2^2}{2m}
+$$&lt;p&gt;
+因为有：
+&lt;/p&gt;
+$$
+H_0(\mathbf{r1})e^{i\mathbf{k\cdot r_1}} = \frac{\hbar^2 k^2}{2m}e^{i\mathbf{k\cdot r_1}}
+$$&lt;p&gt;
+于是假设 $\hbar^2 k ^2/2m = \epsilon_k$ ,对于2电子的计算一样，于是就有：
+&lt;/p&gt;
+$$
+\sum_\mathbf{k}g_\mathbf{k}\left[2\epsilon_\mathbf{k}+V(\mathbf{r_1}-\mathbf{r_2})\right]e^{i\mathbf{k}(\mathbf{r_1}-\mathbf{r_2})}=E\sum_\mathbf{k}g_\mathbf{k}e^{i\mathbf{k}(\mathbf{r_1}-\mathbf{r_2})}.
+$$&lt;p&gt;
+然后两边乘以 $e^{-i\bold{q(r_1-r_2)}}$并对整个空间积分（位置空间）：&lt;/p&gt;
+&lt;p&gt;可以写为：&lt;/p&gt;
+&lt;p&gt;BCS理论表明，电子之间的吸引相互作用会导致一种能量更低的Cooper Pair的状态，那么问题是：既然这种吸引相互作用在室温甚至更高温度都存在，或者说这是一种结构上的效果，那么为什么在室温或者其他温度，Cooper-Pair 很难形成？&lt;/p&gt;
+&lt;p&gt;原因是：在室温下热涨落太剧烈了，在两个电子结合形成Cooper对之后，能量会相比于之前降低一点，但是这个Gap很小，在室温下，环境温度提供能量，导致电子的热涨落太剧烈，使得电子之间的Pair 断开。&lt;/p&gt;
+&lt;h2 id=&#34;ginzburg---landau-theory&#34;&gt;Ginzburg - Landau Theory
+&lt;/h2&gt;
+&lt;p&gt;GL 理论对于超导现象给出了宏观描述，它引入了一个序参量 $\psi(\bold{r})$,它的模方代表在超导体中某一个位置的Cooper- Pair的密度  $n_s(\bold{r})$:
+&lt;/p&gt;
+$$
+|\psi(\mathbf{r})|^2 = n_s(\mathbf{r})
+$$&lt;p&gt;
+当序参量等于0，就说明这个地方没有超导态（SuperConductivity State &amp;mdash;SS）只有Normal State（正常态，简称NS）。不等于0说明这里有SS。&lt;/p&gt;
+&lt;p&gt;GL理论的关键在于，它运用了大自然的懒惰性，即：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大自然是懒惰的，系统将处于自由能最小的状态&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;于是，他们假设超导体的自由能可以展开成序参量模方的形式：
+&lt;/p&gt;
+$$
+F_s=F_n+\underbrace{\alpha|\psi|^2+\frac{\beta}{2}|\psi|^4}_\text{相变势能项}+\underbrace{\frac{1}{2m}|(-i\hbar\nabla-\frac{2eA}{c})\psi|^2}_\text{动能 梯度项}+\underbrace{\frac{|H(r)-H_a|^2}{8\pi}}_\text{磁场能}
+$$&lt;p&gt;
+其中Fn代表Normal State的自由能,&lt;/p&gt;
+&lt;p&gt;相变势能项 $(\alpha|\psi|^2 + \frac{\beta}{2}|\psi|^4)$: 这是描述相变的核心。$\beta$ 是一个正的常数，$\alpha$ 依赖于温度，$\alpha \propto (T - T_c)$：（&lt;strong&gt;添加图像解释&lt;/strong&gt;）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 $T &gt; T_c$ 时，$\alpha &gt; 0$，能量最低点在 $\psi = 0$（正常态）。&lt;/li&gt;
+&lt;li&gt;当 $T &lt; T_c$ 时，$\alpha &lt; 0$，能量最低点在 $\psi \neq 0$，导致自发对称性破缺，进入超导态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;动能梯度项存在是为了防止序参量的模方发生巨大的变化（因为自由能是要取最小值的，既然要避免这种情况发生，那么对于优化问题，加上这一项即可）&lt;/p&gt;
+&lt;p&gt;磁场能量：因为凝聚成超导（形成Cooper-Pair ）会降低系统的自由能（相变势能项），但是形成超导体后需要付出大量抗磁的能量代价，那么II类超导体其实就是在权衡这两点，所以引入了磁通涡旋，两者之间得到了权衡。&lt;/p&gt;
+&lt;p&gt;需要解释两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为什么相变的势能项的幂次是这样的？&lt;/li&gt;
+&lt;li&gt;动能项为什么多了一个 $\frac{2eA}{c}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1-对自由能求极值&#34;&gt;1. 对自由能求极值
+&lt;/h3&gt;
+&lt;p&gt;对于自由能取极值有两种方式得到两个方程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;GL第一方程（$\frac{\partial F}{\partial \psi^*} = 0$）：
+&lt;/p&gt;
+$$
+\alpha\psi+\beta|\psi|^2\psi+\frac{1}{2m}(-i\hbar\nabla-\frac{2eA}{c})^2\psi=0
+$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;超导电流方程（$\frac{\partial F}{\partial A} = 0$）：
+&lt;/p&gt;
+$$
+j=\frac{2e}{m}\mathrm{Re}\left\{\psi^*(-i\hbar\nabla-\frac{2eA}{c})\psi\right\}
+$$&lt;p&gt;
+（添加对于两个方程的推导）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-两个长度&#34;&gt;2. 两个长度
+&lt;/h3&gt;
+&lt;p&gt;通过上面对于自由能取极值可以得到两个长度，相干长度 $\xi$和渗透长度 $\lambda$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;相干长度&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;对于一个超导体，假设此时它体内Cooper-Pair的密度均匀，每个地方的序参量相同 $\psi_0$。&lt;/p&gt;
+&lt;p&gt;此时突然将超导体的边界的序参量变成0（？什么操作），相干长度表示这个操作影响了多少长度的超导体，即表明了这个超导体是软的（相干长度小）还是硬的（相干长度大），如果是软的（像一个具有弹性的物体），它会在表面吸收一定能量，阻止这个影响传播，如果是硬的，那么这个影响就好像波一样向超导体内部传播。&lt;/p&gt;
+&lt;p&gt;那么如何定义这个相干长度呢？&lt;/p&gt;
+&lt;p&gt;首先假设无磁场的情况（$A = 0$）那么GL第一方程变为：
+&lt;/p&gt;
+$$
+\frac{-\hbar^2}{2m}\frac{d^2\psi}{dx^2}+\alpha\psi+\beta\psi^3=0
+$$&lt;p&gt;
+当离边界很远时 $x \to \infty$（这里的x就是离边界的距离）（补充一个超导体的坐标图），此时序参量稳定于 $\psi_0$，并且几乎不发生空间变化，那么此时第一项的二阶导数为0，且此时T&amp;lt;Tc（$\alpha &lt;0$）, 有：
+&lt;/p&gt;
+$$
+\psi_0^2=\frac{-\alpha}{\beta}=\frac{|\alpha|}{\beta}
+$$&lt;p&gt;
+然后严格求解这个方程，首先令任意位置的序参量与平衡态序参量之间有一定的倍数关系f(这个倍数关系是x的函数)：
+&lt;/p&gt;
+$$
+\psi(x) = f(x)\psi_0
+$$&lt;p&gt;
+则GL第一方程转换为：
+&lt;/p&gt;
+$$
+    \frac{-\hbar^2}{2m}\psi_0\frac{d^2f}{dx^2}+\alpha(\psi_0f)+\beta(\psi_0f)^3=0
+$$&lt;p&gt;
+两边同时除以 $\psi_{0}$，并把 $\alpha$ 也就是 $-|\alpha|$ 代入：
+&lt;/p&gt;
+$$
+-\frac{\hbar^{2}}{2m} \frac{d^{2}f}{dx^{2}} - |\alpha|f + \beta\psi_{0}^{2}f^{3} = 0
+$$&lt;p&gt;
+利用第二步的结论 $\beta\psi_{0}^{2} = |\alpha|$，方程变成了：
+&lt;/p&gt;
+$$
+-\frac{\hbar^{2}}{2m} \frac{d^{2}f}{dx^{2}} - |\alpha|f + |\alpha|f^{3} = 0
+$$&lt;p&gt;
+第五步：提取特征长度 我们把带有导数的项移到一边，其他的移到另一边，并两边同除以 $|\alpha|$：
+&lt;/p&gt;
+$$
+\frac{\hbar^{2}}{2m|\alpha|} \frac{d^{2}f}{dx^{2}} = f - f^{3}
+$$&lt;p&gt;
+现在请仔细看左边的系数：&lt;/p&gt;
+&lt;p&gt;系数 $\times \frac{d^{2}f}{dx^{2}}$ = 无量纲数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\frac{d^{2}f}{dx^{2}}$ 的量纲是 $\frac{1}{长度^{2}}$。&lt;/li&gt;
+&lt;li&gt;为了让等式两边都无量纲，前面的系数 必须 具有 长度${}^{2}$ 的量纲。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以前面这个系数是长度平方单位，于是定义这个平方为$\xi^2$：
+&lt;/p&gt;
+$$
+    \xi^2(T)=\frac{\hbar^2}{2m|\alpha|}
+$$&lt;p&gt;
+方程变为：
+&lt;/p&gt;
+$$
+    \xi^2\frac{d^2f}{dx^2}+f-f^3=0
+$$&lt;p&gt;
+这个方程的解析解为：
+&lt;/p&gt;
+$$
+f(x)\approx\tanh\left(\frac{x}{\sqrt{2}\xi}\right)
+$$&lt;p&gt;
+当 x = $\xi$时，序参量恢复到平衡态的66%。&lt;/p&gt;
+&lt;p&gt;相干长度的正式定义是：描述超导序参量（波函数）受扰动后恢复的&lt;strong&gt;距离&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;穿透深度&#34;&gt;穿透深度：
+&lt;/h4&gt;
+&lt;p&gt;当一个超导体内部的序参量基本稳定，维持在 $\psi_0$左右，此时对超导体施加一个磁场，从GL理论给出的超导电流方程：
+&lt;/p&gt;
+$$
+j=\frac{2e}{m}\mathrm{Re}\left\{\psi^*(-i\hbar\nabla-\frac{2eA}{c})\psi\right\}
+$$&lt;p&gt;
+当序参量在各个位置稳定的时候，内部的空间变化项就为0，这个电流方程退化为London 方程：
+&lt;/p&gt;
+$$
+\mathbf{j}= - \frac{4 e^2}{mc}|\psi_0|^2\mathbf{A}
+$$&lt;p&gt;
+根据London 方程，超导体内部形成的电流是与磁场产生的矢势（$\mathbf{B = \nabla \times A}$）成反比的,所以得出超导体是抗磁的，超导电流越大的地方，磁场越小。&lt;/p&gt;
+&lt;p&gt;自然而然，有一个问题，施加的这个磁场能够在超导体内部穿透多远？&lt;/p&gt;
+&lt;p&gt;根据Ampere’s Law ，磁场与电流的关系如下：
+&lt;/p&gt;
+$$
+\nabla \times \mathbf{H} = \frac{4\pi}{c}\mathbf{j}
+$$&lt;p&gt;
+对于两个再次进行Curl操作（$\nabla \times$)，得：
+&lt;/p&gt;
+$$
+\nabla \times (\nabla \times \mathbf{H}) = \frac{4\pi}{c}\nabla \times \mathbf{j}
+$$&lt;p&gt;
+左边根据规则- $\nabla\times(\nabla\times\mathbf{F})=\nabla(\nabla\cdot\mathbf{F})-\nabla^{2}\mathbf{F}$,第一项为0（ $\nabla \cdot \mathbf{H} = 0$）,右边代入London 方程，得到：
+&lt;/p&gt;
+$$
+-\nabla^2\mathbf{H} = - \frac{16\pi e^2}{mc^2}|\psi_0|^2(\nabla \times \mathbf{A})=- \frac{16\pi e^2}{mc^2}|\psi_0|^2\mathbf{H}
+$$&lt;p&gt;
+这即是超导体内部磁场所满足的方程，如果仅考虑一维的穿透的话，这个方程的解为：
+&lt;/p&gt;
+$$
+\mathbf{H} = \exp(-\frac{x}{\lambda}),\quad\lambda(T) =\sqrt{\frac{mc^2}{16\pi e^2|\psi_0|^2}}
+$$&lt;p&gt;
+其中的 $\lambda$称为磁场在超导体中的穿透深度，因为对于这个一维解而言，当x = $\lambda$时磁场强度开始趋于0。根据平衡态序参量的定义 $\psi_0^2=\frac{-\alpha}{\beta}=\frac{|\alpha|}{\beta}$，穿透深度为：
+&lt;/p&gt;
+$$
+\lambda(T) =\sqrt{\frac{mc^2\beta}{16\pi e^2|\alpha|}}
+$$&lt;p&gt;
+穿透深度顾名思义，其越大，磁场越容易穿过超导体，反之亦然。&lt;/p&gt;
+&lt;h4 id=&#34;两类超导体&#34;&gt;两类超导体：
+&lt;/h4&gt;
+&lt;p&gt;GL理论定义了一个系数来区别两类超导体，这个系数为：
+&lt;/p&gt;
+$$
+\kappa = \frac{\lambda}{\xi}
+$$&lt;p&gt;
+如果 $\kappa &gt; 1/\sqrt{2}$,即为I类超导体，如果小于则为II类超导体。&lt;/p&gt;
+&lt;p&gt;可以从表面能来理解这种分类。&lt;/p&gt;
+&lt;p&gt;表面能（Surface Energy）：&lt;/p&gt;
+&lt;p&gt;有一个超导体，它其中有相干长度这么长的区域是NS（正常态），剩下的区域全部是SS，那么表面能表示，你要形成这么一个状态的超导体所需要的能量（就好像在这个超导体里面放一堵墙）。
+&lt;/p&gt;
+$$
+E_S = E_C-E_B
+$$&lt;p&gt;
+其中Es表示表面能，Ec代表这个过程中亏损的能量，Eb代表这个过程超导体获得的能量。&lt;/p&gt;
+&lt;p&gt;分别来看Ec和Eb：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;这个过程中亏损的能量是损失了相干长度这么宽的Cooper-Pair的凝聚能。&amp;mdash; $\xi \times \text{损失的Cooper 凝聚能}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;获得的能量是带来了穿透深度这么长的磁场能&amp;mdash;- $\lambda \times \text{磁场能}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那么当损失大于收益时，表面能为正，那么此时为I类超导，即此时的相干长度比穿透深度长（为什么？磁场能与Cooper的凝聚能相当。）&lt;/p&gt;
+&lt;p&gt;损失小于收益时，表面能为负，此时为II类超导，相干长度比穿透深度短。&lt;/p&gt;
+&lt;p&gt;所以区分I类超导与II类超导的一个角度时，超导体内部磁场能量与Cooper凝聚能量的一个fighting。&lt;/p&gt;
+&lt;p&gt;I类超导：“比较硬且纯净的超导”，其相干长度大于穿透长度，两败俱伤，因为超导体损失的Cooper能量大于磁场的能量。（比较硬是因为，相干长度长，外部的影响可以传到超导体很深的位置）&lt;/p&gt;
+&lt;p&gt;II类超导：“比较软且有杂质的超导”，其相干长度短于穿透长度，内部的Cooper对形成了妥协，让磁场穿入超导体（但不是随便穿入磁场，而是以一个磁通涡旋穿入）。要形成II类超导体，可以往超导体内部加入一定量的杂质，这样会使得超导体内部电子的自由程变短（自由程即电子自由运动的一个距离），那么此时超导体的相干长度也会变小，那么此时穿透深度就会大于相干长度了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://in.iphy.ac.cn/upload/s4/i/201401161403194355.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;上图左边是I类超导，右图是II类超导，I类超导只有一个临界磁场（当磁场超过之后，整个超导态被破环）。II类超导有两个临界磁场，当磁场超过Hc1时超导态转变为混合态（此时允许磁场进入，但是与超导态共存，磁场周围形成许多超导电流屏蔽磁场的影响），当磁场超过Hc2时，与I类超导一样超导态被完全破环。&lt;/p&gt;
+&lt;p&gt;有一个小问题：根据上面的定义，哪一类超导适合做强磁场下的线圈材料？&lt;/p&gt;
+&lt;h4 id=&#34;磁通涡旋&#34;&gt;磁通涡旋：
+&lt;/h4&gt;
+&lt;p&gt;II 类超导体表面能为负，让磁场进入超导体，问题是这个磁场如何进入超导体，或者说超导体中的Cooper-Pair 如何与这个磁场相互权衡？&lt;/p&gt;
+&lt;p&gt;Abrikosov提出了一种磁通涡旋来解释II类超导体中的磁场在超导体中如何穿过。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/2/24/Vortextypetwo.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;如上图，穿过超导体的磁场，被超导电流环绕在半径为 $\xi$的圆内，但是磁场在离中心 $\lambda$的时候显著减弱，为什么这个超导电流的方向与磁场矢势的方向一样呢？（由London方程，超导电流应该是抵消磁场的！）**首先我们看一个更加普遍的超导电流公式。&lt;/p&gt;
+&lt;p&gt;超导电流方程：
+&lt;/p&gt;
+$$
+\mathbf{j_s}=\frac{2e}{m}\mathrm{Re}\left\{\psi^*(-i\hbar\nabla-\frac{2e\mathbf{A}}{c})\psi\right\}
+$$&lt;p&gt;
+London方程在超导体内部序参量 $\psi$处处相等时得出的：
+&lt;/p&gt;
+$$
+\mathbf{j_s}= - \frac{4 e^2}{mc}|\psi_0|^2\mathbf{A}
+$$&lt;p&gt;
+那么如果在II类超导体的情况，在这个涡旋的中心，序参量为0，也就是说这个均匀的实心球体中间被挖了一个洞，则超导电流方程的第一项空间变化就不为0，那么此时空间变化项：
+&lt;/p&gt;
+$$
+\nabla \psi = (\nabla{|\psi|})e^{i\phi} +|\psi|(i\nabla\phi)e^{i\phi}
+$$&lt;p&gt;
+然后计算实部部分 $\mathrm{Re}\left\{\psi^*(-i\hbar\nabla-\frac{2e\mathbf{A}}{c})\psi\right\}$：
+&lt;/p&gt;
+$$
+\mathrm{Re}\left\{\psi^*(-i\hbar\nabla-\frac{2e\mathbf{A}}{c})\psi\right\} = \\
+\mathrm{Re}\left\{-i\hbar |\psi|\nabla{|\psi|}+\hbar|\psi|^2\nabla\phi - \frac{2e\mathbf{A}}{c}|\psi|\right\}
+$$&lt;p&gt;
+第一项为纯虚数，则有：
+&lt;/p&gt;
+$$
+\mathbf{j_s}= \frac{2e}{m}(\hbar\nabla\phi- \frac{2e\mathbf{A}}{c})|\psi|^2
+$$&lt;p&gt;
+根据流体方程：
+&lt;/p&gt;
+$$
+\mathbf{j_s} = n_s (2e) \mathbf{v_s} = |\psi|^2(2e)\mathbf{v_s}
+$$&lt;p&gt;
+可以得到超导电流速度满足：
+&lt;/p&gt;
+$$
+\mathbf{v_s} =\frac{1}{m}(\hbar\nabla\phi- \frac{2e\mathbf{A}}{c})
+$$&lt;p&gt;
+那么这个涡旋周围的超导电流有两项，一项是由空间序参量变化导致的（拓扑项），另一项是超导体希望通过反向电流来抵消磁场（抗磁项是London方程所描述的，但是这种情况只适用于Meissner State&amp;mdash;完全抗磁态），通过这样一个General的超导电流方程，就可以解释为什么此时超导电流的方向与磁场矢势的方向一致（拓扑项大于抗磁项）。&lt;/p&gt;
+&lt;p&gt;那么这个涡旋有什么有趣的物理特征呢？&amp;mdash;-磁通量子&lt;/p&gt;
+&lt;h4 id=&#34;磁通量子&#34;&gt;磁通量子：
+&lt;/h4&gt;
+&lt;p&gt;首先序参量 $\psi(\mathbf{r})$ 是一个复数场：
+&lt;/p&gt;
+$$
+\psi(\mathbf{r}) = |\psi(\mathbf{r})| e^{i\phi(\mathbf{r})}
+$$&lt;p&gt;
+这里的 $\phi(\mathbf{r})$ 是相位。&lt;/p&gt;
+&lt;p&gt;由于序参量具有单值性&amp;mdash;如果在超导体内部画一个闭合回路，序参量沿着这个回路走一圈，物理状态不变，序参量保持不变，但是相位不需要变回原来的相位，只要相差 $2\pi$的整数倍即可（$e^{i(\phi + 2\pi n)} = e^{i\phi}$）,用数学公式表达就是，相位梯度的环路积分为 $2n\pi$:
+&lt;/p&gt;
+$$
+\oint_C \nabla \phi \cdot d\mathbf{l} = 2\pi n, \quad n \in \mathbb{Z}
+$$&lt;p&gt;
+在超导电流速度方程的拓扑项中也有相位梯度的变化，有：
+&lt;/p&gt;
+$$
+\nabla \phi = \frac{m}{\hbar}\mathbf{v}_s + \frac{2e}{\hbar c}\mathbf{A}
+$$&lt;p&gt;
+然后取离这个涡旋比较远半径的闭合回路（回路半径远大于穿透深度），则此时超导电流为0，这超导电流的速度 = 0，然后对于回路积分得到：
+&lt;/p&gt;
+$$
+\oint_C \nabla \phi \cdot d\mathbf{l} = \frac{2e}{\hbar c} \oint_C \mathbf{A} \cdot d\mathbf{l}
+$$&lt;p&gt;
+左边根据波函数的单值性，为 $2n\pi$，右边根据Stokes 定理及（$\curl A = B$）：
+&lt;/p&gt;
+$$
+\oint_C \mathbf{A} \cdot d\mathbf{l} = \iint_S (\nabla \times \mathbf{A}) \cdot d\mathbf{S} = \iint_S  \mathbf{B}\cdot d\mathbf{S} = \Phi
+$$&lt;p&gt;
+因此得到对于这个围绕涡旋的回路而言，：
+&lt;/p&gt;
+$$
+\Phi = n \left( \frac{2\pi \hbar c}{2e} \right) = n \left( \frac{hc}{2e} \right) = n\Phi_0
+$$&lt;p&gt;
+其中 $\Phi_0$就成为磁通量子，表明穿过II类超导体的涡旋所携带的磁通量只能是磁通量子的整数倍。&lt;/p&gt;
+&lt;h4 id=&#34;josephson-效应&#34;&gt;Josephson 效应：
+&lt;/h4&gt;
+</description>
+        </item>
+        <item>
         <title>前置知识</title>
-        <link>https://quantum51.top/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
+        <link>http://localhost:1313/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</link>
         <pubDate>Sun, 28 Dec 2025 22:16:20 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
+        <guid>http://localhost:1313/2025/topoconmat%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;band-structure-theory&#34;&gt;Band Structure Theory
 &lt;/h1&gt;
 &lt;p&gt;拓扑物态中，主要研究的是对于不同结构（具有不同对称性的材料）的物体，其内部电子的能带结构与拓扑之间的关系。因此，物体中的电子的能级就显得尤为重要了。&lt;/p&gt;
@@ -196,21 +608,16 @@ $$&lt;p&gt;
 &lt;/p&gt;
 $$
 V_n = \partial_k E^{(n)}(k) \big|_{k=0} = \langle n | H&#39;(k=0) | n \rangle
-$$&lt;p&gt;
-$$
-m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&amp;rsquo;&amp;rsquo;(k=0) | n \rangle&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2 \sum_{m \neq n} \frac{|\langle n | H&amp;rsquo; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
-$$&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+$$$$
+m_n^{-1} = \partial_k^2 E^{(n)}(k) \big|_{k=0} = \langle n | H&#39;&#39;(k=0) | n \rangle + 2 \sum_{m \neq n} \frac{|\langle n | H&#39; | m \rangle|^2}{E_0^{(n)} - E_0^{(m)}}
+$$</description>
         </item>
         <item>
         <title>Ising model 到 Predictive Coding-能量最小化的自然演进</title>
-        <link>https://quantum51.top/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</link>
+        <link>http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</link>
         <pubDate>Tue, 25 Nov 2025 17:40:16 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</guid>
+        <guid>http://localhost:1313/2025/homeworkising-model-%E5%88%B0-predictive-coding-%E8%83%BD%E9%87%8F%E6%9C%80%E5%B0%8F%E5%8C%96%E7%9A%84%E8%87%AA%E7%84%B6%E6%BC%94%E8%BF%9B/</guid>
         <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要：
 &lt;/h2&gt;
 &lt;p&gt;本文系统探讨了统计物理模型与神经计算理论之间的深刻联系，阐述了基于“能量最小化”原理的计算框架如何从物理系统延伸至生物智能。&lt;/p&gt;
@@ -547,19 +954,19 @@ $$\Delta w_{ij} \propto e_i \cdot r_j$$&lt;h4 id=&#34;pc与hopfield-神经网络
         </item>
         <item>
         <title>三人行</title>
-        <link>https://quantum51.top/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</link>
+        <link>http://localhost:1313/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</link>
         <pubDate>Thu, 20 Nov 2025 10:03:11 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</guid>
+        <guid>http://localhost:1313/2025/%E8%A7%82%E5%90%8E%E6%84%9F%E4%B8%89%E4%BA%BA%E8%A1%8C/</guid>
         <description>&lt;p&gt;三人行讲的是2033年的赵左右对于现在的生活并不满意，通过时间旅行技术想要回到过去（2008）改变自己的人生，他化名荀未来回到2008年遇到了过去（赵左右）与未来的自己（赵了），未来的自己想阻止他改变它的人生，因为另一种人生的他失去了他所爱之人。就这样两个人通过时空旅行改变了过去的自己，虽然最后赵左右成功带着他们的影响继续一个人生活，但是因为时间的影响，他逐渐发现无论自己如何试图改变，但始终战胜不了时间，不能够改变自己的人生。其实这种全知人生的无奈才是时间最痛苦的事，人生的快乐其实就是就是对于未来人生的未知，未知即未来。最后荀未来不忍心看到过去的自己这样挣扎的活着，他出手帮助过去的自己抹去了对于未来所知的一切，让时间回归正轨，但是这么多的努力真的无法改变什么吗？ 当然有！赵左右与徐图图之间的爱无法被时间改变！ 未来就是未知，但是爱或者感觉是永恒的，找到自己所爱的事，不后悔，不试图知晓未来或者改变过去，享受人生的未知，全知是如此的枯燥，探索体验才能在无数条可能的人生道路中走向那条属于自己的道路。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>毕业论文｜chapter3</title>
-        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
+        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</link>
         <pubDate>Fri, 09 May 2025 14:06:10 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
+        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的应用&#34;&gt;量子纠缠的应用
 &lt;/h1&gt;
 &lt;p&gt;可能很多人会想，量子纠缠这么神秘，众多科学家历经坎坷终于证明了量子纠缠存在的合理性。那么它有什么用呢？或者说，它能够解决哪些问题呢？&lt;/p&gt;
@@ -632,7 +1039,7 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;下图就是单位元上的六个单位根，可以将其看成模6群的几何结构（因为两者同构）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Cyclic_group.svg&#34;
 	
 	
 	
@@ -692,7 +1099,7 @@ $$
 &lt;/table&gt;
 &lt;h4 id=&#34;量子相位估计&#34;&gt;量子相位估计：
 &lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/PhaseCircuit.svg&#34;
 	
 	
 	
@@ -828,7 +1235,7 @@ $$&lt;p&gt;
 &lt;h3 id=&#34;shor算法的逻辑&#34;&gt;Shor算法的逻辑：
 &lt;/h3&gt;
 &lt;p&gt;前面说了，经典计算里面可以通过并行计算来加速任务的完成时间，那么分解大数的问题可不可以用并行计算来处理，答案是并行计算的加速效果是线性的，而shor算法具有指数级的加速效果，并且shor算法的时间复杂度是： $O((\log{n})^3)$，所以经典中的并行计算对于任务的加速效果并不如shor算法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter3/Shor%27s_algorithm.svg&#34;
 	
 	
 	
@@ -1042,10 +1449,10 @@ $$
         </item>
         <item>
         <title>AI|Why Machines Learn?</title>
-        <link>https://quantum51.top/2025/aiwhy-machines-learn/</link>
+        <link>http://localhost:1313/2025/aiwhy-machines-learn/</link>
         <pubDate>Sat, 19 Apr 2025 09:34:28 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/aiwhy-machines-learn/</guid>
+        <guid>http://localhost:1313/2025/aiwhy-machines-learn/</guid>
         <description>&lt;h1 id=&#34;why-machines-learn&#34;&gt;Why machines learn？
 &lt;/h1&gt;
 &lt;h2 id=&#34;chapter1deseperatly-seeking-pattern&#34;&gt;Chapter1:Deseperatly seeking pattern
@@ -1102,10 +1509,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;/h3&gt;
 &lt;p&gt;言归正传（Regression后面还会系统的说明），我们也许可以通过理解机器是怎么学习的来完全理解人类是怎么学习的（这里我的理解是我们可以在让机器逐步学会学习的过程中，不断地深化我们对于自己学习过程的理解）。&lt;/p&gt;
 &lt;p&gt;19世纪，图灵等科学家就认为logic和computation之间有很深厚的联系，他们断言“所有的计算都可以被简化为某种逻辑”。然后就引出了这样一个问题：既然人脑是可以执行计算的，那么它是怎么样执行逻辑操作的（它底层是否像逻辑门一样呢？）。&lt;/p&gt;
-&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1.png&#34;
+&lt;p&gt;带着这样的问题，有生物学家通过类比一个神经元：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1.png&#34;
 	width=&#34;948&#34;
 	height=&#34;421&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/1_hu_4cf4f3e353866372.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/1_hu_f54ef82382b8a7c7.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1117,10 +1524,10 @@ $$&lt;p&gt;而对于现在的机器而言无非就是一个Regression算法，�
 &lt;p&gt;图中Dendrites就是神经元的树突，它负责接受各种刺激，树突中间的就是细胞体，他可以处理树突接受到的刺激（相当于进行计算），然后Axon（轴突）负责转递细胞体的结果到Axon terminals（端粒），端粒在将这个结果传递给周边其他的神经元。&lt;/p&gt;
 &lt;p&gt;然后生物学家希望把这一机构转化为一个简单的计算模型，理由是：他很像一个机器，你给他一个输入（刺激），他就会给输出。因此他们想要通过类比用神经元来构建逻辑AND，OR操作。&lt;/p&gt;
 &lt;p&gt;他们首先将这个神经元定义为这个样子：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2.png&#34;
 	width=&#34;974&#34;
 	height=&#34;382&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/2_hu_5ca8c49f76992445.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/2_hu_64a170845a1ba395.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1199,10 +1606,10 @@ $$&lt;p&gt;对于OR逻辑操作也是同理，读者可以自行一试（答案�
 &lt;p&gt;不可以，因为Mark I的工作原理与光学识别系统之间还是有所不同。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;光学系统识别图片上的字母&lt;/strong&gt;（OCR）就像一个经过训练的侦探。它首先“清理”图像，使其更易于分析（预处理）。然后，“划分”图像，找到哪里有文本，并将文本分解成独立的字母（分割）。接着，“观察”每个字母的特点（特征提取），最后根据这些特点与已知字母的特征进行“对比”，从而确定这个字母是哪个（分类和识别）。&lt;/p&gt;
 &lt;p&gt;而Mark I识别图片中的字母则是通过学习，这个学习的过程是：每次当它错误的识别这个图像的时候，通过一定的反馈来学习如何识别图片的字母，本质上就是学习如何区分不同种类的字母。&lt;/p&gt;
-&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4.png&#34;
+&lt;p&gt;那么，具体在Perceptron里面是如何实现的呢？算法上其实和前面的神经元很像，就像下图一样：&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4.png&#34;
 	width=&#34;1444&#34;
 	height=&#34;570&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/4_hu_6075cf4420130cac.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/4_hu_11da06f41b0cccd8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.10.37&#34;
@@ -1238,10 +1645,10 @@ f(g(x)) =
 $$&lt;p&gt;
 我们可以看到这个操作与前面有一点不一样，但都是先对于输入进行一定的处理，然后进行判断。然后我们看看这样的操作可以如何区分不同的种类的字母。先举个例子：&lt;/p&gt;
 &lt;p&gt;如何判断一个人是否肥胖呢？首先，我们有一个用于训练的数据集${x_{train}=(x_1,x_2,index)}$，每个人都有特定的身高（$x_1$）和体重（$x_2$）以及是否肥胖的指标（index），例如一个人（100kg，160cm，1（是））就表示他体重100kg，身高160cm，属于肥胖人群。如果我们将瘦的人标记为三角形，胖的人标记为圆形，那么这个数据集在坐标轴就会如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5.png&#34;
 	width=&#34;767&#34;
 	height=&#34;586&#34;
-	srcset=&#34;https://quantum51.top/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, https://quantum51.top/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/2025/aiwhy-machines-learn/5_hu_455dd33cfca4b775.png 480w, http://localhost:1313/2025/aiwhy-machines-learn/5_hu_97b80f056f3757b.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;截屏2025-05-20 20.13.09&#34;
@@ -1264,10 +1671,10 @@ $$&lt;p&gt;
         </item>
         <item>
         <title>毕业论文|chapter 2</title>
-        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</link>
+        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</link>
         <pubDate>Wed, 16 Apr 2025 16:39:44 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</guid>
+        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-2/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的验证&#34;&gt;量子纠缠的验证
 &lt;/h1&gt;
 &lt;h2 id=&#34;bell不等式&#34;&gt;Bell不等式
@@ -1806,10 +2213,10 @@ $$&lt;p&gt;所以可以通过CHSH游戏&lt;sup id=&#34;fnref:8&#34;&gt;&lt;a hre
         </item>
         <item>
         <title>毕业论文|chapter 1</title>
-        <link>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</link>
+        <link>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</link>
         <pubDate>Wed, 16 Apr 2025 16:38:41 +0800</pubDate>
         
-        <guid>https://quantum51.top/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</guid>
+        <guid>http://localhost:1313/2025/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87chapter-1/</guid>
         <description>&lt;h1 id=&#34;量子纠缠的早期视角&#34;&gt;量子纠缠的早期视角
 &lt;/h1&gt;
 &lt;h2 id=&#34;epr佯谬&#34;&gt;EPR佯谬

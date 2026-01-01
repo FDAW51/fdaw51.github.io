@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Eugene</title>
-        <link>https://quantum51.top/page/</link>
+        <link>http://localhost:1313/page/</link>
         <description>Recent content in Pages on Eugene</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 16 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://quantum51.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于自己</title>
-        <link>https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/</link>
+        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/</link>
         <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/</guid>
+        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/</guid>
         <description>&lt;h2 id=&#34;我是谁&#34;&gt;我（是谁？）
 &lt;/h2&gt;
 &lt;p&gt;我，俞小金，03年生，江西省赣州市兴国县人，农村孩子，小时候很外向，对什么都很好奇，并且小时候觉得世界都围着自己转（特指小学）。但是到初中之后，仿佛世界改变了，周围的人不再贪玩，都变得紧绷，一直带有一种紧张的氛围。即使这样我还是结识了一群很好的朋友，虽然后面分班将一部分人打散，但是我还是很感激他们陪伴我度过了这个从小学无拘无束贪玩的时期转向压力十足的学习阶段。&lt;/p&gt;
@@ -50,10 +50,10 @@
 &lt;h4 id=&#34;6-毕业旅游&#34;&gt;6. 毕业旅游
 &lt;/h4&gt;
 &lt;p&gt;6月份，毕业季，和同学到福建福州的平潭吹了吹海风，然后回到学校顺利毕业了，在家等待开学的同时，学习电动力学和算法，之后应该也会更新相应的笔记，希望能够写出一些有用的东西以及收获成长！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C.jpg&#34;
 	width=&#34;3072&#34;
 	height=&#34;4096&#34;
-	srcset=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C_hu_e3bb6ba9588eca05.jpg 480w, https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C_hu_fa7a719fdee6e6e2.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C_hu_e3bb6ba9588eca05.jpg 480w, http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E7%A6%8F%E5%B7%9E%E8%A1%8C_hu_fa7a719fdee6e6e2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;自己的肖申克的救赎&#34;
@@ -64,10 +64,10 @@
 		data-flex-basis=&#34;180px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA.jpg&#34;
 	width=&#34;4032&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA_hu_ff9fc9de82f89506.jpg 480w, https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA_hu_e9b64973505e3bd0.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA_hu_ff9fc9de82f89506.jpg 480w, http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%B9%B3%E6%BD%AD%E7%9A%84%E6%97%A5%E5%87%BA_hu_e9b64973505e3bd0.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;平潭的日出&#34;
@@ -78,10 +78,10 @@
 		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84.JPG&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84.JPG&#34;
 	width=&#34;3840&#34;
 	height=&#34;2160&#34;
-	srcset=&#34;https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84_hu_3616b3e5219bf7f9.JPG 480w, https://quantum51.top/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84_hu_74453b2014635c94.JPG 1024w&#34;
+	srcset=&#34;http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84_hu_3616b3e5219bf7f9.JPG 480w, http://localhost:1313/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%B7%B1/%E5%90%8C%E8%A1%8C%E7%9A%84_hu_74453b2014635c94.JPG 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;同行的伙伴们(我是左二)&#34;
@@ -109,18 +109,18 @@
         </item>
         <item>
         <title>Archives</title>
-        <link>https://quantum51.top/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Wed, 16 Aug 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://quantum51.top/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>https://quantum51.top/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://quantum51.top/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         
