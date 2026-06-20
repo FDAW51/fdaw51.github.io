@@ -114,38 +114,22 @@ let groups = $derived.by(() => {
 <div>
     {#each groups as group}
         <div>
-            <div class="flex flex-row w-full items-center h-15">
-                <div class="w-[15%] md:w-[10%] transition text-2xl font-bold text-right text-75">
+            <div class="flex flex-row w-full items-center gap-x-3 h-14">
+                <div class="text-2xl font-bold text-75">
                     {group.year}
                 </div>
-                <div class="w-[15%] md:w-[10%]">
-                    <div class="h-3 w-3 bg-none rounded-full outline-solid outline-(--primary) mx-auto outline-offset-2 z-50 outline-3"></div>
-                </div>
-                <div class="w-[70%] md:w-[80%] transition text-left text-50">
+                <div class="h-3 w-3 rounded-full bg-(--primary) shrink-0"></div>
+                <div class="text-50">
                     {group.posts.length} {i18n(group.posts.length === 1 ? I18nKey.postCount : I18nKey.postsCount)}
                 </div>
             </div>
             {#each group.posts as post}
                 <a href={getPostUrl(post)}
                     aria-label={post.data.title}
-                    class="group btn-plain h-10 w-full rounded-lg hover:text-[initial]"
+                    class="group btn-plain w-full rounded-lg hover:text-[initial] block"
                 >
-                    <div class="flex flex-row justify-start items-center h-full">
-                        <!-- dot -->
-                        <div class="w-[10%] md:w-[6%] relative dash-line h-full flex items-center">
-                            <div class="transition-all mx-auto w-1 h-1 rounded group-hover:h-5
-                                bg-[oklch(0.5_0.05_var(--hue))] group-hover:bg-(--primary)
-                                outline-4 z-50
-                                outline-(--card-bg)
-                                group-hover:outline-(--btn-plain-bg-hover)
-                                group-active:outline-(--btn-plain-bg-active)"
-                            ></div>
-                        </div>
-                        <!-- post title -->
-                        <div class="flex-1 text-left font-bold
-                            group-hover:translate-x-1 transition-all group-hover:text-(--primary)
-                            text-75 pr-2 whitespace-nowrap text-ellipsis overflow-hidden"
-                        >
+                    <div class="ml-5 py-2">
+                        <div class="font-bold transition-all group-hover:translate-x-1 group-hover:text-(--primary) text-75">
                             {post.data.title}
                         </div>
                     </div>
