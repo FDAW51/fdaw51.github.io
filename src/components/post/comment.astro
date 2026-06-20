@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getPostUrl } from "@utils/url";
+import { postConfig } from "@/config";
+import Twikoo from "./twikoo.astro";
+import Waline from "./waline.astro";
+
+interface Props {
+    post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+
+const path = getPostUrl(post);
+
+let commentService = "";
+if (postConfig.comment?.enable && post.data.comment) {
+    if (postConfig.comment?.waline) {
+        commentService = "waline";
+    } else if (postConfig.comment?.twikoo) {
+        commentService = "twikoo";
+    }
+}
+---
+
+{postConfig.comment?.enable && post.data.comment && (
+    <div class="card-base p-6 mb-4">
+        {commentService === 'waline' && <Waline path={path} />}
+        {commentService === 'twikoo' && <Twikoo path={path} />}
+    </div>
+)}

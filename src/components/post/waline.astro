@@ -1,0 +1,97 @@
+---
+import { postConfig } from "@/config";
+
+interface Props {
+    path: string;
+}
+
+const config = {
+    ...postConfig.comment.waline,
+    el: "#wcomment",
+    path: Astro.props.path,
+};
+---
+
+<div id="wcomment"></div>
+<script is:inline define:vars={{ config }}>
+    // 动态创建配置对象
+    function createWalineConfig() {
+        return {
+            el: '#wcomment',
+            serverURL: config.serverURL,
+            path: config.path,
+            lang: config.lang || 'zh-CN',
+        };
+    }
+
+    // 加载 Waline 脚本
+    function loadWalineScript() {
+        return new Promise((resolve, reject) => {
+            if (typeof Waline !== 'undefined' && typeof Waline.init === 'function') {
+                resolve();
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+            document.head.appendChild(link);
+        });
+    }
+
+    // 初始化 Waline
+    async function initWaline() {
+        const commentEl = document.getElementById('wcomment');
+        if (!commentEl) return;
+        try {
+            await loadWalineScript();
+            if (typeof Waline !== 'undefined' && typeof Waline.init === 'function') {
+                commentEl.innerHTML = '';
+                const dynamicConfig = createWalineConfig();
+                Waline.init(dynamicConfig);
+                console.log('[Waline] 初始化完成');
+            }
+        } catch (error) {
+            console.error('[Waline] 加载或初始化失败:', error);
+        }
+    }
+
+    // 使用 Intersection Observer 延迟加载
+    function setupLazyLoad() {
+        const commentEl = document.getElementById('wcomment');
+        if (!commentEl) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                initWaline();
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px' });
+
+        observer.observe(commentEl);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupLazyLoad);
+    } else {
+        setupLazyLoad();
+    }
+
+    if (window.swup && window.swup.hooks) {
+        window.swup.hooks.on('content:replace', setupLazyLoad);
+    } else {
+        document.addEventListener('swup:enable', function() {
+            if (window.swup && window.swup.hooks) {
+                window.swup.hooks.on('content:replace', setupLazyLoad);
+            }
+        });
+    }
+
+    document.addEventListener('twilight:page:loaded', setupLazyLoad);
+</script>
