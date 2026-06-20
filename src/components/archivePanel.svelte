@@ -41,13 +41,6 @@ onMount(() => {
     uncategorized = params.get("uncategorized");
 });
 
-function formatDate(date: Date | string) {
-    const d = new Date(date);
-    const month = (d.getMonth() + 1).toString().padStart(2, "0");
-    const day = d.getDate().toString().padStart(2, "0");
-    return `${month}-${day}`;
-}
-
 function formatTag(tagList: string[]) {
     return tagList.map((t) => `#${t}`).join(" ");
 }
@@ -141,12 +134,8 @@ let groups = $derived.by(() => {
                     class="group btn-plain h-10 w-full rounded-lg hover:text-[initial]"
                 >
                     <div class="flex flex-row justify-start items-center h-full">
-                        <!-- date -->
-                        <div class="w-[15%] md:w-[10%] transition text-sm text-right text-50">
-                            {formatDate(post.data.published)}
-                        </div>
-                        <!-- dot and line -->
-                        <div class="w-[15%] md:w-[10%] relative dash-line h-full flex items-center">
+                        <!-- dot -->
+                        <div class="w-[10%] md:w-[6%] relative dash-line h-full flex items-center">
                             <div class="transition-all mx-auto w-1 h-1 rounded group-hover:h-5
                                 bg-[oklch(0.5_0.05_var(--hue))] group-hover:bg-(--primary)
                                 outline-4 z-50
@@ -156,14 +145,14 @@ let groups = $derived.by(() => {
                             ></div>
                         </div>
                         <!-- post title -->
-                        <div class="w-[70%] md:max-w-[65%] md:w-[65%] text-left font-bold
+                        <div class="flex-1 text-left font-bold
                             group-hover:translate-x-1 transition-all group-hover:text-(--primary)
-                            text-75 pr-8 whitespace-nowrap text-ellipsis overflow-hidden"
+                            text-75 pr-2 whitespace-nowrap text-ellipsis overflow-hidden"
                         >
                             {post.data.title}
                         </div>
                         <!-- tag list -->
-                        <div class="hidden md:block md:w-[15%] text-left text-sm transition whitespace-nowrap text-ellipsis overflow-hidden text-30"
+                        <div class="hidden md:block md:w-[28%] text-left text-sm transition whitespace-nowrap text-ellipsis overflow-hidden text-30"
                         >
                             {formatTag(post.data.tags)}
                         </div>

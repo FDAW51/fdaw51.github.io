@@ -66,7 +66,7 @@ const umamiBaseUrl = umamiConfig.baseUrl || "";
         <div class="meta-icon">
             <Icon name="material-symbols:book-2-outline-rounded" class="text-xl"></Icon>
         </div>
-        <div class="flex flex-row flex-nowrap items-center">
+        <div class="flex flex-row flex-wrap items-center overflow-hidden">
             {categoryParts && categoryParts.length > 0 ? (
                 categoryParts.map((categoryName, index) => (
                     <>
@@ -93,11 +93,11 @@ const umamiBaseUrl = umamiConfig.baseUrl || "";
         </div>
     </div>
     <!-- tags -->
-    <div class:list={["items-center", {"flex": !hideTagsForMobile, "hidden md:flex": hideTagsForMobile}]}>
+    <div class:list={["items-center overflow-hidden", {"flex": !hideTagsForMobile, "hidden md:flex": hideTagsForMobile}]}>
         <div class="meta-icon">
             <Icon name="material-symbols:tag-rounded" class="text-xl"></Icon>
         </div>
-        <div class="flex flex-row flex-nowrap items-center">
+        <div class="flex flex-row flex-wrap items-center overflow-hidden">
             {(tags && tags.length > 0) && tags.map((tag, i) => (
                 <div class:list={[{"hidden": i == 0}, "mx-1.5 text-(--meta-divider) text-sm"]}>/</div>
                 <a href={getTagUrl(tag)} aria-label={`View all posts with the ${tag.trim()} tag`}
