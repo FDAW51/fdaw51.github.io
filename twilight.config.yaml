@@ -235,7 +235,7 @@ musicPlayer:
         type: "playlist"
         id: "2161912966"
     # 是否自动播放（浏览器可能阻止自动播放）
-    autoplay: false
+    autoplay: true
 
 # 看板娘配置
 pio:
