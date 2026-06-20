@@ -41,9 +41,6 @@ onMount(() => {
     uncategorized = params.get("uncategorized");
 });
 
-function formatTag(tagList: string[]) {
-    return tagList.map((t) => `#${t}`).join(" ");
-}
 
 function isCategoryMatch(category: string | string[] | null | undefined, targets: string[]) {
     const postParts = getCategoryPathParts(category);
@@ -150,11 +147,6 @@ let groups = $derived.by(() => {
                             text-75 pr-2 whitespace-nowrap text-ellipsis overflow-hidden"
                         >
                             {post.data.title}
-                        </div>
-                        <!-- tag list -->
-                        <div class="hidden md:block md:w-[28%] text-left text-sm transition whitespace-nowrap text-ellipsis overflow-hidden text-30"
-                        >
-                            {formatTag(post.data.tags)}
                         </div>
                     </div>
                 </a>
