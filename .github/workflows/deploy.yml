@@ -1,32 +1,64 @@
 name: Deploy to GitHub Pages
 
 on:
-  # 每次推送到 `main` 分支时触发这个“工作流程”
-  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
-    branches: [ main ]
-  # 允许你在 GitHub 上的 Actions 标签中手动触发此“工作流程”
+    branches: [ master ]
   workflow_dispatch:
 
-# 允许 job 克隆 repo 并创建一个 page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout repository
         uses: actions/checkout@v5
-      - name: Install, build, and upload your site
-        uses: withastro/action@v5
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          package-manager: pnpm@9.14.4
-          build-cmd: pnpm run build
-        # env:
-          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # 对变量值使用单引号。（可选）
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "store_path=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.store_path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
