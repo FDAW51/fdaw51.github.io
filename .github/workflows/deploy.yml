@@ -52,8 +52,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site
-        run: pnpm run build
+      - name: Build Astro site
+        id: astro-build
+        run: |
+          echo "=== Step 1: Generate icons ==="
+          node scripts/generate-icons.js
+          echo "=== Step 2: Astro build ==="
+          pnpm exec astro build 2>&1
+          echo "=== Step 3: Pagefind ==="
+          npx pagefind --site dist 2>&1
         env:
           GITHUB_ACTIONS: true
 
