@@ -111,30 +111,32 @@ let groups = $derived.by(() => {
 });
 </script>
 
-<div>
+<div class="space-y-10">
     {#each groups as group}
         <div>
-            <div class="flex flex-row w-full items-center gap-x-3 h-14">
-                <div class="text-2xl font-bold text-75">
-                    {group.year}
-                </div>
-                <div class="h-3 w-3 rounded-full bg-(--primary) shrink-0"></div>
-                <div class="text-50">
+            <!-- Year section header -->
+            <div class="flex items-center gap-x-4 mb-4">
+                <span class="text-3xl md:text-4xl font-bold text-(--primary) tabular-nums">{group.year}</span>
+                <div class="h-px flex-1 bg-(--primary)/20"></div>
+                <span class="text-sm text-50">
                     {group.posts.length} {i18n(group.posts.length === 1 ? I18nKey.postCount : I18nKey.postsCount)}
-                </div>
+                </span>
             </div>
-            {#each group.posts as post}
-                <a href={getPostUrl(post)}
-                    aria-label={post.data.title}
-                    class="group btn-plain w-full rounded-lg hover:text-[initial] block"
-                >
-                    <div class="ml-5 py-2">
-                        <div class="font-bold transition-all group-hover:translate-x-1 group-hover:text-(--primary) text-75">
-                            {post.data.title}
+            <!-- Post list -->
+            <div class="space-y-1">
+                {#each group.posts as post}
+                    <a href={getPostUrl(post)}
+                        aria-label={post.data.title}
+                        class="group block rounded-lg px-4 py-2 -mx-4 transition-colors hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active)"
+                    >
+                        <div class="transition-all group-hover:translate-x-1">
+                            <span class="font-medium text-75 group-hover:text-(--primary) transition-colors">
+                                {post.data.title}
+                            </span>
                         </div>
-                    </div>
-                </a>
-            {/each}
+                    </a>
+                {/each}
+            </div>
         </div>
     {/each}
 </div>
