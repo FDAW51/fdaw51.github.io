@@ -405,6 +405,8 @@ function handleLoadSuccess() {
         currentTime = targetTime;
         pendingProgress = 0; // 恢复后清除
     }
+    // 预加载下一首
+    preloadNextTrack();
     // 如果是自动播放模式，或者当前处于播放状态（如切换歌曲），则尝试播放
     if (isAutoplayEnabled || isPlaying || shouldPlay) {
         const playPromise = audio?.play();
@@ -424,6 +426,31 @@ function handleLoadSuccess() {
             });
         }
     }
+}
+
+// 预加载下一首歌曲
+function preloadNextTrack() {
+    if (playlist.length <= 1) return;
+    // 清理旧预加载
+    document.querySelectorAll('link[data-music-preload]').forEach(el => el.remove());
+    // 确定下一首的索引
+    let nextIndex: number;
+    if (isShuffled) {
+        do {
+            nextIndex = Math.floor(Math.random() * playlist.length);
+        } while (nextIndex === currentIndex && playlist.length > 1);
+    } else {
+        nextIndex = currentIndex < playlist.length - 1 ? currentIndex + 1 : 0;
+    }
+    const nextSong = playlist[nextIndex];
+    if (!nextSong?.url) return;
+    // 用 preload link 告诉浏览器提前加载
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'audio';
+    link.href = getAssetPath(nextSong.url);
+    link.setAttribute('data-music-preload', '');
+    document.head.appendChild(link);
 }
 
 function handleUserInteraction() {
@@ -603,6 +630,7 @@ onMount(() => {
 
     audio = new Audio();
     audio.volume = volume;
+    audio.preload = "auto";
     handleAudioEvents();
     interactionEvents.forEach(event => {
         document.addEventListener(event, handleUserInteraction, { capture: true });
