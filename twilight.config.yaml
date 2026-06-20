@@ -196,37 +196,37 @@ musicPlayer:
               title: "24-7, 365"
               artist: "elijah woods"
               cover: "/img/averter.png"
-              url: "/music/01-247-365.m4a"
+              url: "/music/01-247-365.mp3"
               duration: 0
             - id: 2
               title: "Call of Silence"
               artist: "澤野弘之 / R!N / Gemie"
               cover: "/img/averter.png"
-              url: "/music/02-call-of-silence.m4a"
+              url: "/music/02-call-of-silence.mp3"
               duration: 0
             - id: 3
               title: "Panorama"
               artist: "X-Ray Dog"
               cover: "/img/averter.png"
-              url: "/music/03-panorama.m4a"
+              url: "/music/03-panorama.mp3"
               duration: 0
             - id: 4
               title: "Time to go home"
               artist: "Jacoo"
               cover: "/img/averter.png"
-              url: "/music/04-time-to-go-home.m4a"
+              url: "/music/04-time-to-go-home.mp3"
               duration: 0
             - id: 5
               title: "Towards the Light"
               artist: "Jacoo"
               cover: "/img/averter.png"
-              url: "/music/05-towards-the-light.m4a"
+              url: "/music/05-towards-the-light.mp3"
               duration: 0
             - id: 6
               title: "时空观影券"
               artist: "Tiko / 缪礼丞 / 粉太狼（夏利）"
               cover: "/img/averter.png"
-              url: "/music/06-shi-kong-guan-ying-quan.m4a"
+              url: "/music/06-shi-kong-guan-ying-quan.mp3"
               duration: 0
     # meting 模式配置（从在线平台获取歌单）
     meting:
